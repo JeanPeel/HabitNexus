@@ -12,10 +12,13 @@
     "express-flash": "0.0.2",
     "express-session": "^1.16.2",
     "method-override": "^3.0.0",
+    "moment": "^2.27.0",
+    "moment-timezone": "^0.5.31",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-moment": "^0.9.7",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"
   },
