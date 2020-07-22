@@ -41,6 +41,7 @@ class Form extends Component {
                     </div>
                     <div>
                         <label for="priority" >Days to Repeat: </label>
+                        <fieldset name="weekday">
                         <input type="checkbox" id="monday" name="weekday" value="1" />
                         <label for="monday">Monday</label>
                         <input type="checkbox" id="tuesday" name="weekday" value="2" />
@@ -55,9 +56,11 @@ class Form extends Component {
                         <label for="saturday">Saturday</label>
                         <input type="checkbox" id="sunday" name="weekday" value="7" />
                         <label for="sunday">Sunday</label>
+                        </fieldset>
                     </div>
                     <div>
                         <label for="priority" >Time of Day: </label>
+                        <fieldset name="daytime">
                         <input type="checkbox" id="morning" name="daytime" value="8.1" />
                         <label for="morning">Morning</label>
                         <input type="checkbox" id="afternoon" name="weekday" value="8.2" />
@@ -66,33 +69,40 @@ class Form extends Component {
                         <label for="evemomg">Evening</label>
                         <input type="checkbox" id="night" name="weekday" value="8.4" />
                         <label for="night">Night</label>
+                       </fieldset>
                     </div>
                     <div>
                         <label for="priority" >Priority: </label>
+                        <fieldset name="priority">
                         <input type="radio" id="high" name="priority" value="31" />
                         <label for="high">High</label>
                         <input type="radio" id="medium" name="priority" value="21" />
                         <label for="medium">Medium</label>
                         <input type="radio" id="low" name="priority" value="11" />
                         <label for="low">Low</label>
+                        </fieldset>
                     </div>
                     <div>
                         <label for="dificulty" >Dificulty Level: </label>
-                        <input type="radio" id="dificult" name="priority" value="32" />
+                        <fieldset name="difficulty">
+                        <input type="radio" id="dificult" name="difficulty" value="32" />
                         <label for="dificult">Dificult</label>
-                        <input type="radio" id="moderate" name="priority" value="22" />
+                        <input type="radio" id="moderate" name="difficulty" value="22" />
                         <label for="moderate">Moderate</label>
-                        <input type="radio" id="easy" name="priority" value="12" />
+                        <input type="radio" id="easy" name="difficulty" value="12" />
                         <label for="easy">Easy</label>
+                        </fieldset>
                     </div>
                     <div>
                         <label for="durration" >Durration: </label>
-                        <input type="radio" id="upkeep" name="priority" value="60" />
+                        <fieldset name="durration">
+                        <input type="radio" id="upkeep" name="durration" value="60" />
                         <label for="upkeep">Regular-Upkeep (1 hour or less)</label>
-                        <input type="radio" id="task" name="priority" value="30" />
+                        <input type="radio" id="task" name="durration" value="30" />
                         <label for="task">Fast-Task (30 min or less)</label>
-                        <input type="radio" id="quick" name="priority" value="10" />
+                        <input type="radio" id="quick" name="durration" value="10" />
                         <label for="bit">Quick-bit (10 mins or less)</label>
+                        </fieldset>
                     </div>
                     <div>
                         <label for="url">Link to info or image (optional): </label>
