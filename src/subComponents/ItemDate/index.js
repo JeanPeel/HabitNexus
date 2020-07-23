@@ -4,34 +4,33 @@ import "../style.css";
 // import 'moment-timezone';
 const moment = require('moment');
 
-class ItemDate extends React.Component {
+export default function ItemDate(props) {
 
-    state = {
-        DateItem: "unchanged",
-    };
+    let now = moment();
+    var DateItem = now.format("MM/DD/YYYY")
+    const AutoDate = now.format("MM/DD/YYYY")
+    console.log("AutoDate: ", AutoDate);
 
-    updateDateItem = DateItem => {
-        this.setState({ DateItem });
-        console.log(`DateItem:`, DateItem)
-    };
+    var DateItem = props.DateItem;
+    var updateDateItem = props.DateItem;
 
-    render() {
-        const { DateItem } = this.state;
+    // updateDateItem = DateItem => {
+    //     this.setState({ DateItem });
+    //     console.log(`Update DateItem:`, DateItem)
+    // };
 
     return (
         <div>
-            <label htmlFor="DateItem" >Start Date:</label>
+            <label htmlFor="DateItem" >Start Date is Today ({AutoDate}) <br/>or Change Start Date: </label>
             <input
                 type="date"
                 name="DateItem"
                 value={DateItem}
-                onChange={this.updateDateItem}
-                placeholder="now.format()"
+                onChange={updateDateItem}
                 className="DateItem"
             />
         </div>
     );
 }
-}
 
-export default ItemDate;
+

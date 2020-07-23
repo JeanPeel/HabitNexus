@@ -12,7 +12,7 @@ class Durration extends React.Component {
 
     updateDurrationItem = DurrationItem => {
         this.setState({ DurrationItem });
-        console.log(`DDurrationItem:`, DurrationItem)
+        console.log(`DurrationItem:`, DurrationItem)
     };
 
     render() {

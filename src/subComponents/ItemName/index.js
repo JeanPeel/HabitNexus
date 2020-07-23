@@ -4,19 +4,13 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-class ItemName extends React.Component {
-    state = {
-        NameItem: "unchanged",
-    };
+export default function ItemName(props) {
 
-    updateNameItem = NameItem => {
-        this.setState({ NameItem });
-        console.log(`NameItem:`, NameItem);
-    };
+    var NameItem = props.NameItem;
+    var updateNameItem = props.NameItem;
 
-    render() {
-        const { NameItem } = this.state;
-
+    console.log(`NameItem:`, NameItem);
+   
         return (
             <div>
                 <label htmlFor="NameItem">Item Name: </label>
@@ -24,13 +18,10 @@ class ItemName extends React.Component {
                     type="text"
                     name="NameItem"
                     value={NameItem}
-                    onChange={this.updateNameItem}
+                    onChange={updateNameItem}
                     placeholder="Add Item Name"
                     className="nameItem"
                 />
             </div>
-        );
-    }
-}
-
-export default ItemName;
+         );
+        }
