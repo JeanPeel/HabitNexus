@@ -15,7 +15,7 @@ class Difficulty extends Component {
     }
 
     onChangeValue(event) {
-        console.log(event.target.value);
+        console.log("Dificulty: ", event.target.value);
     }
 
     render() {

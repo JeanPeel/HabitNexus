@@ -9,6 +9,9 @@ export default function ItemName(props) {
     const NameItem = props.NameItem;
     const updateNameItem = props.updateNameItem;
 
+    console.log(`Name Item:`, NameItem);
+    console.log(`Update Name Item:`, updateNameItem);
+
     return (
         <div>
             <label for="NameItem">Item Name: </label>

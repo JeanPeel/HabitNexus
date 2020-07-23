@@ -17,7 +17,7 @@ class Priority extends Component {
     }
 
     onChangeValue(event) {
-        console.log(event.target.value);
+        console.log("Priority: ", event.target.value);
     }
 
     render() {

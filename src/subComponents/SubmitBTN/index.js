@@ -7,6 +7,7 @@ import "../style.css";
 export default function SubmitBTN(props) {
 
     const saveProps = props.saveProps;
+    console.log("Saving Props: ", props.saveProps);
 
     return (
         <div>

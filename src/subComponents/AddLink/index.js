@@ -9,6 +9,9 @@ export default function AddLink(props) {
     const LinkItem = props.LinkItem;
     const updateLinkItem = props.updateLinkItem;
 
+    console.log(`LinkItem:`, LinkItem);
+    console.log(`Update LinkItem:`, updateLinkItem);
+
     return (
         <div>
         <label for="LinkItem" >Add Link to info or image (optional): </label>

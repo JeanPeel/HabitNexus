@@ -9,7 +9,7 @@ export default function ItemDate(props) {
     const DateItem = props.DateItem;
     const updateDateItem = props.updateDateItem;
     let now = moment();
-    console.log(now.format());
+    console.log("DateItem: ", now.format());
 
     return (
         <div>

@@ -14,7 +14,7 @@ class TOD extends React.Component {
     };
     handleChange = selectedTOD => {
         this.setState({ selectedTOD });
-        console.log(`TOD selected:`, selectedTOD);
+        console.log(`TOD selected: `, selectedTOD);
     };
 
     render() {

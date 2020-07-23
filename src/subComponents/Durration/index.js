@@ -15,7 +15,7 @@ class Durration extends Component {
     }
 
     onChangeValue(event) {
-        console.log(event.target.value);
+        console.log("Durration: ", event.target.value);
     }
 
     render() {
