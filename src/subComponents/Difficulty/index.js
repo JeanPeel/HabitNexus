@@ -28,9 +28,9 @@ class Difficulty extends Component {
                         type="radio"
                         className="radioBTN"
                         name="difficulty"
-                        value="dificult"
+                        value="difficult"
                     />
-                    <label for="dificult">Difficult</label>
+                    <label for="difficult">Difficult</label>
                     <input
                         type="radio"
                         className="radioBTN"
