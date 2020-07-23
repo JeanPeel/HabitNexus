@@ -4,47 +4,49 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-class Difficulty extends Component {
+class Difficulty extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-            name: "React"
-        };
-        this.onChangeValue = this.onChangeValue.bind(this);
-    }
+    state = {
+        DifficultyItem: "unchanged",
+    };
 
-    onChangeValue(event) {
-        console.log("Dificulty: ", event.target.value);
-    }
+    updateDifficultyItem = DifficultyItem => {
+        this.setState({ DifficultyItem });
+        console.log(`DifficultyItem:`, DifficultyItem)
+    };
 
     render() {
 
+        const { DifficultyItem } = this.state;
+
         return (
             <div>
-                <label for="difficulty" >Difficulty Level: </label>
-                <fieldset name="difficulty">
+                <label htmlFor="DifficultyItem" >Difficulty Level: </label>
+                <fieldset name="DifficultyItem">
                     <input
                         type="radio"
                         className="radioBTN"
-                        name="difficulty"
+                        name="dDifficultyItem"
                         value="difficult"
+                        onChange={this.updateDifficultyItem }
                     />
-                    <label for="difficult">Difficult</label>
+                    <label htmlFor="difficult">Difficult</label>
                     <input
                         type="radio"
                         className="radioBTN"
-                        name="difficulty"
+                        name="DifficultyItem"
                         value="moderate"
+                        onChange={this.updateDifficultyItem}
                     />
-                    <label for="moderate">Moderate</label>
+                    <label htmlFor="moderate">Moderate</label>
                     <input
                         type="radio"
                         className="radioBTN"
-                        name="difficulty"
+                        name="DifficultyItem"
                         value="easy"
+                        onChange={this.updateDifficultyItem }
                     />
-                    <label for="easy">Easy</label>
+                    <label htmlFor="easy">Easy</label>
                 </fieldset>
             </div>
         );

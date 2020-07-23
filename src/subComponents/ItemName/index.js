@@ -4,25 +4,33 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-export default function ItemName(props) {
+class ItemName extends React.Component {
+    state = {
+        NameItem: "unchanged",
+    };
 
-    const NameItem = props.NameItem;
-    const updateNameItem = props.updateNameItem;
+    updateNameItem = NameItem => {
+        this.setState({ NameItem });
+        console.log(`NameItem:`, NameItem);
+    };
 
-    console.log(`Name Item:`, NameItem);
-    console.log(`Update Name Item:`, updateNameItem);
+    render() {
+        const { NameItem } = this.state;
 
-    return (
-        <div>
-            <label for="NameItem">Item Name: </label>
-            <input 
-            type="text"
-            name="NameItem" 
-            value={NameItem} 
-            onChange={updateNameItem} 
-            placeholder="Add Item Name" 
-            className="nameItem" 
-            />
-        </div>
-    );
+        return (
+            <div>
+                <label htmlFor="NameItem">Item Name: </label>
+                <input
+                    type="text"
+                    name="NameItem"
+                    value={NameItem}
+                    onChange={this.updateNameItem}
+                    placeholder="Add Item Name"
+                    className="nameItem"
+                />
+            </div>
+        );
+    }
 }
+
+export default ItemName;

@@ -4,14 +4,31 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-export default function SubmitBTN(props) {
 
-    const saveProps = props.saveProps;
-    console.log("Saving Props: ", props.saveProps);
 
-    return (
-        <div>
-     <button type="submit" onClick={saveProps} className="submitBTN">Submit</button>
-    </div>
-    );
+class SubmitBTN extends React.Component {
+
+    // const saveProps = props.saveProps;
+    // console.log("Saving Props: ", props.saveProps);
+
+    state = {
+        saveProps: "unchanged",
+    }
+
+    handleChange = saveProps => {
+        this.setState({ saveProps });
+        console.log("Saving Props: ", saveProps);
+    };
+
+    render() {
+        const { saveProps } = this.state;
+
+        return (
+            <div>
+                <button type="submit" onClick={this.saveProps} className="submitBTN">Submit</button>
+            </div >
+        );
+    }
 }
+
+export default SubmitBTN;

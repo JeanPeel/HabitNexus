@@ -22,7 +22,7 @@ class TOD extends React.Component {
 
         return (
             <div>
-                <label for="TimeDay">Time Of Day</label>
+                <label htmlFor="TimeDay">Time Of Day</label>
                 <Select
                     name="TimeDay"
                     value={selectedTOD}

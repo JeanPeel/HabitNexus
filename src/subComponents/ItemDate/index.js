@@ -4,24 +4,34 @@ import "../style.css";
 // import 'moment-timezone';
 const moment = require('moment');
 
-export default function ItemDate(props) {
+class ItemDate extends React.Component {
 
-    const DateItem = props.DateItem;
-    const updateDateItem = props.updateDateItem;
-    let now = moment();
-    console.log("DateItem: ", now.format());
+    state = {
+        DateItem: "unchanged",
+    };
+
+    updateDateItem = DateItem => {
+        this.setState({ DateItem });
+        console.log(`DateItem:`, DateItem)
+    };
+
+    render() {
+        const { DateItem } = this.state;
 
     return (
         <div>
-            <label for="DateItem" >Start Date:</label>
+            <label htmlFor="DateItem" >Start Date:</label>
             <input
                 type="date"
                 name="DateItem"
                 value={DateItem}
-                onChange={updateDateItem}
+                onChange={this.updateDateItem}
                 placeholder="now.format()"
                 className="DateItem"
             />
         </div>
     );
 }
+}
+
+export default ItemDate;

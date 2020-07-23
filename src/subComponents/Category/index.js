@@ -21,7 +21,7 @@ class Category extends React.Component {
 
         return (
             <div>
-                <label for="category">Category</label>
+                <label htmlFor="category">Category</label>
                 <Select
                     name="category"
                     value={selectedCategory}

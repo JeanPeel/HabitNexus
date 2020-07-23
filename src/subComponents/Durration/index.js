@@ -4,47 +4,49 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-class Durration extends Component {
+class Durration extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-            name: "React"
-        };
-        this.onChangeValue = this.onChangeValue.bind(this);
-    }
+    state = {
+        DurrationItem: null,
+    };
 
-    onChangeValue(event) {
-        console.log("Durration: ", event.target.value);
-    }
+    updateDurrationItem = DurrationItem => {
+        this.setState({ DurrationItem });
+        console.log(`DDurrationItem:`, DurrationItem)
+    };
 
     render() {
 
+        const { DurrationItem } = this.state;
+
         return (
             <div>
-                <label for="durration" >Durration: </label>
-                <fieldset name="durration">
+                <label htmlFor="DurrationItem" >Durration: </label>
+                <fieldset name="DurrationItem">
                     <input
                         type="radio"
                         className="radioBTN"
-                        name="durration"
+                        name="DurrationItem"
                         value="regular-upkeep" 
+                        onChange={this.updateDurrationItem }
                         />
-                    <label for="upkeep">Regular-Upkeep (1 hour or less)</label>
+                    <label htmlFor="upkeep">Regular-Upkeep (1 hour or less)</label>
                     <input
                         type="radio"
                         className="radioBTN"
-                        name="durration"
+                        name="DurrationItem"
                         value="fast-task" 
+                        onChange={this.updateDurrationItem }
                         />
-                    <label for="task">Fast-Task (30 min or less)</label>
+                    <label htmlFor="task">Fast-Task (30 min or less)</label>
                     <input
                         type="radio"
                         className="radioBTN"
-                        name="durration"
+                        name="DurrationItem"
                         value="quick-bit" 
+                        onChange={this.updateDurrationItem }
                         />
-                    <label for="bit">Quick-bit (10 mins or less)</label>
+                    <label htmlFor="bit">Quick-bit (10 mins or less)</label>
                 </fieldset>
             </div>
         );

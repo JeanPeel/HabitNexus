@@ -4,25 +4,35 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-export default function AddLink(props) {
+class AddLink extends React.Component {
 
-    const LinkItem = props.LinkItem;
-    const updateLinkItem = props.updateLinkItem;
+    state = {
+        LinkItem: "unchanged",
+    };
 
-    console.log(`LinkItem:`, LinkItem);
-    console.log(`Update LinkItem:`, updateLinkItem);
+    updateLinkItem = LinkItem => {
+        this.setState({ LinkItem });
+        console.log(`LinkItem:`, LinkItem);
+    };
+
+    render() {
+        const { LinkItem } = this.state;
+
 
     return (
         <div>
-        <label for="LinkItem" >Add Link to info or image (optional): </label>
+        <label htmlFor="LinkItem" >Add Link to info or image (optional): </label>
         <input 
         type="url" 
         name="LinkItem" 
         value={LinkItem} 
-        onChange={updateLinkItem} 
+        onChange={this.updateLinkItem}
         placeholder="Add a Link Here" 
         className="linkItem"
         />
     </div>
     );
 }
+}
+
+export default AddLink;

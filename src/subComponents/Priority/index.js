@@ -6,47 +6,49 @@ import "../style.css";
 
 
 
-class Priority extends Component {
+class Priority extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-            name: "React"
-        };
-        this.onChangeValue = this.onChangeValue.bind(this);
-    }
+    state = {
+        PriorityItem: "unchanged",
+    };
 
-    onChangeValue(event) {
-        console.log("Priority: ", event.target.value);
-    }
+    updatePriorityItem = PriorityItem => {
+        this.setState({ PriorityItem });
+        console.log(`PriorityItem:`, PriorityItem)
+    };
 
     render() {
 
+        const { PriorityItem } = this.state;
+
         return (
             <div>
-                <label for="priority" >Priority: </label>
-                <fieldset name="priority">
+                <label htmlFor="PriorityItem" >Priority: </label>
+                <fieldset name="PriorityItem">
                     <input 
                     type="radio" 
                     className="radioBTN"
-                    name="priority" 
+                    name="PriorityItem" 
                     value="high" 
+                    onChange={this.updateDurrationItem }
                     />
-                    <label for="high">High</label>
+                    <label htmlFor="high">High</label>
                     <input 
                     type="radio" 
                     className="radioBTN"
-                    name="priority" 
+                    name="PriorityItem" 
                     value="medium" 
+                    onChange={this.updateDurrationItem }
                     />
-                    <label for="medium">Medium</label>
+                    <label htmlFor="medium">Medium</label>
                     <input 
                     type="radio" 
                     className="radioBTN"
-                    name="priority" 
+                    name="PriorityItem" 
                     value="low" 
+                    onChange={this.updateDurrationItem }
                     />
-                    <label for="low">Low</label>
+                    <label htmlFor="low">Low</label>
                 </fieldset>
             </div>
         );
