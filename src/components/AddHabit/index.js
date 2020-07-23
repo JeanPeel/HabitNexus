@@ -1,27 +1,17 @@
 import React, { Component } from "react";
-import "./style.css";
+import "../style.css";
 import Moment from 'react-moment';
 import 'moment-timezone';
 const moment = require('moment');
 
-class Form extends Component {
-    state = {
+export default function AddHabit(props) {
 
-    }
-
-
-    render() {
-
-        return (
-            <div>
+    return (
+        <div>
                 <h1>New Habit Form</h1>
-                <form action="/habits" method="POST">
-
-
+                <form action="/register" method="POST">
+               
                 </form>
             </div>
-        );
-    }
-}
-
-export default Form;
+            );
+        }
