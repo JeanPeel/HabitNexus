@@ -2,28 +2,50 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
-const express = require('express')
-const app = express()
+
+const express = require("express");
+const mongoose = require('mongoose');
+const path = require('path');
+
+const PORT = process.env.PORT || 3030;
+const app = express();
+
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
 
-// const htmlRoutes = require('./routes/html');
-// const apiRoutes = require('../server/routes/api');
+const HabitModel = require('./models/Habit');
+const CatModel = require('./models/CatModel');
+const DayModel = require('./models/DayModel');
+const UsersModel = require('./models/UsersModel');
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
+mongoose.Promise = global.Promise;
 
-// app.use(express.static("public"));
-// app.get("/", (req, res) => {
-//     response.sendfile(__dirname + "/public/home.html");
-// });
+// MONGO setup ===
+// =============================================================
+// IF NODE_ENV exists then setup for Heroku, if not just use local
+let MONGODB_URI = process.env.NODE_ENV
+    ? process.env.MONGODB_URI
+    : "mongodb://localhost/HabitNexus";
+    // : "mongodb://<dbuser>:<dbpassword>@ds141490.mlab.com:41490/heroku_bwqsgrdb";
 
-// htmlRoutes.createRoutes(app);
-// apiRoutes.createRoutes(app);
+mongoose.connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+// =============================================================
 
+
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Serve up static assets (usually on heroku)
+// if (process.env.NODE_ENV === "production") {
+app.use(express.static("client/build"));
+// }
 
 const initializePassport = require('./passport-config')
 initializePassport(
@@ -32,10 +54,6 @@ initializePassport(
   id => users.find(user => user.id === id)
 )
 
-const users = []
-
-app.set('view-engine', 'ejs')
-app.use(express.urlencoded({ extended: false }))
 app.use(flash())
 app.use(session({
   secret: process.env.SESSION_SECRET,
@@ -46,47 +64,14 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
 
-function checkAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next()
-  }
-
-  res.redirect('/login')
-}
-
-function checkNotAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return res.redirect('/')
-  }
-  next()
-}
-
-
-// app.get("/api/timeOfDay", function (req, res) {
-//   res.json(timeOfDay);
-// });
-
-// app.get("/api/categories", function (req, res) {
-//   res.json(categories);
-// });
-
-// app.post("/api/timeOfDay", function (req, res) {
-
-//   res.json(timeOfDay);
-// });
-
-// app.post("/api/categories", function (req, res) { 
-
-//   res.json(categories);
-
-// });
-
 app.get('/', checkAuthenticated, (req, res) => {
-  res.render('index.js', { name: req.user.name })
+  // res.render('index.ejs', { name: req.user.name })
+  res.redirect('/index')
 })
 
 app.get('/login', checkNotAuthenticated, (req, res) => {
-  res.render('login.js')
+  // res.render('login.ejs')
+  res.redirect('/login')
 })
 
 app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
@@ -96,7 +81,8 @@ app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
 }))
 
 app.get('/register', checkNotAuthenticated, (req, res) => {
-  res.render('register.js')
+  // res.render('register.ejs')
+  res.redirect('/register')
 })
 
 app.post('/register', checkNotAuthenticated, async (req, res) => {
@@ -114,15 +100,104 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
   }
 })
 
-
-
 app.delete('/logout', (req, res) => {
   req.logOut()
   res.redirect('/login')
 })
 
-app.listen(3000)
+function checkAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next()
+  }
 
-const listener = app.listen(process.env.PORT, () => {
-  console.log("your app is listening on port " + listner.address().port);
+  res.redirect('/login')
+}
+
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return res.redirect('/')
+  }
+  next()
+}
+
+app.delete("/:id", (request, response) => {
+    const mongoID = request.params.id;
+    ToDo.remove({
+        _id: mongoID,
+    })
+        .then((data) => {
+            response.status(200).end();
+        })
+        .catch((error) => {
+            response.status(404).send(error.message);
+        });
+});
+
+app.post("/HabitNexus2", (request, response) => {
+    const HabitData = request.body;
+    console.log('is this working?', HabitData)
+    Habit.create(HabitData, function () {
+        response.status(200).end();
+    })
+});
+
+app.put('/api/updateScore/:id', function (req, res) {
+    console.log(`
+            put route /api/
+            
+            req.body :${JSON.stringify(req.body)}
+            req.params: ${req.params.id}
+            `)
+    Habit.updateOne({ _id: req.params.id }, { score: req.body.score })
+        .then(data => {
+            res.json(data)
+        })
+
+})
+
+app.get('/api/sortedHabits', function (req, res) {
+    console.log(`
+            sorted get route /api/
+            
+            req.body :${JSON.stringify(req.body)}
+            req.params: ${req.params.id}
+            `)
+
+    Habit.find({})
+        .then(data => {
+            res.json(data)
+            console.log('get sorted Habits: ', data)
+        })
+        .catch(function () {
+            response.status(404).end("Can not find and sort list!");
+        });
+
+});
+
+// ****************** Define any API routes before this runs *****************************
+app.get("/HabitNexus2", (request, response) => {
+    Habit.find({})
+        .then(function (data) {
+            response.status(200).json(data);
+        })
+        .catch(function () {
+            response.status(404).end("404!! Information BLACK HOLE!!");
+        });
+});
+
+function sendIndex(request, response) {
+    const indexPath = path.join(__dirname, 'client', 'build', 'index.html');
+
+    response.sendFile(indexPath);
+}
+
+app
+    .get("/Form", sendIndex)
+    .get("/Habits", sendIndex)
+    .get("/Leaderboard", sendIndex)
+    .get("/Login", sendIndex);
+
+//*************************************************************************************** */
+app.listen(PORT, () => {
+    console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
