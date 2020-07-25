@@ -28,6 +28,8 @@ export default function Durration(props) {
         }
     })();
 
+    console.log("DurrationValue", DurrationValue)
+
     // var WeekItem = props.WeekItem;
 
 

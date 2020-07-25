@@ -13,7 +13,7 @@ class Login extends Component {
         return (
             <div>
                 <h1>Login</h1>
-                <form action="/register" method="POST">
+                <form action="/login"  method="POST" id="form">
                     <UserName />
                     <ItemPassword />
                     <SubmitBTN />

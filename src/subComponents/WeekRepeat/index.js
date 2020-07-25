@@ -62,7 +62,7 @@ export default function WeekRepeat(props) {
 
     WeekObject = props.WeekSchedule
 
-    console.log(`WeekItem:`, WeekItem);
+    console.log(`WeekObject:`, WeekObject);
 
         return (
             <div>

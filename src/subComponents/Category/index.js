@@ -7,6 +7,7 @@ import Select from 'react-select';
 var axios = require("axios");
 
 // var categories = require("../../data/categories");
+// var formData = require("../../data/formData");
 
 
 class Category extends Component {
@@ -42,6 +43,8 @@ class Category extends Component {
             }).catch(error => {
                 console.log("Category Error: ", error);
             });
+
+            console.log(state.selectedCategory)
     }
 
     render() {

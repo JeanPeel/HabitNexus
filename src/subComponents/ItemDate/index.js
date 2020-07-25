@@ -16,7 +16,7 @@ export default function ItemDate(props) {
 
     // updateDateItem = DateItem => {
     //     this.setState({ DateItem });
-    //     console.log(`Update DateItem:`, DateItem)
+        console.log(`DateItem:`, DateItem)
     // };
 
     return (

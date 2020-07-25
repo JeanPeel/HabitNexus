@@ -6,65 +6,67 @@ import "../style.css";
 
 
 export default function Priority(props) {
-    
+
     let PriorityValue
 
     const [on, setOn] = useState(false);
 
     const ScheduleValue1 = (() => {
         if (on === true) {
-            PriorityValue = (document.getElementById(high).value)
+            PriorityValue1 = (document.getElementById(high).value)
         }
     })();
 
     const ScheduleValue2 = (() => {
         if (on === true) {
-            PriorityValue = (document.getElementById(medium).value)
+            PriorityValue2 = (document.getElementById(medium).value)
         }
     })();
- 
+
     const ScheduleValue3 = (() => {
         if (on === true) {
-            PriorityValue = (document.getElementById(low).value)
+            PriorityValue3 = (document.getElementById(low).value)
         }
     })();
 
     // var WeekItem = props.WeekItem;
 
 
-        return (
-            <div>
-                <label htmlFor="PriorityItem" >Priority: </label>
-                <fieldset name="PriorityItem">
-                    <input 
-                    type="radio" 
+    console.log("PriorityValue", PriorityValue)
+
+    return (
+        <div>
+            <label htmlFor="PriorityItem" >Priority: </label>
+            <fieldset name="PriorityItem">
+                <input
+                    type="radio"
                     className="radioBTN"
-                    name="PriorityItem" 
-                    value="high" 
+                    name="PriorityItem"
+                    value="high"
                     id="high"
-                    onChange={() => setOn(!on).then(ScheduleValue1())}
-                    />
-                    <label htmlFor="high">High</label>
-                    <input 
-                    type="radio" 
+                    onChange={() => setOn(!on).then(PriorityValue1())}
+                />
+                <label htmlFor="high">High</label>
+                <input
+                    type="radio"
                     className="radioBTN"
-                    name="PriorityItem" 
-                    value="medium" 
-                    onChange={() => setOn(!on).then(ScheduleValue2())}
-                    />
-                    <label htmlFor="medium">Medium</label>
-                    <input 
-                    type="radio" 
+                    name="PriorityItem"
+                    value="medium"
+                    onChange={() => setOn(!on).then(PriorityValue2())}
+                />
+                <label htmlFor="medium">Medium</label>
+                <input
+                    type="radio"
                     className="radioBTN"
-                    name="PriorityItem" 
-                    value="low" 
-                    onChange={() => setOn(!on).then(ScheduleValue3())}
-                    />
-                    <label htmlFor="low">Low</label>
-                </fieldset>
-            </div>
-        );
-    }
+                    name="PriorityItem"
+                    value="low"
+                    onChange={() => setOn(!on).then(PriorityValue3())}
+                />
+                <label htmlFor="low">Low</label>
+            </fieldset>
+        </div>
+    );
+}
 
 
 export default Priority;

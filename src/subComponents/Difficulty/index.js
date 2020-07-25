@@ -28,6 +28,8 @@ export default function Difficulty(props) {
         }
     })();
 
+    console.log("DifficultyValue", DifficultyValue)
+
     // var WeekItem = props.WeekItem;
 
 

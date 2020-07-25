@@ -26,7 +26,7 @@ class Form extends Component {
         return (
             <div>
                 <h1>New Habit Form</h1>
-                <form action="/habits" method="POST">
+                <form action="/habits" method="POST" id="form">
                     <ItemDate />
                     <ItemName/>
                     <Category/>
