@@ -20,7 +20,7 @@ export default function ItemEmail(props) {
                     name="EmailItem"
                     value={EmailItem}
                     onChange={updateEmailItem}
-                    placeholder="Add Email Name"
+                    placeholder="Add Email Address"
                     className="emailItem"
                     required />
             </div>

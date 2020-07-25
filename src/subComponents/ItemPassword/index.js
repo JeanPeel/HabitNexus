@@ -13,14 +13,14 @@ export default function ItemPassword(props) {
    
         return (
             <div>
-                <label htmlFor="PasswordItem">Password Name: </label>
+                <label htmlFor="PasswordItem">Password: </label>
                 <input
                     type="password"
                     id="Password"
                     name="PasswordItem"
                     value={PasswordItem}
                     onChange={updatePasswordItem}
-                    placeholder="Add Password Name"
+                    placeholder="Add Password"
                     className="passwordItem"
                     required />
             </div>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 // import axios from 'axios';
 
-import ItemName from "../../subComponents/ItemName";
+import UserName from "../../subComponents/UserName";
 import ItemEmail from "../../subComponents/ItemEmail";
 import ItemPassword from "../../subComponents/ItemPassword";
 import SubmitBTN from "../../subComponents/SubmitBTN";
@@ -14,7 +14,7 @@ class Register extends Component {
             <div>
                 <h1>Register</h1>
                 <form action="/register" method="POST">
-                    <ItemName />
+                    <UserName />
                     <ItemEmail />
                     <ItemPassword />
                     <SubmitBTN />
