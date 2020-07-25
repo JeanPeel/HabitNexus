@@ -5,21 +5,32 @@ import "../style.css";
 // const moment = require('moment');
 
 
+export default function Priority(props) {
+    
+    let PriorityValue
 
-class Priority extends React.Component {
+    const [on, setOn] = useState(false);
 
-    state = {
-        PriorityItem: "unchanged",
-    };
+    const ScheduleValue1 = (() => {
+        if (on === true) {
+            PriorityValue = (document.getElementById(high).value)
+        }
+    })();
 
-    updatePriorityItem = PriorityItem => {
-        this.setState({ PriorityItem });
-        console.log(`PriorityItem:`, PriorityItem)
-    };
+    const ScheduleValue2 = (() => {
+        if (on === true) {
+            PriorityValue = (document.getElementById(medium).value)
+        }
+    })();
+ 
+    const ScheduleValue3 = (() => {
+        if (on === true) {
+            PriorityValue = (document.getElementById(low).value)
+        }
+    })();
 
-    render() {
+    // var WeekItem = props.WeekItem;
 
-        const { PriorityItem } = this.state;
 
         return (
             <div>
@@ -30,7 +41,8 @@ class Priority extends React.Component {
                     className="radioBTN"
                     name="PriorityItem" 
                     value="high" 
-                    onChange={this.updateDurrationItem }
+                    id="high"
+                    onChange={() => setOn(!on).then(ScheduleValue1())}
                     />
                     <label htmlFor="high">High</label>
                     <input 
@@ -38,7 +50,7 @@ class Priority extends React.Component {
                     className="radioBTN"
                     name="PriorityItem" 
                     value="medium" 
-                    onChange={this.updateDurrationItem }
+                    onChange={() => setOn(!on).then(ScheduleValue2())}
                     />
                     <label htmlFor="medium">Medium</label>
                     <input 
@@ -46,13 +58,13 @@ class Priority extends React.Component {
                     className="radioBTN"
                     name="PriorityItem" 
                     value="low" 
-                    onChange={this.updateDurrationItem }
+                    onChange={() => setOn(!on).then(ScheduleValue3())}
                     />
                     <label htmlFor="low">Low</label>
                 </fieldset>
             </div>
         );
     }
-}
+
 
 export default Priority;

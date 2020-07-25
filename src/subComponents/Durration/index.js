@@ -4,20 +4,32 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-class Durration extends React.Component {
+export default function Durration(props) {
+    
+    let DurrationValue
 
-    state = {
-        DurrationItem: null,
-    };
+    const [on, setOn] = useState(false);
 
-    updateDurrationItem = DurrationItem => {
-        this.setState({ DurrationItem });
-        console.log(`DurrationItem:`, DurrationItem)
-    };
+    const DurrationValue1 = (() => {
+        if (on === true) {
+            DurrationValue = (document.getElementById(regular-upkeep).value)
+        }
+    })();
 
-    render() {
+    const DurrationValue2 = (() => {
+        if (on === true) {
+            DurrationValue = (document.getElementById(fast-task).value)
+        }
+    })();
+ 
+    const DurrationValue3 = (() => {
+        if (on === true) {
+            DurrationyValue = (document.getElementById(quick-bit).value)
+        }
+    })();
 
-        const { DurrationItem } = this.state;
+    // var WeekItem = props.WeekItem;
+
 
         return (
             <div>
@@ -28,7 +40,8 @@ class Durration extends React.Component {
                         className="radioBTN"
                         name="DurrationItem"
                         value="regular-upkeep" 
-                        onChange={this.updateDurrationItem }
+                        id="regular-upkeep"
+                        onChange={() => setOn(!on).then(DurrationValue1())}
                         />
                     <label htmlFor="upkeep">Regular-Upkeep (1 hour or less)</label>
                     <input
@@ -36,7 +49,8 @@ class Durration extends React.Component {
                         className="radioBTN"
                         name="DurrationItem"
                         value="fast-task" 
-                        onChange={this.updateDurrationItem }
+                        id="fast-task"
+                        onChange={() => setOn(!on).then(DurrationValue2())}
                         />
                     <label htmlFor="task">Fast-Task (30 min or less)</label>
                     <input
@@ -44,13 +58,14 @@ class Durration extends React.Component {
                         className="radioBTN"
                         name="DurrationItem"
                         value="quick-bit" 
-                        onChange={this.updateDurrationItem }
+                        id="quick-bit"
+                        onChange={() => setOn(!on).then(DurrationValue3())}
                         />
                     <label htmlFor="bit">Quick-bit (10 mins or less)</label>
                 </fieldset>
             </div>
         );
     }
-}
+
 
 export default Durration;

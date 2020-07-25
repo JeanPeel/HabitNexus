@@ -4,20 +4,32 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-class Difficulty extends React.Component {
+export default function Difficulty(props) {
+    
+    let DifficultyValue
 
-    state = {
-        DifficultyItem: "unchanged",
-    };
+    const [on, setOn] = useState(false);
 
-    updateDifficultyItem = DifficultyItem => {
-        this.setState({ DifficultyItem });
-        console.log(`DifficultyItem:`, DifficultyItem)
-    };
+    const DifficultyValue1 = (() => {
+        if (on === true) {
+            DifficultyValue = (document.getElementById(difficult).value)
+        }
+    })();
 
-    render() {
+    const DifficultyValue2 = (() => {
+        if (on === true) {
+            DifficultyValue = (document.getElementById(moderate).value)
+        }
+    })();
+ 
+    const DifficultyValue3 = (() => {
+        if (on === true) {
+            DifficultyValue = (document.getElementById(easy).value)
+        }
+    })();
 
-        const { DifficultyItem } = this.state;
+    // var WeekItem = props.WeekItem;
+
 
         return (
             <div>
@@ -28,7 +40,8 @@ class Difficulty extends React.Component {
                         className="radioBTN"
                         name="DifficultyItem"
                         value="difficult"
-                        onChange={this.updateDifficultyItem }
+                        id="difficult"
+                        onChange={() => setOn(!on).then(DifficultyValue1())}
                     />
                     <label htmlFor="difficult">Difficult</label>
                     <input
@@ -36,7 +49,8 @@ class Difficulty extends React.Component {
                         className="radioBTN"
                         name="DifficultyItem"
                         value="moderate"
-                        onChange={this.updateDifficultyItem}
+                        id="moderate"
+                        onChange={() => setOn(!on).then(DifficultyValue1())}
                     />
                     <label htmlFor="moderate">Moderate</label>
                     <input
@@ -44,13 +58,14 @@ class Difficulty extends React.Component {
                         className="radioBTN"
                         name="DifficultyItem"
                         value="easy"
-                        onChange={this.updateDifficultyItem }
+                        id="easy"
+                        onChange={() => setOn(!on).then(DifficultyValue1())}
                     />
                     <label htmlFor="easy">Easy</label>
                 </fieldset>
             </div>
         );
     }
-}
+
 
 export default Difficulty;

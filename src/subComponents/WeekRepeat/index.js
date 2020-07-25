@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import React, { useState } from 'react';
 import "../style.css";
 // import Moment from 'react-moment';
 // import 'moment-timezone';
@@ -6,20 +7,62 @@ import "../style.css";
 
 
 
-class WeekRepeat extends React.Component {
+export default function WeekRepeat(props) {
 
-    state = {
-        WeekItem: "unchanged",
-    };
+    WeekSchedule = []
 
-    updateWeekItem = WeekItem => {
-        this.setState({ WeekItem });
-        console.log(`WeekItem:`, WeekItem)
-    };
 
-    render() {
 
-        const { WeekItem } = this.state;
+    const ScheduleValue = (() => {
+        if (document.getElementById(monday).check) {
+            WeekSchedule[0] = (props.getElementById(monday))
+        } else {
+            WeekSchedule[0] = ('null')
+        }
+        if (document.getElementById(tuesday).check) {
+            WeekSchedule[1] = (props.getElementById(tuesday))
+        } else {
+            WeekSchedule[1] = ('null')
+        }
+        if (document.getElementById(wednesday).check) {
+            WeekSchedule[2] = (props.getElementById(wednesday))
+        } else {
+            WeekSchedule[2] = ('null')
+        }
+        if (document.getElementById(thursday).check) {
+            WeekSchedule[3] = (props.getElementById(thursday))
+        } else {
+            WeekSchedule[3] = ('null')
+        }
+        if (document.getElementById(friday).check) {
+            WeekSchedule[4] = (props.getElementById(friday))
+        } else {
+            WeekSchedule[4] = ('null')
+        }
+        if (document.getElementById(saturday).check) {
+            WeekSchedule[5] = (props.getElementById(saturday))
+        } else {
+            WeekSchedule[5] = ('null')
+        }
+        if (document.getElementById(sunday).check) {
+            WeekSchedule[6] = (props.getElementById(sunday))
+        } else {
+            WeekSchedule[6] = ('null')
+        }
+    })();
+
+    // const [on, setOn] = useState(false);
+
+    // if (on === true) {
+    //     const ScheduleValue = props.WeekItem
+    //     WeekSchedule.push(ScheduleValue)
+    // }
+
+    // var WeekItem = props.WeekItem;
+
+    WeekObject = props.WeekSchedule
+
+    console.log(`WeekItem:`, WeekItem);
 
         return (
             <div>
@@ -30,7 +73,8 @@ class WeekRepeat extends React.Component {
                     className="radioBTN"
                     name="WeekItem" 
                     value="monday" 
-                    onChange={this.updateDurrationItem }
+                    id="monday" 
+                    onChange={ ScheduleValue() }
                     />
                     <label htmlFor="monday">Monday</label>
                     <input 
@@ -38,7 +82,8 @@ class WeekRepeat extends React.Component {
                     className="radioBTN"
                     name="WeekItem" 
                     value="tuesday" 
-                    onChange={this.updateDurrationItem }
+                    id="tuesday" 
+                    onChange={ ScheduleValue() }
                     />
                     <label htmlFor="tuesday">Tuesday</label>
                     <input 
@@ -46,7 +91,8 @@ class WeekRepeat extends React.Component {
                     className="radioBTN"
                     name="WeekItem" 
                     value="wednesday" 
-                    onChange={this.updateDurrationItem }
+                    id="tuesday" 
+                    onChange={ ScheduleValue() }
                     />
                     <label htmlFor="wednesday">Wednesday</label>
                     <input 
@@ -54,7 +100,8 @@ class WeekRepeat extends React.Component {
                     className="radioBTN"
                     name="WeekItem" 
                     value="thursday" 
-                    onChange={this.updateDurrationItem }
+                    id="tuesday" 
+                    onChange={ ScheduleValue() }
                     />
                     <label htmlFor="thursday">Thursday</label>
                     <input 
@@ -62,7 +109,8 @@ class WeekRepeat extends React.Component {
                     className="radioBTN"
                     name="WeekItem" 
                     value="friday"
-                    onChange={this.updateDurrationItem }
+                    id="tuesday" 
+                    onChange={ ScheduleValue() }
                      />
                     <label htmlFor="friday">Friday</label>
                     <input 
@@ -70,7 +118,8 @@ class WeekRepeat extends React.Component {
                     className="radioBTN"
                     name="WeekItem" 
                     value="saturday" 
-                    onChange={this.updateDurrationItem }
+                    id="tuesday" 
+                    onChange={ ScheduleValue() }
                     />
                     <label htmlFor="saturday">Saturday</label>
                     <input 
@@ -78,13 +127,13 @@ class WeekRepeat extends React.Component {
                     className="radioBTN"
                     name="WeekItem" 
                     value="sunday"
-                    onChange={this.updateDurrationItem }
+                    id="tuesday" 
+                    onChange={ ScheduleValue() }
                      />
                     <label htmlFor="sunday">Sunday</label>
                 </fieldset>
             </div>
         );
     }
-}
 
 export default WeekRepeat;
