@@ -16,9 +16,9 @@ const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
 
-const HabitModel = require('./models/Habit');
-const CatModel = require('./models/CatModel');
-const DayModel = require('./models/DayModel');
+const Habit = require('./models/HabitModel');
+// const CatModel = require('./models/CatModel');
+// const DayModel = require('./models/DayModel');
 const UsersModel = require('./models/UsersModel');
 
 mongoose.Promise = global.Promise;

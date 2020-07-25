@@ -26,7 +26,7 @@ class Difficulty extends React.Component {
                     <input
                         type="radio"
                         className="radioBTN"
-                        name="dDifficultyItem"
+                        name="DifficultyItem"
                         value="difficult"
                         onChange={this.updateDifficultyItem }
                     />

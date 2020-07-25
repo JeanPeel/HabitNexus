@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 import "./style.css";
+// import axios from 'axios';
+
+import ItemName from "../../subComponents/ItemName";
+import ItemEmail from "../../subComponents/ItemEmail";
+import ItemPassword from "../../subComponents/ItemPassword";
+import SubmitBTN from "../../subComponents/SubmitBTN";
 
 class Register extends Component {
 
@@ -8,21 +14,11 @@ class Register extends Component {
             <div>
                 <h1>Register</h1>
                 <form action="/register" method="POST">
-                    <div>
-                        <label htmlFor="name">Name</label>
-                        <input type="text" id="name" name="name" required />
-                    </div>
-                    <div>
-                        <label fhtmlFor="email">Email</label>
-                        <input type="email" id="email" name="email" required />
-                    </div>
-                    <div>
-                        <label htmlFor="password">Password</label>
-                        <input type="password" id="password" name="password" required />
-                    </div>
-                    <button type="submit">Register</button>
+                    <ItemName />
+                    <ItemEmail />
+                    <ItemPassword />
+                    <SubmitBTN />
                 </form>
-                <a href="/login">Login</a>
             </div>
         );
     }

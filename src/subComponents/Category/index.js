@@ -48,9 +48,9 @@ class Category extends Component {
         return (
             <div>
                 <div>
-                    <label htmlFor="categoryItems">Category</label>
+                    <label htmlFor="CategoryItems">Category</label>
                     <select
-                        name="categoryItems"
+                        name="CategoryItems"
                         placeholder="Select a Category"
                         value={this.state.selectedCategory}
                         onChange={(e) =>
@@ -58,7 +58,7 @@ class Category extends Component {
                                 selectedCategory: e.target.value,
                                 validationError:
                                     e.target.value === ""
-                                        ? "You must select your favourite team"
+                                        ? "You must select your favourite category"
                                         : ""
                             })
                         }
