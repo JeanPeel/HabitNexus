@@ -79,7 +79,7 @@ export default function WeekRepeat(props) {
                     name="WeekItem" 
                     value="monday" 
                     id="monday" 
-                    onChange={ ScheduleValue() }
+                    // onChange={ ScheduleValue() }
                     />
                     <label htmlFor="monday">Monday</label>
                     <input 
@@ -88,7 +88,7 @@ export default function WeekRepeat(props) {
                     name="WeekItem" 
                     value="tuesday" 
                     id="tuesday" 
-                    onChange={ ScheduleValue() }
+                    // onChange={ ScheduleValue() }
                     />
                     <label htmlFor="tuesday">Tuesday</label>
                     <input 
@@ -97,7 +97,7 @@ export default function WeekRepeat(props) {
                     name="WeekItem" 
                     value="wednesday" 
                     id="tuesday" 
-                    onChange={ ScheduleValue() }
+                    // onChange={ ScheduleValue() }
                     />
                     <label htmlFor="wednesday">Wednesday</label>
                     <input 
@@ -106,7 +106,7 @@ export default function WeekRepeat(props) {
                     name="WeekItem" 
                     value="thursday" 
                     id="tuesday" 
-                    onChange={ ScheduleValue() }
+                    // onChange={ ScheduleValue() }
                     />
                     <label htmlFor="thursday">Thursday</label>
                     <input 
@@ -115,7 +115,7 @@ export default function WeekRepeat(props) {
                     name="WeekItem" 
                     value="friday"
                     id="tuesday" 
-                    onChange={ ScheduleValue() }
+                    // onChange={ ScheduleValue() }
                      />
                     <label htmlFor="friday">Friday</label>
                     <input 
@@ -124,7 +124,7 @@ export default function WeekRepeat(props) {
                     name="WeekItem" 
                     value="saturday" 
                     id="tuesday" 
-                    onChange={ ScheduleValue() }
+                    // onChange={ ScheduleValue() }
                     />
                     <label htmlFor="saturday">Saturday</label>
                     <input 
@@ -133,7 +133,7 @@ export default function WeekRepeat(props) {
                     name="WeekItem" 
                     value="sunday"
                     id="tuesday" 
-                    onChange={ ScheduleValue() }
+                    // onChange={ ScheduleValue() }
                      />
                     <label htmlFor="sunday">Sunday</label>
                 </fieldset>
