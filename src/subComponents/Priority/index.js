@@ -7,32 +7,32 @@ import "../style.css";
 
 export default function Priority(props) {
 
-    let PriorityValue
+    // let PriorityValue
 
-    const [on, setOn] = useState(false);
+    // const [on, setOn] = false
 
-    const ScheduleValue1 = (() => {
-        if (on === true) {
-            PriorityValue1 = (document.getElementById(high).value)
-        }
-    })();
+    // const ScheduleValue1 = (() => {
+    //     if (on === true) {
+    //         PriorityValue1 = (document.getElementById(high).value)
+    //     }
+    // })();
 
-    const ScheduleValue2 = (() => {
-        if (on === true) {
-            PriorityValue2 = (document.getElementById(medium).value)
-        }
-    })();
+    // const ScheduleValue2 = (() => {
+    //     if (on === true) {
+    //         PriorityValue2 = (document.getElementById(medium).value)
+    //     }
+    // })();
 
-    const ScheduleValue3 = (() => {
-        if (on === true) {
-            PriorityValue3 = (document.getElementById(low).value)
-        }
-    })();
+    // const ScheduleValue3 = (() => {
+    //     if (on === true) {
+    //         PriorityValue3 = (document.getElementById(low).value)
+    //     }
+    // })();
 
     // var WeekItem = props.WeekItem;
 
 
-    console.log("PriorityValue", PriorityValue)
+    // console.log("PriorityValue", PriorityValue)
 
     return (
         <div>
@@ -44,7 +44,7 @@ export default function Priority(props) {
                     name="PriorityItem"
                     value="high"
                     id="high"
-                    onChange={() => setOn(!on).then(PriorityValue1())}
+                    // onChange={() => setOn(!on).then(PriorityValue1())}
                 />
                 <label htmlFor="high">High</label>
                 <input
@@ -52,7 +52,7 @@ export default function Priority(props) {
                     className="radioBTN"
                     name="PriorityItem"
                     value="medium"
-                    onChange={() => setOn(!on).then(PriorityValue2())}
+                    // onChange={() => setOn(!on).then(PriorityValue2())}
                 />
                 <label htmlFor="medium">Medium</label>
                 <input
@@ -60,7 +60,7 @@ export default function Priority(props) {
                     className="radioBTN"
                     name="PriorityItem"
                     value="low"
-                    onChange={() => setOn(!on).then(PriorityValue3())}
+                    // onChange={() => setOn(!on).then(PriorityValue3())}
                 />
                 <label htmlFor="low">Low</label>
             </fieldset>
@@ -69,4 +69,3 @@ export default function Priority(props) {
 }
 
 
-export default Priority;

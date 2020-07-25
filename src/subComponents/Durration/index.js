@@ -6,29 +6,29 @@ import "../style.css";
 
 export default function Durration(props) {
     
-    let DurrationValue
+    // let DurrationValue
 
-    const [on, setOn] = useState(false);
+    // const [on, setOn] = false
 
-    const DurrationValue1 = (() => {
-        if (on === true) {
-            DurrationValue = (document.getElementById(regular-upkeep).value)
-        }
-    })();
+    // const DurrationValue1 = (() => {
+    //     if (on === true) {
+    //         DurrationValue = (document.getElementById(regular-upkeep).value)
+    //     }
+    // })();
 
-    const DurrationValue2 = (() => {
-        if (on === true) {
-            DurrationValue = (document.getElementById(fast-task).value)
-        }
-    })();
+    // const DurrationValue2 = (() => {
+    //     if (on === true) {
+    //         DurrationValue = (document.getElementById(fast-task).value)
+    //     }
+    // })();
  
-    const DurrationValue3 = (() => {
-        if (on === true) {
-            DurrationyValue = (document.getElementById(quick-bit).value)
-        }
-    })();
+    // const DurrationValue3 = (() => {
+    //     if (on === true) {
+    //         DurrationyValue = (document.getElementById(quick-bit).value)
+    //     }
+    // })();
 
-    console.log("DurrationValue", DurrationValue)
+    // console.log("DurrationValue", DurrationValue)
 
     // var WeekItem = props.WeekItem;
 
@@ -43,7 +43,7 @@ export default function Durration(props) {
                         name="DurrationItem"
                         value="regular-upkeep" 
                         id="regular-upkeep"
-                        onChange={() => setOn(!on).then(DurrationValue1())}
+                        // onChange={() => setOn(!on).then(DurrationValue1())}
                         />
                     <label htmlFor="upkeep">Regular-Upkeep (1 hour or less)</label>
                     <input
@@ -52,7 +52,7 @@ export default function Durration(props) {
                         name="DurrationItem"
                         value="fast-task" 
                         id="fast-task"
-                        onChange={() => setOn(!on).then(DurrationValue2())}
+                        // onChange={() => setOn(!on).then(DurrationValue2())}
                         />
                     <label htmlFor="task">Fast-Task (30 min or less)</label>
                     <input
@@ -61,7 +61,7 @@ export default function Durration(props) {
                         name="DurrationItem"
                         value="quick-bit" 
                         id="quick-bit"
-                        onChange={() => setOn(!on).then(DurrationValue3())}
+                        // onChange={() => setOn(!on).then(DurrationValue3())}
                         />
                     <label htmlFor="bit">Quick-bit (10 mins or less)</label>
                 </fieldset>
@@ -70,4 +70,3 @@ export default function Durration(props) {
     }
 
 
-export default Durration;

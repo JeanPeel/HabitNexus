@@ -21,31 +21,31 @@ class Category extends Component {
         validationError: ""
     };
 
-    componentDidMount() {
-        axios
-        .get('/api/categories')
-            .then((response) => {
-                return response.json();
-                console.log("recieved response.json")
-            })
-            .then(data => {
-                let categoriesFromApi = data.map((categoryValue, categoryLabel) => {
-                    return { value: categoryValue, label: categoryLabel }
-                });
-                this.setState({
-                    categoriesSet: [
-                        {
-                            value: '',
-                            label: '(Select a Category)'
-                        }
-                    ].concat(categoriesFromApi)
-                });
-            }).catch(error => {
-                console.log("Category Error: ", error);
-            });
+    // componentDidMount() {
+    //     axios
+    //     .get('/api/categories')
+    //         .then((response) => {
+    //             return response.json();
+    //             console.log("recieved response.json")
+    //         })
+    //         .then(data => {
+    //             let categoriesFromApi = data.map((categoryValue, categoryLabel) => {
+    //                 return { value: categoryValue, label: categoryLabel }
+    //             });
+    //             this.setState({
+    //                 categoriesSet: [
+    //                     {
+    //                         value: '',
+    //                         label: '(Select a Category)'
+    //                     }
+    //                 ].concat(categoriesFromApi)
+    //             });
+    //         }).catch(error => {
+    //             console.log("Category Error: ", error);
+    //         });
 
-            console.log(state.selectedCategory)
-    }
+    //         console.log(state.selectedCategory)
+    // }
 
     render() {
         return (

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import React, { useState } from 'react';
+import React, { Component, useState } from "react";
+
 import "../style.css";
 // import Moment from 'react-moment';
 // import 'moment-timezone';
@@ -9,46 +9,49 @@ import "../style.css";
 
 export default function WeekRepeat(props) {
 
-    WeekSchedule = []
+    // WeekSchedule = []
 
 
 
     const ScheduleValue = (() => {
-        if (document.getElementById(monday).check) {
-            WeekSchedule[0] = (props.getElementById(monday))
-        } else {
-            WeekSchedule[0] = ('null')
-        }
-        if (document.getElementById(tuesday).check) {
-            WeekSchedule[1] = (props.getElementById(tuesday))
-        } else {
-            WeekSchedule[1] = ('null')
-        }
-        if (document.getElementById(wednesday).check) {
-            WeekSchedule[2] = (props.getElementById(wednesday))
-        } else {
-            WeekSchedule[2] = ('null')
-        }
-        if (document.getElementById(thursday).check) {
-            WeekSchedule[3] = (props.getElementById(thursday))
-        } else {
-            WeekSchedule[3] = ('null')
-        }
-        if (document.getElementById(friday).check) {
-            WeekSchedule[4] = (props.getElementById(friday))
-        } else {
-            WeekSchedule[4] = ('null')
-        }
-        if (document.getElementById(saturday).check) {
-            WeekSchedule[5] = (props.getElementById(saturday))
-        } else {
-            WeekSchedule[5] = ('null')
-        }
-        if (document.getElementById(sunday).check) {
-            WeekSchedule[6] = (props.getElementById(sunday))
-        } else {
-            WeekSchedule[6] = ('null')
-        }
+        // if (document.getElementById(monday).check) {
+        //     WeekSchedule[0] = (props.getElementById(monday))
+        // } else {
+        //     WeekSchedule[0] = ('null')
+        // }
+        // if (document.getElementById(tuesday).check) {
+        //     WeekSchedule[1] = (props.getElementById(tuesday))
+        // } else {
+        //     WeekSchedule[1] = ('null')
+        // }
+        // if (document.getElementById(wednesday).check) {
+        //     WeekSchedule[2] = (props.getElementById(wednesday))
+        // } else {
+        //     WeekSchedule[2] = ('null')
+        // }
+        // if (document.getElementById(thursday).check) {
+        //     WeekSchedule[3] = (props.getElementById(thursday))
+        // } else {
+        //     WeekSchedule[3] = ('null')
+        // }
+        // if (document.getElementById(friday).check) {
+        //     WeekSchedule[4] = (props.getElementById(friday))
+        // } else {
+        //     WeekSchedule[4] = ('null')
+        // }
+        // if (document.getElementById(saturday).check) {
+        //     WeekSchedule[5] = (props.getElementById(saturday))
+        // } else {
+        //     WeekSchedule[5] = ('null')
+        // }
+        // if (document.getElementById(sunday).check) {
+        //     WeekSchedule[6] = (props.getElementById(sunday))
+        // } else {
+        //     WeekSchedule[6] = ('null')
+        // }
+
+        console.log('ScheduledValue ran')
+
     })();
 
     // const [on, setOn] = useState(false);
@@ -60,9 +63,11 @@ export default function WeekRepeat(props) {
 
     // var WeekItem = props.WeekItem;
 
-    WeekObject = props.WeekSchedule
+    // WeekObject = props.WeekSchedule
 
-    console.log(`WeekObject:`, WeekObject);
+    //   WeekObject = WeekSchedule
+
+    // console.log(`WeekObject:`, WeekObject);
 
         return (
             <div>
@@ -136,4 +141,3 @@ export default function WeekRepeat(props) {
         );
     }
 
-export default WeekRepeat;

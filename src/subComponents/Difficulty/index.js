@@ -6,29 +6,29 @@ import "../style.css";
 
 export default function Difficulty(props) {
     
-    let DifficultyValue
+    // let DifficultyValue
 
-    const [on, setOn] = useState(false);
+    // const [on, setOn] = false;
 
-    const DifficultyValue1 = (() => {
-        if (on === true) {
-            DifficultyValue = (document.getElementById(difficult).value)
-        }
-    })();
+    // const DifficultyValue1 = (() => {
+    //     if (on === true) {
+    //         DifficultyValue = (document.getElementById(difficult).value)
+    //     }
+    // })();
 
-    const DifficultyValue2 = (() => {
-        if (on === true) {
-            DifficultyValue = (document.getElementById(moderate).value)
-        }
-    })();
+    // const DifficultyValue2 = (() => {
+    //     if (on === true) {
+    //         DifficultyValue = (document.getElementById(moderate).value)
+    //     }
+    // })();
  
-    const DifficultyValue3 = (() => {
-        if (on === true) {
-            DifficultyValue = (document.getElementById(easy).value)
-        }
-    })();
+    // const DifficultyValue3 = (() => {
+    //     if (on === true) {
+    //         DifficultyValue = (document.getElementById(easy).value)
+    //     }
+    // })();
 
-    console.log("DifficultyValue", DifficultyValue)
+    // console.log("DifficultyValue", DifficultyValue)
 
     // var WeekItem = props.WeekItem;
 
@@ -43,7 +43,7 @@ export default function Difficulty(props) {
                         name="DifficultyItem"
                         value="difficult"
                         id="difficult"
-                        onChange={() => setOn(!on).then(DifficultyValue1())}
+                        // onChange={() => setOn(!on).then(DifficultyValue1())}
                     />
                     <label htmlFor="difficult">Difficult</label>
                     <input
@@ -52,7 +52,7 @@ export default function Difficulty(props) {
                         name="DifficultyItem"
                         value="moderate"
                         id="moderate"
-                        onChange={() => setOn(!on).then(DifficultyValue1())}
+                        // onChange={() => setOn(!on).then(DifficultyValue1())}
                     />
                     <label htmlFor="moderate">Moderate</label>
                     <input
@@ -61,7 +61,7 @@ export default function Difficulty(props) {
                         name="DifficultyItem"
                         value="easy"
                         id="easy"
-                        onChange={() => setOn(!on).then(DifficultyValue1())}
+                        // onChange={() => setOn(!on).then(DifficultyValue1())}
                     />
                     <label htmlFor="easy">Easy</label>
                 </fieldset>
@@ -70,4 +70,3 @@ export default function Difficulty(props) {
     }
 
 
-export default Difficulty;

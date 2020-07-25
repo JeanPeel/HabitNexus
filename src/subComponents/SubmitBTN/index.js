@@ -15,7 +15,7 @@ export default function SubmitBTN(props) {
     formData.push(formProps);
     
     console.log("form data: ", formData)
-    
+
     // const saveProps = props.saveProps;
     // console.log("Saving Props: ", props.saveProps);
 
@@ -33,4 +33,3 @@ export default function SubmitBTN(props) {
     }
 
 
-export default SubmitBTN;
