@@ -40,38 +40,38 @@ var WeekItem = ""
 
             this.setState({ WeekItem:  n.target.id})
 
-            if (n.target.id = 'monday') {
+            if (n.target.id === 'monday') {
 
                 WeekSchedule.Monday = WeekSchedule.Monday ? false : true;
 
             }
-            else if  (n.target.id = 'tuesday') {
+            else if  (n.target.id === 'tuesday') {
 
                 WeekSchedule.Tuesday = WeekSchedule.Tuesday ? false : true;
                
             }
-            else if  (n.target.id = 'wednesday') {
+            else if  (n.target.id === 'wednesday') {
 
                 WeekSchedule.Wednesday = WeekSchedule.Wednesday ? false : true;
 
 
             }
-            else if  (n.target.id = 'thursday') {
+            else if  (n.target.id === 'thursday') {
 
                 WeekSchedule.Thursday = WeekSchedule.Thursday ? false : true;
     
             }
-            else if  (n.target.id = 'friday') {
+            else if  (n.target.id === 'friday') {
 
                 WeekSchedule.Friday = WeekSchedule.Friday ? false : true;
 
             }
-            else if  (n.target.id = 'saturday') {
+            else if  (n.target.id ==='saturday') {
 
                 WeekSchedule.Saturday = WeekSchedule.Saturday ? false : true;
                
             }
-            else if  (n.target.id = 'sunday') {
+            else if  (n.target.id === 'sunday') {
 
                 WeekSchedule.Sunday = WeekSchedule.Sunday ? false : true;
 
