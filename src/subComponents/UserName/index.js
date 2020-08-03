@@ -12,14 +12,14 @@ class UserName extends React.Component {
 
     updateInputValue3 = g => {
         this.setState({ UserNameItem: g.target.value });
-        console.log("UserNameItem: ", g.target.value )
+        console.log("UserNameItem: ", g.target.value)
     };
 
-    
+
 
     render() {
         const { UserNameItem } = this.state;
-   
+
         return (
             <div>
                 <label htmlFor="UserNameItem">User Name: </label>
@@ -32,8 +32,8 @@ class UserName extends React.Component {
                     className="userNameItem"
                 />
             </div>
-         );
-        }
+        );
     }
+}
 
-    export default UserName;
+export default UserName;

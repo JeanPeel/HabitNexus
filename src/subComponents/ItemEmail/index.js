@@ -12,14 +12,14 @@ class ItemEmail extends React.Component {
 
     updateInputValue5 = i => {
         this.setState({ EmailItem: i.target.value });
-        console.log("EmailItem: ", i.target.value )
+        console.log("EmailItem: ", i.target.value)
     };
 
-    
+
 
     render() {
         const { EmailItem } = this.state;
-   
+
         return (
             <div>
                 <label htmlFor="EmailItem">Email Name: </label>
@@ -33,9 +33,9 @@ class ItemEmail extends React.Component {
                     className="emailItem"
                     required />
             </div>
-         );
-        }
-
+        );
     }
 
-    export default ItemEmail;
+}
+
+export default ItemEmail;

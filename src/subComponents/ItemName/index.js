@@ -12,14 +12,14 @@ class ItemName extends React.Component {
 
     updateInputValue2 = f => {
         this.setState({ NameItem: f.target.value });
-        console.log("NameItem: ", f.target.value )
+        console.log("NameItem: ", f.target.value)
     };
 
-    
+
 
     render() {
         const { NameItem } = this.state;
-   
+
         return (
             <div>
                 <label htmlFor="NameItem">Item Name: </label>
@@ -32,9 +32,9 @@ class ItemName extends React.Component {
                     onChange={this.updateInputValue2}
                 />
             </div>
-         );
-        }
-
+        );
     }
 
-    export default ItemName;
+}
+
+export default ItemName;

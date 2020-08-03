@@ -12,10 +12,10 @@ class Difficulty extends React.Component {
 
     updateInputValue7 = l => {
         this.setState({ DifficultyItem: l.target.id });
-        console.log("DifficultyItem: ", l.target.id )
+        console.log("DifficultyItem: ", l.target.id)
     };
 
-    
+
 
     render() {
         const { DifficultyItem } = this.state;
@@ -41,7 +41,7 @@ class Difficulty extends React.Component {
                         id="moderate"
                         value={DifficultyItem}
                         onChange={this.updateInputValue7}
-            
+
                     />
                     <label htmlFor="moderate">Moderate</label>
                     <input

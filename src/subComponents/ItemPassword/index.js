@@ -12,14 +12,14 @@ class ItemPassword extends React.Component {
 
     updateInputValue4 = h => {
         this.setState({ PasswordItem: h.target.value });
-        console.log("PasswordItem: ", h.target.value )
+        console.log("PasswordItem: ", h.target.value)
     };
 
-    
+
 
     render() {
         const { PasswordItem } = this.state;
-   
+
         return (
             <div>
                 <label htmlFor="PasswordItem">Password: </label>
@@ -33,8 +33,8 @@ class ItemPassword extends React.Component {
                     className="passwordItem"
                     required />
             </div>
-         );
-        }
+        );
     }
+}
 
-    export default ItemPassword;
+export default ItemPassword;

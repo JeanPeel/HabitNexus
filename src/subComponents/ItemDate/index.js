@@ -7,10 +7,10 @@ const moment = require('moment');
 class ItemDate extends React.Component {
 
     DateItem = moment().format("MM/DD/YYYY")
-        // now = moment();
+    // now = moment();
 
-        // console.log("AutoDate: ", AutoDate);
-  
+    // console.log("AutoDate: ", AutoDate);
+
 
     state = {
         DateItem: ""
@@ -18,7 +18,7 @@ class ItemDate extends React.Component {
 
     updateInputValue6 = k => {
         this.setState({ DateItem: k.target.value });
-        console.log("DateItem: ", k.target.value )
+        console.log("DateItem: ", k.target.value)
     };
 
 
@@ -29,19 +29,19 @@ class ItemDate extends React.Component {
         var AutoDate = moment().format("MM/DD/YYYY")
         const { DateItem } = this.state;
 
-    return (
-        <div>
-            <label htmlFor="DateItem" >Start Date is Today ({AutoDate}) <br/>or Change Start Date: </label>
-            <input
-                type="date"
-                name="DateItem"
-                value={DateItem}
-                onChange={this.updateInputValue6}
-                className="DateItem"
-            />
-        </div>
-    );
-}
+        return (
+            <div>
+                <label htmlFor="DateItem" >Start Date is Today ({AutoDate}) <br />or Change Start Date: </label>
+                <input
+                    type="date"
+                    name="DateItem"
+                    value={DateItem}
+                    onChange={this.updateInputValue6}
+                    className="DateItem"
+                />
+            </div>
+        );
+    }
 }
 
 export default ItemDate;
