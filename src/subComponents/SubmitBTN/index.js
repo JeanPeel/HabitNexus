@@ -16,6 +16,8 @@ export default function SubmitBTN(props) {
 
     var NameItem = props.NameItem;
 
+    const saveLink = props.saveLink;
+
     var HabitItem = {
         Date: DateItem,
         Date2: updateDateItem,
@@ -38,7 +40,7 @@ export default function SubmitBTN(props) {
             <div>
                 <button 
                 type="submit" 
-                onClick={formData.push(formProps), console.log("form Props: ", formProps), console.log("HabitItem: ", HabitItem)} 
+                onClick={formData.push(formProps), console.log("form Props: ", formProps), console.log("HabitItem: ", HabitItem), saveLink} 
                 className="submitBTN" 
                 form="form" 
                 value={props.form}

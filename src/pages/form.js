@@ -98,9 +98,11 @@ class Form extends Component {
                     <AddLink
                       LinkItem = {this.state.LinkItem}
                       updateLink = {this.updateLink}
-                      saveLink = {this.saveLink}
+                 
                     />
-                    <SubmitBTN/>
+                    <SubmitBTN
+                         saveLink = {this.saveLink}
+                         />
                 </form>
             </div>
         );
