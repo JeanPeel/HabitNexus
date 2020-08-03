@@ -13,9 +13,9 @@ class Register extends Component {
         return (
             <div>
                 <h1>Register</h1>
-           
+
                 {/* <form action="/register"  method="POST" id="form"> */}
-                <form  id="form">
+                <form id="form">
                     <UserName />
                     <ItemEmail />
                     <ItemPassword />

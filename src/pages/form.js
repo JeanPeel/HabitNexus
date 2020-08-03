@@ -35,26 +35,26 @@ class Form extends Component {
         ]
     }
 
-    updateLink= (event) => {
+    updateLink = (event) => {
         const { name, value } = event.target;
-    
-        this.setState({
-          [name]: value
-        })
-      }
 
-      saveLink = (event) => {
+        this.setState({
+            [name]: value
+        })
+    }
+
+    saveLink = (event) => {
 
         event.preventDefault();
 
         var LinkItem = this.state.LinkItem;
 
         var DateItem = this.state.DateItem;
-    
+
         var updateDateItem = this.state.DateItem;
-    
+
         var NameItem = this.state.NameItem;
-    
+
         const newHabit = {
             Item: NameItem,
             ItemCat: 'this is a category',
@@ -67,18 +67,18 @@ class Form extends Component {
             ItemLength: 'this is the durration',
             Link: LinkItem
         }
-    
+
         axios
-          .post("/HabitNexus2", newHabit)
-          .catch((error) => console.log(error));
-    
-    
+            .post("/HabitNexus2", newHabit)
+            .catch((error) => console.log(error));
+
+
         this.setState({
-          HabitList: this.state.HabitList.concat(newHabit),
-          HabitItem: ''
+            HabitList: this.state.HabitList.concat(newHabit),
+            HabitItem: ''
         })
-    
-      }
+
+    }
 
     render() {
 
@@ -88,21 +88,21 @@ class Form extends Component {
                 {/* <form action="/habits" method="POST" id="form"> */}
                 <form id="form">
                     <ItemDate />
-                    <ItemName/>
-                    <Category/>
-                    <Priority/>
-                    <Difficulty/>
-                    <Durration/>
-                    <WeekRepeat/>
-                    <TOD/>
+                    <ItemName />
+                    <Category />
+                    <Priority />
+                    <Difficulty />
+                    <Durration />
+                    <WeekRepeat />
+                    <TOD />
                     <AddLink
-                      LinkItem = {this.state.LinkItem}
-                      updateLink = {this.updateLink}
-                 
+                        LinkItem={this.state.LinkItem}
+                        updateLink={this.updateLink}
+
                     />
                     <SubmitBTN
-                         saveLink = {this.saveLink}
-                         />
+                        saveLink={this.saveLink}
+                    />
                 </form>
             </div>
         );
