@@ -4,33 +4,23 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-export default function Durration(props) {
+
     
-    // let DurrationValue
+    class Durration extends React.Component {
 
-    // const [on, setOn] = false
-
-    // const DurrationValue1 = (() => {
-    //     if (on === true) {
-    //         DurrationValue = (document.getElementById(regular-upkeep).value)
-    //     }
-    // })();
-
-    // const DurrationValue2 = (() => {
-    //     if (on === true) {
-    //         DurrationValue = (document.getElementById(fast-task).value)
-    //     }
-    // })();
- 
-    // const DurrationValue3 = (() => {
-    //     if (on === true) {
-    //         DurrationyValue = (document.getElementById(quick-bit).value)
-    //     }
-    // })();
-
-    // console.log("DurrationValue", DurrationValue)
-
-    // var WeekItem = props.WeekItem;
+        state = {
+            DurrationItem: ""
+        };
+    
+        updateInputValue8 = l => {
+            this.setState({ DurrationItem: l.target.id });
+            console.log("DurrationItem: ", l.target.id )
+        };
+    
+        
+    
+        render() {
+            const { DurrationItem } = this.state;
 
 
         return (
@@ -41,27 +31,28 @@ export default function Durration(props) {
                         type="radio"
                         className="radioBTN"
                         name="DurrationItem"
-                        value="regular-upkeep" 
-                        id="regular-upkeep"
-                        // onChange={() => setOn(!on).then(DurrationValue1())}
+                        id="regular-upkeep <10min"
+                        value={DurrationItem}
+                        onChange={this.updateInputValue8}
                         />
                     <label htmlFor="upkeep">Regular-Upkeep (1 hour or less)</label>
                     <input
                         type="radio"
                         className="radioBTN"
                         name="DurrationItem"
-                        value="fast-task" 
-                        id="fast-task"
-                        // onChange={() => setOn(!on).then(DurrationValue2())}
+                        id="fast-task <30min"
+                        value={DurrationItem}
+                        onChange={this.updateInputValue8}
+                
                         />
                     <label htmlFor="task">Fast-Task (30 min or less)</label>
                     <input
                         type="radio"
                         className="radioBTN"
                         name="DurrationItem"
-                        value="quick-bit" 
-                        id="quick-bit"
-                        // onChange={() => setOn(!on).then(DurrationValue3())}
+                        id="quick-bit <1hour"
+                        value={DurrationItem}
+                        onChange={this.updateInputValue8}
                         />
                     <label htmlFor="bit">Quick-bit (10 mins or less)</label>
                 </fieldset>
@@ -69,4 +60,7 @@ export default function Durration(props) {
         );
     }
 
+}
+
+export default Durration;
 

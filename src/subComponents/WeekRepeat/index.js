@@ -5,69 +5,84 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
+var WeekSchedule = {
+    Monday: false,
+    Tuesday : false,
+    Wednesday: false,
+    Thursday: false,
+    Friday: false,
+    Saturday: false,
+    Sunday: false
+}
+
+var WeekItem = ""
 
 
-export default function WeekRepeat(props) {
+    class WeekRepeat extends React.Component {
 
-    // WeekSchedule = []
+        state = {
+            WeekItem: "",
+            WeekSchedule: {
+                Monday: false,
+                Tuesday : false,
+                Wednesday: false,
+                Thursday: false,
+                Friday: false,
+                Saturday: false,
+                Sunday: false
+            }
+        };
 
 
+        updateInputValue9 = n => {
 
-    const ScheduleValue = (() => {
-        // if (document.getElementById(monday).check) {
-        //     WeekSchedule[0] = (props.getElementById(monday))
-        // } else {
-        //     WeekSchedule[0] = ('null')
-        // }
-        // if (document.getElementById(tuesday).check) {
-        //     WeekSchedule[1] = (props.getElementById(tuesday))
-        // } else {
-        //     WeekSchedule[1] = ('null')
-        // }
-        // if (document.getElementById(wednesday).check) {
-        //     WeekSchedule[2] = (props.getElementById(wednesday))
-        // } else {
-        //     WeekSchedule[2] = ('null')
-        // }
-        // if (document.getElementById(thursday).check) {
-        //     WeekSchedule[3] = (props.getElementById(thursday))
-        // } else {
-        //     WeekSchedule[3] = ('null')
-        // }
-        // if (document.getElementById(friday).check) {
-        //     WeekSchedule[4] = (props.getElementById(friday))
-        // } else {
-        //     WeekSchedule[4] = ('null')
-        // }
-        // if (document.getElementById(saturday).check) {
-        //     WeekSchedule[5] = (props.getElementById(saturday))
-        // } else {
-        //     WeekSchedule[5] = ('null')
-        // }
-        // if (document.getElementById(sunday).check) {
-        //     WeekSchedule[6] = (props.getElementById(sunday))
-        // } else {
-        //     WeekSchedule[6] = ('null')
-        // }
+            WeekItem = n.target.id
 
-        console.log('ScheduledValue ran')
+            this.setState({ WeekItem:  n.target.id})
 
-    })();
+            if (n.target.id = 'monday') {
 
-    // const [on, setOn] = useState(false);
+                WeekSchedule.Monday = WeekSchedule.Monday ? false : true;
 
-    // if (on === true) {
-    //     const ScheduleValue = props.WeekItem
-    //     WeekSchedule.push(ScheduleValue)
-    // }
+            }
+            else if  (n.target.id = 'tuesday') {
 
-    // var WeekItem = props.WeekItem;
+                WeekSchedule.Tuesday = WeekSchedule.Tuesday ? false : true;
+               
+            }
+            else if  (n.target.id = 'wednesday') {
 
-    // WeekObject = props.WeekSchedule
+                WeekSchedule.Wednesday = WeekSchedule.Wednesday ? false : true;
 
-    //   WeekObject = WeekSchedule
 
-    // console.log(`WeekObject:`, WeekObject);
+            }
+            else if  (n.target.id = 'thursday') {
+
+                WeekSchedule.Thursday = WeekSchedule.Thursday ? false : true;
+    
+            }
+            else if  (n.target.id = 'friday') {
+
+                WeekSchedule.Friday = WeekSchedule.Friday ? false : true;
+
+            }
+            else if  (n.target.id = 'saturday') {
+
+                WeekSchedule.Saturday = WeekSchedule.Saturday ? false : true;
+               
+            }
+            else if  (n.target.id = 'sunday') {
+
+                WeekSchedule.Sunday = WeekSchedule.Sunday ? false : true;
+
+            }
+            console.log("WeekItem: ", n.target.id )
+            console.log("WeekSchedule: ", WeekSchedule)
+        };
+
+    
+        render() {
+            const { WeekItem } = this.state;
 
         return (
             <div>
@@ -77,67 +92,69 @@ export default function WeekRepeat(props) {
                     type="checkbox" 
                     className="radioBTN"
                     name="WeekItem" 
-                    value="monday" 
                     id="monday" 
-                    // onChange={ ScheduleValue() }
+                    value={WeekItem}
+                    onChange={this.updateInputValue9}
                     />
                     <label htmlFor="monday">Monday</label>
                     <input 
                     type="checkbox" 
                     className="radioBTN"
                     name="WeekItem" 
-                    value="tuesday" 
                     id="tuesday" 
-                    // onChange={ ScheduleValue() }
+                    value={WeekItem}
+                    onChange={this.updateInputValue9}
                     />
                     <label htmlFor="tuesday">Tuesday</label>
                     <input 
                     type="checkbox" 
                     className="radioBTN"
                     name="WeekItem" 
-                    value="wednesday" 
-                    id="tuesday" 
-                    // onChange={ ScheduleValue() }
+                    id="wednesday" 
+                    value={WeekItem}
+                    onChange={this.updateInputValue9}
                     />
                     <label htmlFor="wednesday">Wednesday</label>
                     <input 
                     type="checkbox" 
                     className="radioBTN"
                     name="WeekItem" 
-                    value="thursday" 
-                    id="tuesday" 
-                    // onChange={ ScheduleValue() }
+                    id="thursday" 
+                    value={WeekItem}
+                    onChange={this.updateInputValue9}
                     />
                     <label htmlFor="thursday">Thursday</label>
                     <input 
                     type="checkbox" 
                     className="radioBTN"
                     name="WeekItem" 
-                    value="friday"
-                    id="tuesday" 
-                    // onChange={ ScheduleValue() }
+                    id="friday"
+                    value={WeekItem}
+                    onChange={this.updateInputValue9}
                      />
                     <label htmlFor="friday">Friday</label>
                     <input 
                     type="checkbox" 
                     className="radioBTN"
                     name="WeekItem" 
-                    value="saturday" 
-                    id="tuesday" 
-                    // onChange={ ScheduleValue() }
+                    id="saturday"
+                    value={WeekItem}
+                    onChange={this.updateInputValue9}
                     />
                     <label htmlFor="saturday">Saturday</label>
                     <input 
                     type="checkbox" 
                     className="radioBTN"
                     name="WeekItem" 
-                    value="sunday"
-                    id="tuesday" 
-                    // onChange={ ScheduleValue() }
+                    id="sunday"
+                    value={WeekItem}
+                    onChange={this.updateInputValue9}
                      />
                     <label htmlFor="sunday">Sunday</label>
                 </fieldset>
             </div>
         );
     }
+}
 
+export default WeekRepeat;

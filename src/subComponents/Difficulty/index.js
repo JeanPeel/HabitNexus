@@ -4,33 +4,21 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-export default function Difficulty(props) {
+class Difficulty extends React.Component {
+
+    state = {
+        DifficultyItem: ""
+    };
+
+    updateInputValue7 = l => {
+        this.setState({ DifficultyItem: l.target.id });
+        console.log("DifficultyItem: ", l.target.id )
+    };
+
     
-    // let DifficultyValue
 
-    // const [on, setOn] = false;
-
-    // const DifficultyValue1 = (() => {
-    //     if (on === true) {
-    //         DifficultyValue = (document.getElementById(difficult).value)
-    //     }
-    // })();
-
-    // const DifficultyValue2 = (() => {
-    //     if (on === true) {
-    //         DifficultyValue = (document.getElementById(moderate).value)
-    //     }
-    // })();
- 
-    // const DifficultyValue3 = (() => {
-    //     if (on === true) {
-    //         DifficultyValue = (document.getElementById(easy).value)
-    //     }
-    // })();
-
-    // console.log("DifficultyValue", DifficultyValue)
-
-    // var WeekItem = props.WeekItem;
+    render() {
+        const { DifficultyItem } = this.state;
 
 
         return (
@@ -41,27 +29,28 @@ export default function Difficulty(props) {
                         type="radio"
                         className="radioBTN"
                         name="DifficultyItem"
-                        value="difficult"
                         id="difficult"
-                        // onChange={() => setOn(!on).then(DifficultyValue1())}
+                        value={DifficultyItem}
+                        onChange={this.updateInputValue7}
                     />
                     <label htmlFor="difficult">Difficult</label>
                     <input
                         type="radio"
                         className="radioBTN"
                         name="DifficultyItem"
-                        value="moderate"
                         id="moderate"
-                        // onChange={() => setOn(!on).then(DifficultyValue1())}
+                        value={DifficultyItem}
+                        onChange={this.updateInputValue7}
+            
                     />
                     <label htmlFor="moderate">Moderate</label>
                     <input
                         type="radio"
                         className="radioBTN"
                         name="DifficultyItem"
-                        value="easy"
                         id="easy"
-                        // onChange={() => setOn(!on).then(DifficultyValue1())}
+                        value={DifficultyItem}
+                        onChange={this.updateInputValue7}
                     />
                     <label htmlFor="easy">Easy</label>
                 </fieldset>
@@ -69,4 +58,6 @@ export default function Difficulty(props) {
         );
     }
 
+}
 
+export default Difficulty;
