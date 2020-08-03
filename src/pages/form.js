@@ -19,23 +19,25 @@ import Difficulty from "../subComponents/Difficulty";
 class Form extends Component {
     state = {
         HabitItem: '',
+        newHabit: [],
         HabitList: [
             {
-                Item: 'this is an item',
-                ItemCat: 'this is a category',
-                Date: 'today',
-                Date2: 'today2',
-                ItemTime: 'this is the TOD',
-                Weakly: 'This is the days of the week',
-                Dificult: 'this is dificult',
-                Prioritize: 'this is prioritized',
-                ItemLength: 'this is the durration',
-                Link: 'this is a link',
+                DateItem: "DateItem",
+                updateDateItem: "updateDateItem",
+                NameItem: "NameItem",
+                CategoryItems: "CategoryItems",
+                PriorityItem: "PriorityItem",
+                DifficultyItem: "DifficultyItem",
+                DurrationItem: "DurrationItem",
+                WeekSchedule: "WeekSchedule",
+                selectedTOD: "selectedTOD",
+                selectedHour: "selectedHour",
+                LinkItem: "LinkItem"
             }
         ]
     }
 
-    updateLink = (event) => {
+    updateHabit = (event) => {
         const { name, value } = event.target;
 
         this.setState({
@@ -43,29 +45,35 @@ class Form extends Component {
         })
     }
 
-    saveLink = (event) => {
+    saveHabit = (event) => {
 
         event.preventDefault();
 
         var LinkItem = this.state.LinkItem;
-
         var DateItem = this.state.DateItem;
-
         var updateDateItem = this.state.DateItem;
-
         var NameItem = this.state.NameItem;
+        var CategoryItems = this.state.CategoryItems;
+        var DifficultyItem = this.state.DifficultyItem;
+        var DurrationItem = this.state.DurrationItem;
+        var PriorityItem = this.state.PriorityItem;
+        var selectedTOD = this.state.selectedTOD;
+        var selectedHour = this.state.selectedHour;
+        var WeekSchedule = this.state.WeekSchedule;
 
         const newHabit = {
-            Item: NameItem,
-            ItemCat: 'this is a category',
-            Date: DateItem,
-            Date2: updateDateItem,
-            ItemTime: 'this is the TOD',
-            Weakly: 'This is the days of the week',
-            Dificult: 'this is dificult',
-            Prioritize: 'this is prioritized',
-            ItemLength: 'this is the durration',
-            Link: LinkItem
+            DateItem: DateItem,
+            updateDateItem: updateDateItem,
+            NameItem: NameItem,
+            CategoryItems: CategoryItems,
+            PriorityItem: PriorityItem,
+            DifficultyItem: DifficultyItem,
+            DurrationItem: DurrationItem,
+            WeekSchedule: WeekSchedule,
+            selectedTOD: selectedTOD,
+            selectedHour: selectedHour,
+            LinkItem: LinkItem
+
         }
 
         axios
@@ -74,34 +82,55 @@ class Form extends Component {
 
 
         this.setState({
-            HabitList: this.state.HabitList.concat(newHabit),
-            HabitItem: ''
+            HabitItem: '',
+            newHabit: [],
+            HabitList: this.state.HabitList.concat(newHabit)
         })
 
     }
 
     render() {
 
+        const { newHabit } = this.state;
+
         return (
             <div>
                 <h1>New Habit Form</h1>
                 {/* <form action="/habits" method="POST" id="form"> */}
                 <form id="form">
-                    <ItemDate />
-                    <ItemName />
-                    <Category />
-                    <Priority />
-                    <Difficulty />
-                    <Durration />
-                    <WeekRepeat />
-                    <TOD />
+                    <ItemDate 
+                    DateItem = {this.state.DateItem}
+                    />
+                    <ItemName 
+                    NameItem = {this.state.NameItem}
+                    />
+                    <Category 
+                    CategoryItems = {this.state.CategoryItems}
+                    />
+                    <Priority 
+                    PriorityItem = {this.state.PriorityItem}
+                    />
+                    <Difficulty 
+                    DifficultyItem = {this.state.DifficultyItem}
+                    />
+                    <Durration 
+                    DurrationItem = {this.state.DurrationItem}
+                    />
+                    <WeekRepeat 
+                    WeekSchedule = {this.state.WeekSchedule}
+                    />
+                    <TOD 
+                    selectedTOD = {this.state.selectedTOD}
+                    selectedHour = {this.state.selectedHour}
+                    />
                     <AddLink
                         LinkItem={this.state.LinkItem}
-                        updateLink={this.updateLink}
+                     
 
                     />
                     <SubmitBTN
-                        saveLink={this.saveLink}
+                       updateHabit={this.updateHabit}
+                        saveHabit={this.saveHabit}
                     />
                 </form>
             </div>
