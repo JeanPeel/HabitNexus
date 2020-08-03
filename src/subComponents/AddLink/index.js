@@ -6,14 +6,23 @@ import "../style.css";
 
 // var SubmitBTN = require('../SubmitBTN');
 
-export default function AddLink(props) {
+// import Select from 'react-select';
 
-    var LinkItem = props.LinkItem;
-    const updateLink = props.updateLink;
-    const saveLink = props.saveLink;
+class AddLink extends React.Component {
 
-    console.log(`LinkItem:`, LinkItem);
+    state = {
+        LinkItem: ""
+    };
 
+    updateInputValue = e => {
+        this.setState({ LinkItem: e.target.value });
+        console.log("LinkItem: ", e.target.value )
+    };
+
+    
+
+    render() {
+        const { LinkItem } = this.state;
 
     return (
         <div>
@@ -24,8 +33,11 @@ export default function AddLink(props) {
                 value={LinkItem}
                 placeholder="Add a Link Here"
                 className="linkItem"
-                onChange={updateLink, console.log('Update Link Item: ', updateLink)}
+                onChange={this.updateInputValue}
             />
         </div>
     );
 }
+}
+
+export default AddLink;

@@ -4,12 +4,21 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-export default function UserName(props) {
+class UserName extends React.Component {
 
-    var UserNameItem = props.UserNameItem;
-    var updateUNItem = props.USerNameItem;
+    state = {
+        UserNameItem: ""
+    };
 
-    console.log(`UserNameItem:`, UserNameItem);
+    updateInputValue3 = g => {
+        this.setState({ UserNameItem: g.target.value });
+        console.log("UserNameItem: ", g.target.value )
+    };
+
+    
+
+    render() {
+        const { UserNameItem } = this.state;
    
         return (
             <div>
@@ -18,10 +27,13 @@ export default function UserName(props) {
                     type="text"
                     name="UserNameItem"
                     value={UserNameItem}
-                    onChange={updateUNItem}
+                    onChange={this.updateInputValue3}
                     placeholder="Add User Name"
                     className="userNameItem"
                 />
             </div>
          );
         }
+    }
+
+    export default UserName;

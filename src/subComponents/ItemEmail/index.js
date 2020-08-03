@@ -4,12 +4,21 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-export default function ItemEmail(props) {
+class ItemEmail extends React.Component {
 
-    var EmailItem = props.EmailItem;
-    var updateEmailItem = props.EmailItem;
+    state = {
+        EmailItem: ""
+    };
 
-    console.log(`EmailItem:`, EmailItem);
+    updateInputValue5 = i => {
+        this.setState({ EmailItem: i.target.value });
+        console.log("EmailItem: ", i.target.value )
+    };
+
+    
+
+    render() {
+        const { EmailItem } = this.state;
    
         return (
             <div>
@@ -19,10 +28,14 @@ export default function ItemEmail(props) {
                     id="email"
                     name="EmailItem"
                     value={EmailItem}
-                    onChange={updateEmailItem}
+                    onChange={this.updateInputValue5}
                     placeholder="Add Email Address"
                     className="emailItem"
                     required />
             </div>
          );
         }
+
+    }
+
+    export default ItemEmail;

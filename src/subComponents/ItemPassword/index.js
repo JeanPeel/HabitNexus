@@ -4,12 +4,21 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-export default function ItemPassword(props) {
+class ItemPassword extends React.Component {
 
-    var PasswordItem = props.PasswordItem;
-    var updatePasswordItem = props.PasswordItem;
+    state = {
+        PasswordItem: ""
+    };
 
-    console.log(`PasswordItem:`, PasswordItem);
+    updateInputValue4 = h => {
+        this.setState({ PasswordItem: h.target.value });
+        console.log("PasswordItem: ", h.target.value )
+    };
+
+    
+
+    render() {
+        const { PasswordItem } = this.state;
    
         return (
             <div>
@@ -19,10 +28,13 @@ export default function ItemPassword(props) {
                     id="Password"
                     name="PasswordItem"
                     value={PasswordItem}
-                    onChange={updatePasswordItem}
+                    onChange={this.updateInputValue4}
                     placeholder="Add Password"
                     className="passwordItem"
                     required />
             </div>
          );
         }
+    }
+
+    export default ItemPassword;

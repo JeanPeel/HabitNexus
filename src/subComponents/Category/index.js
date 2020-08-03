@@ -6,75 +6,42 @@ import "../style.css";
 import Select from 'react-select';
 var axios = require("axios");
 
-// var categories = require("../../data/categories");
+var categories = require("../../data/categories");
 // var formData = require("../../data/formData");
 
 
-class Category extends Component {
-
-    // categoriesFromApi= [];
-    // selectedCategory= "";
+class Category extends React.Component {
 
     state = {
-        categoriesSet: [],
-        selectedCategory: "",
-        validationError: ""
+        CategoryItems: "",
     };
 
-    // componentDidMount() {
-    //     axios
-    //     .get('/api/categories')
-    //         .then((response) => {
-    //             return response.json();
-    //             console.log("recieved response.json")
-    //         })
-    //         .then(data => {
-    //             let categoriesFromApi = data.map((categoryValue, categoryLabel) => {
-    //                 return { value: categoryValue, label: categoryLabel }
-    //             });
-    //             this.setState({
-    //                 categoriesSet: [
-    //                     {
-    //                         value: '',
-    //                         label: '(Select a Category)'
-    //                     }
-    //                 ].concat(categoriesFromApi)
-    //             });
-    //         }).catch(error => {
-    //             console.log("Category Error: ", error);
-    //         });
+    handleChange5 = CategoryItems => {
+        this.setState({ CategoryItems });
+        console.log(`CategoryItems: `, CategoryItems);
+    };
 
-    //         console.log(state.selectedCategory)
-    // }
+    // updateInputValue6 = j => {
+    //     this.setState({ CategoryItems: j.target.value });
+    //     console.log("CategoryItems: ", j.target.value )
+    // };
+
+    
 
     render() {
+        const { CategoryItems } = this.state;
+
         return (
             <div>
                 <div>
                     <label htmlFor="CategoryItems">Category</label>
-                    <select
+                    <Select
                         name="CategoryItems"
                         placeholder="Select a Category"
-                        value={this.state.selectedCategory}
-                        onChange={(e) =>
-                            this.setState({
-                                selectedCategory: e.target.value,
-                                validationError:
-                                    e.target.value === ""
-                                        ? "You must select your favourite category"
-                                        : ""
-                            })
-                        }
-                    >
-                        {this.state.categoriesSet.map((categoryValue, categoryLabel) => (
-                            <option
-                                key={categoryValue.value}
-                                value={categoryValue.value}
-                            >
-                                {categoryLabel.label}
-                            </option>
-                        ))}
-                    </select>
+                        value={CategoryItems}
+                        onChange={this.handleChange5}
+                        options={categories}
+                    />
                 </div>
                 <div
                     style={{
