@@ -8,6 +8,21 @@ var formData = require("../../data/formData");
 
 export default function SubmitBTN(props) {
 
+    var LinkItem = props.LinkItem;
+
+    var DateItem = props.DateItem;
+
+    var updateDateItem = props.DateItem;
+
+    var NameItem = props.NameItem;
+
+    var HabitItem = {
+        Date: DateItem,
+        Date2: updateDateItem,
+        Item: NameItem,
+        Link: LinkItem
+    }
+
     formData =[]
 
     let formProps = (props.form)
@@ -23,7 +38,7 @@ export default function SubmitBTN(props) {
             <div>
                 <button 
                 type="submit" 
-                onClick={formData.push(formProps)} 
+                onClick={formData.push(formProps), console.log("form Props: ", formProps), console.log("HabitItem: ", HabitItem)} 
                 className="submitBTN" 
                 form="form" 
                 value={props.form}
