@@ -46,22 +46,52 @@ class Category extends React.Component {
     };
 
     newHabit = this.state.newHabit
+    CategoryItems  = this.state.newHabit.CategoryItems;
+    value1 = ""
 
-    handleChange5 = (CategoryState, newHabit) => {
+    handleChange5 = (CategoryState) => {
 
+        const newHabit = this.state.newHabit
 
-
-        const { CategoryItems } = this.state.newHabit.CategoryItems
+        const { CategoryItems } = this.newHabit.CategoryItems;
 
         this.setState({ CategoryState: CategoryState });
         console.log(`CategoryState: `, CategoryState);
         var value1 = CategoryState.value
         console.log(`valueA: `, value1);
 
-        this.setState({ newHabit: { CategoryItems: value1 } });
+        // console.log(`newHabit1: `, newHabit);
 
-        console.log(`newHabit: `, newHabit);
-    };
+        // console.log(`CategoryItems1: `, CategoryItems);
+
+        this.setState({ newHabit: { CategoryItems: CategoryState.value } });
+
+        this.setState({CategoryItems: CategoryState.value});
+
+        console.log(`newHabit2: `, newHabit);
+
+        console.log(`CategoryItems2: `, CategoryItems);
+
+    
+            // newHabit: {
+            //     CategoryItems: value1}
+            
+    }
+
+    // state = {
+    //     CategoryState: {
+    //         value: value1,
+    //         label: ""
+    //     },
+    //     newHabit: {
+    //         CategoryItems: value1,
+    //     }
+    // }
+
+
+    // this.setState({ newHabit: { CategoryItems: value1 } });
+
+    // this.setState({CategoryItems: value1});
 
 
     render() {
@@ -74,7 +104,7 @@ class Category extends React.Component {
 
         const { newHabit } = this.state.newHabit;
 
-        var { CategoryItems } = this.newHabit.CategoryItems;
+        var { CategoryItems } = this.state.newHabit.CategoryItems;
 
         // console.log("newHabit: ", this.state.newHabit)
 
@@ -83,9 +113,9 @@ class Category extends React.Component {
         return (
             <div>
                 <div>
-                    <label htmlFor="CategoryItems">Category</label>
+                    <label htmlFor="CategoryItem">Category</label>
                     <Select
-                        name="CategoryItems"
+                        name="CategoryItem"
                         placeholder="Select a Category"
                         value={CategoryState}
                         onChange={this.handleChange5}
