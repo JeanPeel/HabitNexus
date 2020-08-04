@@ -40,11 +40,11 @@ class TOD extends React.Component {
         }
     };
 
-    newHabit  = this.state.newHabit
+    newHabit = this.state.newHabit
 
-    handleChange = (TODState, newHabit  ) => {
+    handleChange = (TODState, newHabit) => {
 
-        
+
 
         const { selectedTOD } = this.state.newHabit.selectedTOD
 

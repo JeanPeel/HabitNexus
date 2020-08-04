@@ -45,11 +45,11 @@ class Category extends React.Component {
         }
     };
 
-    newHabit  = this.state.newHabit
+    newHabit = this.state.newHabit
 
-    handleChange5 = (CategoryState, newHabit  ) => {
+    handleChange5 = (CategoryState, newHabit) => {
 
-        
+
 
         const { CategoryItems } = this.state.newHabit.CategoryItems
 
@@ -87,7 +87,7 @@ class Category extends React.Component {
                     <Select
                         name="CategoryItems"
                         placeholder="Select a Category"
-                        value={CategoryState }
+                        value={CategoryState}
                         onChange={this.handleChange5}
                         options={categories}
                     />
