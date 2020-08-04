@@ -38,6 +38,7 @@ class SubmitBTN extends React.Component {
         HourState: "",
         WeekState: "",
         FormState: "",
+        show: false,
         newHabit: {
             PriorityItem: "",
             LinkItem: "",
@@ -80,6 +81,7 @@ class SubmitBTN extends React.Component {
         HourState: "",
         WeekState: "",
         FormState: "",
+        show: false,
         newHabit: {
             PriorityItem: "",
             LinkItem: "",
@@ -110,6 +112,20 @@ class SubmitBTN extends React.Component {
         this.setState({ newHabit: value10 });
     };
 
+    showModal = y => {
+    
+        this.setState({
+            show: !this.state.show
+        });
+
+
+    }
+
+    onClose = x => {
+        this.props.show = false;
+      };
+
+
     render() {
         var AutoDate = moment().format("MM/DD/YYYY")
     
@@ -126,6 +142,9 @@ class SubmitBTN extends React.Component {
         const { WeekState } = this.state.WeekState;
 
         const { newHabit } = this.state.newHabit;
+
+
+    
 
         // const { LinkItem } = this.state.newHabit.LinkItem;
         // var { CategoryItems } = this.state.newHabit.CategoryItems;
@@ -144,7 +163,7 @@ class SubmitBTN extends React.Component {
             <div>
                 <button
                     type="submit"
-                    onClick={this.updateInputValue0}
+                    onClick={this.updateInputValue0, this.showModal, this.onClose}
                     className="submitBTN"
                     form="form"
                     value={FormState}

@@ -15,6 +15,7 @@ import Hours from "../subComponents/Hours";
 import WeekRepeat from "../subComponents/WeekRepeat";
 import ItemDate from "../subComponents/ItemDate";
 import Difficulty from "../subComponents/Difficulty";
+import Modal from "../components/Modal";
 
 // var formData = require("../../data/formData");
 
@@ -48,6 +49,7 @@ class Form extends Component {
         HourState: "",
         WeekState: "",
         FormState: "",
+        show: false,
         newHabit: {
             PriorityItem: "",
             LinkItem: "",
@@ -121,6 +123,36 @@ class Form extends Component {
             newHabit: [],
         })
 
+    }
+
+
+
+    showModal = y => {
+
+        this.setState({
+            show: !this.state.show
+        });
+
+
+    }
+
+    onClose = x => {
+        this.props.show = false;
+      };
+
+    habitData = (newHabit) => {
+
+        document.getElementById('#itemDate').text(newHabit.DateItem);
+        document.getElementById("#itemName").text(newHabit.NameItem);;
+        document.getElementById("#itemCat").text(newHabit.CategoryItems);
+        document.getElementById("#itemPri").text(newHabit.PriorityItem);
+        document.getElementById("#itemDif").text(newHabit.DifficultyItem);
+        document.getElementById("#itemDur").text(newHabit.DurrationItem);
+        document.getElementById("#itemWeek").text(newHabit.WeekSchedule);
+        document.getElementById("#itemTOD").text(newHabit.selectedTOD);
+        document.getElementById("#itemHour").text(newHabit.selectedHour);
+        document.getElementById("#itemLink").text(newHabit.LinkItem);
+        
     }
 
     render() {
@@ -206,7 +238,44 @@ class Form extends Component {
                         newHabit={this.state.newHabit}
                         updateHabit={this.updateHabit}
                         saveHabit={this.saveHabit}
+                        HabitData={this.habitData}
                         FormState={this.state.FormState}
+                    />
+                    <Modal
+                        LinkState={this.state.LinkState}
+                        LinkItem={this.state.newHabit.LinkItem}
+
+                        HourState={this.state.HourState}
+                        selectedHour={this.state.newHabit.selectedHour}
+
+                        TODState={this.state.TODState}
+                        selectedTOD={this.state.newHabit.selectedTOD}
+
+                        WeekState={this.state.WeekState}
+                        WeekSchedule={this.state.newHabit.WeekSchedule}
+
+                        DurrationState={this.state.DurrationState}
+                        DurrationItem={this.state.newHabit.DurrationItem}
+
+                        DifficultyState={this.state.DifficultyState}
+                        DifficultyItem={this.state.newHabit.DifficultyItem}
+
+                        PriorityState={this.state.PriorityState}
+                        PriorityItem={this.state.newHabit.PriorityItem}
+
+                        CategoryState={this.state.CategoryState}
+                        CategoryItems={this.state.newHabit.CategoryItems}
+
+                        NameState={this.state.NameState}
+                        NameItem={this.state.newHabit.NameItem}
+
+                        DateState={this.state.DateState}
+                        DateItem={this.state.newHabit.DateItem}
+
+                        newHabit={this.state.newHabit}
+
+                        show={this.state.show}
+                        onClose={this.showModal}
                     />
                 </form>
             </div>
