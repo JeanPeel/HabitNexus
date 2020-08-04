@@ -41,27 +41,35 @@ class TOD extends React.Component {
     };
 
     newHabit = this.state.newHabit
+    CategoryItems = this.state.newHabit.selectedTOD;
+    valueC = "";
 
-    handleChange = (TODState, newHabit) => {
+    handleChange = (TODState) => {
 
-
+        const newHabit = this.state.newHabit
 
         const { selectedTOD } = this.state.newHabit.selectedTOD
 
         this.setState({ TODState: TODState });
         console.log(`TODState: `, TODState);
-        var valueA = TODState.value
-        console.log(`valueA: `, valueA);
+        var valueC = TODState.value
+        console.log(`valueC: `, valueC);
 
-        this.setState({ newHabit: { selectedTOD: valueA } });
+        this.setState({ newHabit: { selectedTOD: TODState.value} });
 
-        console.log(`newHabit: `, newHabit);
+        this.setState({ selectedTOD: TODState.value });
+
+        console.log(`selectedTOD: `, selectedTOD);
     };
 
     render() {
-        const { TODState } = this.state;
+        const { TODState } = this.state.TODState;
 
-        // const { selectedTOD } = this.state.newHabit.selectedTOD
+        const { newHabit } = this.state.newHabit;
+
+        const { selectedTOD } = this.state.newHabit.selectedTOD
+
+        console.log("newHabit: ", this.state.newHabit)
 
         return (
             <div>

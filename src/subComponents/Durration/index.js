@@ -9,19 +9,57 @@ import "../style.css";
 class Durration extends React.Component {
 
     state = {
-        DurrationItem: ""
+        PriorityState: "",
+        LinkState: "",
+        DateState: "",
+        updateDateState: "",
+        NameState: "",
+        CategoryState: "",
+        DifficultyState: "",
+        DurrationState: "",
+        PriorityState: "",
+        TODState: "",
+        HourState: "",
+        WeekState: "",
+        newHabit: {
+            PriorityItem: "",
+            LinkItem: "",
+            DateItem: "",
+            updateDateItem: "",
+            NameItem: "",
+            CategoryItems: "",
+            DifficultyItem: "",
+            DurrationItem: "",
+            PriorityItem: "",
+            selectedTOD: "",
+            selectedHour: "",
+            WeekSchedule: "",
+
+        }
     };
 
-    updateInputValue8 = l => {
-        this.setState({ DurrationItem: l.target.id });
-        console.log("DurrationItem: ", l.target.id)
+    updateInputValue8 = n => {
+
+        const value2 = n.target.id
+
+        this.setState({ PriorityState: value2 });
+
+        this.setState({ newHabit: {DurrationItem: value2 } });
+
+        // console.log("newHabit: ", this.state.newHabit)
     };
 
 
 
     render() {
-        const { DurrationItem } = this.state;
 
+        const { DurrationState } = this.state.DurrationState;
+
+        const { newHabit } = this.state.newHabit;
+
+        const {DurrationItem} = this.state.newHabit.DurrationItem;
+
+        console.log("newHabit: ", this.state.newHabit)
 
         return (
             <div>

@@ -41,6 +41,8 @@ class Priority extends React.Component {
 
         this.setState({ newHabit: { PriorityItem: value1 } });
 
+        // console.log("newHabit: ", this.state.newHabit)
+
     };
 
 

@@ -7,19 +7,58 @@ import "../style.css";
 class Difficulty extends React.Component {
 
     state = {
-        DifficultyItem: ""
+        PriorityState: "",
+        LinkState: "",
+        DateState: "",
+        updateDateState: "",
+        NameState: "",
+        CategoryState: "",
+        DifficultyState: "",
+        DurrationState: "",
+        PriorityState: "",
+        TODState: "",
+        HourState: "",
+        WeekState: "",
+        newHabit: {
+            PriorityItem: "",
+            LinkItem: "",
+            DateItem: "",
+            updateDateItem: "",
+            NameItem: "",
+            CategoryItems: "",
+            DifficultyItem: "",
+            DurrationItem: "",
+            PriorityItem: "",
+            selectedTOD: "",
+            selectedHour: "",
+            WeekSchedule: "",
+
+        }
     };
 
     updateInputValue7 = l => {
-        this.setState({ DifficultyItem: l.target.id });
-        console.log("DifficultyItem: ", l.target.id)
+
+        const value1 = l.target.id
+
+        this.setState({ DifficultyState: value1 });
+
+        this.setState({ newHabit: { DifficultyItem: value1 } });
+
+        // console.log("newHabit: ", this.state.newHabit)
+
     };
 
 
 
     render() {
-        const { DifficultyItem } = this.state;
 
+        const { DifficultyState } = this.state.DifficultyState;
+
+        const { newHabit } = this.state.newHabit;
+
+        const { DifficultyItem } = this.state.newHabit.DifficultyItem;
+
+        console.log("newHabit: ", this.state.newHabit)
 
         return (
             <div>

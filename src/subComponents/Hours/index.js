@@ -40,21 +40,26 @@ class Hours extends React.Component {
         }
     };
 
-    newHabit = this.state.newHabit
+    newHabit = this.state.newHabit;
+   selectedHour = this.state.newHabit.selectedHour;
+    valueB = "";
 
-    handleChange2 = (HourState, newHabit) => {
+    handleChange2 = (HourState) => {
 
-        const { selectedHour } = this.state.newHabit.selectedHour
+        const newHabit = this.state.newHabit
+
+        const { selectedHour } = this.newHabit.selectedHour
 
         this.setState({ HourState: HourState });
         console.log(`Hour selected: `, HourState);
         var valueB = HourState.value
         console.log(`valueB: `, valueB);
 
+        this.setState({ newHabit: { selectedHour: HourState.value } });
 
-        this.setState({ newHabit: { selectedHour: valueB } });
+        this.setState({ selectedHour: HourState.value });
 
-        console.log(`newHabit: `, newHabit);
+        console.log(`selectedHour: `, selectedHour);
     };
 
 
@@ -62,8 +67,11 @@ class Hours extends React.Component {
 
         const { HourState } = this.state;
 
+        const { newHabit } = this.state.newHabit;
 
-        // const { selectedHour } = this.state.newHabit.selectedHour
+        var {selectedHour} = this.state.newHabit.selectedHour;
+
+        console.log("newHabit: ", this.state.newHabit)
 
         return (
             <div>
