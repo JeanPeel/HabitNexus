@@ -1,28 +1,59 @@
 import React, { Component } from "react";
 import "../style.css";
-// import Moment from 'react-moment';
-// import 'moment-timezone';
-// const moment = require('moment');
-
-
-
 
 class Priority extends React.Component {
 
     state = {
-        PriorityItem: ""
+        PriorityState: "",
+        LinkState: "",
+        DateState: "",
+        updateDateState: "",
+        NameState: "",
+        CategoryState: "",
+        DifficultyState: "",
+        DurrationState: "",
+        PriorityState: "",
+        TODState: "",
+        HourState: "",
+        WeekState: "",
+        newHabit: {
+            PriorityItem: "",
+            LinkItem: "",
+            DateItem: "",
+            updateDateItem: "",
+            NameItem: "",
+            CategoryItems: "",
+            DifficultyItem: "",
+            DurrationItem: "",
+            PriorityItem: "",
+            selectedTOD: "",
+            selectedHour: "",
+            WeekSchedule: "",
+
+        }
     };
 
     updateInputValue9 = m => {
-        this.setState({ PriorityItem: m.target.id });
-        console.log("PriorityItem: ", m.target.id)
+
+        const value1 = m.target.id
+
+        this.setState({ PriorityState: value1 });
+
+        this.setState({ newHabit: { PriorityItem: value1 } });
+
     };
 
 
 
     render() {
-        const { PriorityItem } = this.state;
 
+        const { PriorityState } = this.state.PriorityState;
+
+        const { newHabit } = this.state.newHabit;
+
+        const { PriorityItem } = this.state.newHabit.PriorityItem;
+
+        console.log("newHabit: ", this.state.newHabit)
 
         return (
             <div>

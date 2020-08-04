@@ -11,18 +11,59 @@ import "../style.css";
 class AddLink extends React.Component {
 
     state = {
-        LinkItem: ""
+        PriorityState: "",
+        LinkState: "",
+        DateState: "",
+        updateDateState: "",
+        NameState: "",
+        CategoryState: "",
+        DifficultyState: "",
+        DurrationState: "",
+        PriorityState: "",
+        TODState: "",
+        HourState: "",
+        WeekState: "",
+        newHabit: {
+            PriorityItem: "",
+            LinkItem: "",
+            DateItem: "",
+            updateDateItem: "",
+            NameItem: "",
+            CategoryItems: "",
+            DifficultyItem: "",
+            DurrationItem: "",
+            PriorityItem: "",
+            selectedTOD: "",
+            selectedHour: "",
+            WeekSchedule: "",
+
+        }
     };
 
     updateInputValue = e => {
-        this.setState({ LinkItem: e.target.value });
-        console.log("LinkItem: ", e.target.value)
+
+        const value2 = e.target.value
+
+        this.setState({ LinkState: value2 });
+
+        this.setState({ newHabit: { LinkItem: value2 } });
     };
 
 
 
     render() {
-        const { LinkItem } = this.state;
+        
+        const { LinkState } = this.state.LinkState;
+
+        const { newHabit } = this.state.newHabit;
+
+        const { LinkItem } = this.state.newHabit.LinkItem;
+
+        console.log("newHabit: ", this.state.newHabit)
+
+        // console.log("LinkState: ", this.state.LinkState)
+
+        // console.log("LinkItem: ", this.state.newHabit.LinkItem)
 
         return (
             <div>

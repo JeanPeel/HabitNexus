@@ -13,23 +13,73 @@ var categories = require("../../data/categories");
 class Category extends React.Component {
 
     state = {
-        CategoryItems: "",
+        PriorityState: "",
+        LinkState: "",
+        DateState: "",
+        updateDateState: "",
+        NameState: "",
+        CategoryState: {
+            value: "", 
+            label: ""
+        },
+        DifficultyState: "",
+        DurrationState: "",
+        PriorityState: "",
+        TODState: "",
+        HourState: "",
+        WeekState: "",
+        newHabit: {
+            PriorityItem: "",
+            LinkItem: "",
+            DateItem: "",
+            updateDateItem: "",
+            NameItem: "",
+            CategoryItems: "",
+            DifficultyItem: "",
+            DurrationItem: "",
+            PriorityItem: "",
+            selectedTOD: "",
+            selectedHour: "",
+            WeekSchedule: "",
+
+        }
     };
 
-    handleChange5 = CategoryItems => {
-        this.setState({ CategoryItems });
-        console.log(`CategoryItems: `, CategoryItems);
+    handleChange5 = CategoryState => {
+        this.setState({ CategoryState });
+        console.log(`CategoryState: `, CategoryState);
+
     };
 
-    // updateInputValue6 = j => {
-    //     this.setState({ CategoryItems: j.target.value });
-    //     console.log("CategoryItems: ", j.target.value )
+    // handleChange5 = Value3 => {
+
+    //     this.setState({ newHabit: { CategoryItems: Value3 } });
+
     // };
 
-    
+    // updateInputValue9 = Value3 => {
+
+    //     this.setState({ newHabit: { CategoryItems : Value3 } });
+
+    // };
+
+
 
     render() {
-        const { CategoryItems } = this.state;
+
+        const { CategoryState } = this.state.CategoryState;
+
+        // const { label } = this.CategoryState.label;
+
+        // const { CategoryState } = this.state.CategoryState;
+
+        // const { newHabit } = this.state.newHabit;
+
+        // const { CategoryItems } = this.newHabit.CategoryItems;
+
+        // console.log("newHabit: ", this.state.newHabit)
+
+        // console.log("label: ", this.CategoryState.label)
 
         return (
             <div>
@@ -38,8 +88,8 @@ class Category extends React.Component {
                     <Select
                         name="CategoryItems"
                         placeholder="Select a Category"
-                        value={CategoryItems}
-                        onChange={this.handleChange5}
+                        value={CategoryState}
+                        onChange={this.handleChange5 }
                         options={categories}
                     />
                 </div>
