@@ -7,18 +7,54 @@ import "../style.css";
 class ItemName extends React.Component {
 
     state = {
-        NameItem: ""
+        PriorityState: "",
+        LinkState: "",
+        DateState: "",
+        updateDateState: "",
+        NameState: "",
+        CategoryState: "",
+        DifficultyState: "",
+        DurrationState: "",
+        PriorityState: "",
+        TODState: "",
+        HourState: "",
+        WeekState: "",
+        newHabit: {
+            PriorityItem: "",
+            LinkItem: "",
+            DateItem: "",
+            updateDateItem: "",
+            NameItem: "",
+            CategoryItems: "",
+            DifficultyItem: "",
+            DurrationItem: "",
+            PriorityItem: "",
+            selectedTOD: "",
+            selectedHour: "",
+            WeekSchedule: "",
+
+        }
     };
 
     updateInputValue2 = f => {
-        this.setState({ NameItem: f.target.value });
-        console.log("NameItem: ", f.target.value)
+
+        const value7 = f.target.value
+
+        this.setState({ NameState: value7 });
+
+        this.setState({ newHabit: {  NameItem: value7 } });
     };
 
 
 
     render() {
-        const { NameItem } = this.state;
+        const { NameState } = this.state.NameState;
+
+        const { newHabit } = this.state.newHabit;
+
+        const { NameItem } = this.state.newHabit.NameItem;
+
+        console.log("newHabit: ", this.state.newHabit)
 
         return (
             <div>

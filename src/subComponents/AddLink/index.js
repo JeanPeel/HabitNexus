@@ -61,10 +61,6 @@ class AddLink extends React.Component {
 
         console.log("newHabit: ", this.state.newHabit)
 
-        // console.log("LinkState: ", this.state.LinkState)
-
-        // console.log("LinkItem: ", this.state.newHabit.LinkItem)
-
         return (
             <div>
                 <label htmlFor="LinkItem" >Add Link to info or image (optional): </label>

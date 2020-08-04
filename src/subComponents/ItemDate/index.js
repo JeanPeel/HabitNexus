@@ -13,12 +13,42 @@ class ItemDate extends React.Component {
 
 
     state = {
-        DateItem: ""
+        PriorityState: "",
+        LinkState: "",
+        DateState: "",
+        updateDateState: "",
+        NameState: "",
+        CategoryState: "",
+        DifficultyState: "",
+        DurrationState: "",
+        PriorityState: "",
+        TODState: "",
+        HourState: "",
+        WeekState: "",
+        newHabit: {
+            PriorityItem: "",
+            LinkItem: "",
+            DateItem: "",
+            updateDateItem: "",
+            NameItem: "",
+            CategoryItems: "",
+            DifficultyItem: "",
+            DurrationItem: "",
+            PriorityItem: "",
+            selectedTOD: "",
+            selectedHour: "",
+            WeekSchedule: "",
+
+        }
     };
 
     updateInputValue6 = k => {
-        this.setState({ DateItem: k.target.value });
-        console.log("DateItem: ", k.target.value)
+
+        const value8 = k.target.value
+
+        this.setState({ DateState: value8  });
+       
+        this.setState({ newHabit: { DateItem: value8 || moment().format("MM/DD/YYYY") } });
     };
 
 
@@ -27,7 +57,15 @@ class ItemDate extends React.Component {
     render() {
         // var DateItem = moment().format("MM/DD/YYYY")
         var AutoDate = moment().format("MM/DD/YYYY")
-        const { DateItem } = this.state;
+
+        const { DateState } = this.state.DateState;
+
+        const { newHabit } = this.state.newHabit;
+
+        const { DateItem } = this.state.newHabit.DateItem 
+
+        console.log("newHabit: ", this.state.newHabit)
+
 
         return (
             <div>
