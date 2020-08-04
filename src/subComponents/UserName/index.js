@@ -7,18 +7,36 @@ import "../style.css";
 class UserName extends React.Component {
 
     state = {
-        UserNameItem: ""
+        UserState: "",
+        EmailState: "",
+        PasswordState: "",
+        newUser: {
+            UserNameItem: "",
+            EmailItem: "",
+            PasswordItem: ""
+        }
     };
 
+
     updateInputValue3 = g => {
-        this.setState({ UserNameItem: g.target.value });
-        console.log("UserNameItem: ", g.target.value)
+
+        const value5 = g.target.value
+
+        this.setState({ UserState: value5});
+
+        this.setState({ newUser: {  UserNameItem: value5 } });
     };
 
 
 
     render() {
-        const { UserNameItem } = this.state;
+        const { UserState } = this.state.UserState ;
+
+        const { newUser } = this.state.newUser;
+
+        const { UserNameItem } = this.state.newUser.UserNameItem;
+
+        console.log("newUser: ", this.state.newUser)
 
         return (
             <div>

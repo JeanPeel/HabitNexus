@@ -7,18 +7,35 @@ import "../style.css";
 class ItemEmail extends React.Component {
 
     state = {
-        EmailItem: ""
+        UserState: "",
+        EmailState: "",
+        PasswordState: "",
+        newUser: {
+            UserNameItem: "",
+            EmailItem: "",
+            PasswordItem: ""
+        }
     };
 
     updateInputValue5 = i => {
-        this.setState({ EmailItem: i.target.value });
-        console.log("EmailItem: ", i.target.value)
+
+        const value4 = i.target.value
+
+        this.setState({ EmailState: value4 });
+
+        this.setState({ newUser: {  EmailItem: value4 } });
     };
 
 
 
     render() {
-        const { EmailItem } = this.state;
+        const { EmailState } = this.state.EmailState ;
+
+        const { newUser } = this.state.newUser;
+
+        const { EmailItem } = this.state.newUser.EmailItem ;
+
+        console.log("newUser: ", this.state.newUser)
 
         return (
             <div>

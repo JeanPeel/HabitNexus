@@ -7,18 +7,36 @@ import "../style.css";
 class ItemPassword extends React.Component {
 
     state = {
-        PasswordItem: ""
+        UserState: "",
+        EmailState: "",
+        PasswordState: "",
+        newUser: {
+            UserNameItem: "",
+            EmailItem: "",
+            PasswordItem: ""
+        }
     };
 
+
     updateInputValue4 = h => {
-        this.setState({ PasswordItem: h.target.value });
-        console.log("PasswordItem: ", h.target.value)
+
+        const value6 = h.target.value
+
+        this.setState({ PasswordState : value6});
+
+        this.setState({ newUser: {  PasswordItem: value6  } });
     };
 
 
 
     render() {
-        const { PasswordItem } = this.state;
+        const { PasswordState } = this.state.PasswordState ;
+
+        const { newUser } = this.state.newUser;
+
+        const { PasswordItem } = this.state.newUser.PasswordItem;
+
+        console.log("newUser: ", this.state.newUser)
 
         return (
             <div>
