@@ -19,7 +19,7 @@ class Category extends React.Component {
         updateDateState: "",
         NameState: "",
         CategoryState: {
-            value: "", 
+            value: "",
             label: ""
         },
         DifficultyState: "",
@@ -45,24 +45,23 @@ class Category extends React.Component {
         }
     };
 
-    handleChange5 = CategoryState => {
-        this.setState({ CategoryState });
+    newHabit  = this.state.newHabit
+
+    handleChange5 = (CategoryState, newHabit  ) => {
+
+        
+
+        const { CategoryItems } = this.state.newHabit.CategoryItems
+
+        this.setState({ CategoryState: CategoryState });
         console.log(`CategoryState: `, CategoryState);
+        var value1 = CategoryState.value
+        console.log(`valueA: `, value1);
 
+        this.setState({ newHabit: { CategoryItems: value1 } });
+
+        console.log(`newHabit: `, newHabit);
     };
-
-    // handleChange5 = Value3 => {
-
-    //     this.setState({ newHabit: { CategoryItems: Value3 } });
-
-    // };
-
-    // updateInputValue9 = Value3 => {
-
-    //     this.setState({ newHabit: { CategoryItems : Value3 } });
-
-    // };
-
 
 
     render() {
@@ -71,11 +70,11 @@ class Category extends React.Component {
 
         // const { label } = this.CategoryState.label;
 
-        // const { CategoryState } = this.state.CategoryState;
+        // const { value3 } = this.state.value3;
 
-        // const { newHabit } = this.state.newHabit;
+        const { newHabit } = this.state.newHabit;
 
-        // const { CategoryItems } = this.newHabit.CategoryItems;
+        var { CategoryItems } = this.newHabit.CategoryItems;
 
         // console.log("newHabit: ", this.state.newHabit)
 
@@ -88,8 +87,8 @@ class Category extends React.Component {
                     <Select
                         name="CategoryItems"
                         placeholder="Select a Category"
-                        value={CategoryState}
-                        onChange={this.handleChange5 }
+                        value={CategoryState }
+                        onChange={this.handleChange5}
                         options={categories}
                     />
                 </div>

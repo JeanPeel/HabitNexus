@@ -12,6 +12,7 @@ import ItemName from "../subComponents/ItemName";
 import Priority from "../subComponents/Priority";
 import SubmitBTN from "../subComponents/SubmitBTN";
 import TOD from "../subComponents/TOD";
+import Hours from "../subComponents/Hours";
 import WeekRepeat from "../subComponents/WeekRepeat";
 import ItemDate from "../subComponents/ItemDate";
 import Difficulty from "../subComponents/Difficulty";
@@ -98,38 +99,41 @@ class Form extends Component {
                 <h1>New Habit Form</h1>
                 {/* <form action="/habits" method="POST" id="form"> */}
                 <form id="form">
-                    <ItemDate 
-                    DateItem = {this.state.DateItem}
+                    <ItemDate
+                        DateItem={this.state.DateItem}
                     />
-                    <ItemName 
-                    NameItem = {this.state.NameItem}
+                    <ItemName
+                        NameItem={this.state.NameItem}
                     />
-                    <Category 
-                    CategoryItems = {this.state.CategoryItems}
+                    <Category
+                        CategoryItems={this.state.CategoryItems}
                     />
-                    <Priority 
-                    PriorityItem = {this.state.PriorityItem}
+                    <Priority
+                        PriorityItem={this.state.PriorityItem}
                     />
-                    <Difficulty 
-                    DifficultyItem = {this.state.DifficultyItem}
+                    <Difficulty
+                        DifficultyItem={this.state.DifficultyItem}
                     />
-                    <Durration 
-                    DurrationItem = {this.state.DurrationItem}
+                    <Durration
+                        DurrationItem={this.state.DurrationItem}
                     />
-                    <WeekRepeat 
-                    WeekSchedule = {this.state.WeekSchedule}
+                    <WeekRepeat
+                        WeekSchedule={this.state.WeekSchedule}
                     />
-                    <TOD 
-                    selectedTOD = {this.state.selectedTOD}
-                    selectedHour = {this.state.selectedHour}
+                    <TOD
+                        selectedTOD={this.state.selectedTOD}
+
+                    />
+                    < Hours
+                        selectedHour={this.state.selectedHour}
                     />
                     <AddLink
                         LinkItem={this.state.LinkItem}
-                     
+
 
                     />
                     <SubmitBTN
-                       updateHabit={this.updateHabit}
+                        updateHabit={this.updateHabit}
                         saveHabit={this.saveHabit}
                     />
                 </form>

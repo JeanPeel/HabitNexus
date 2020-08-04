@@ -5,11 +5,11 @@ import "../style.css";
 // const moment = require('moment');
 import Select from 'react-select';
 
-var timeOfDay = require("../../data/timeOfDay");
+var hours = require("../../data/hours");
 
-class TOD extends React.Component {
+class Hours extends React.Component {
 
-    // selectedTOD= ""
+    // selectedHour= ""
 
     state = {
         PriorityState: "",
@@ -42,39 +42,41 @@ class TOD extends React.Component {
 
     newHabit  = this.state.newHabit
 
-    handleChange = (TODState, newHabit  ) => {
+    handleChange2 = (HourState, newHabit  ) => {
+
+        const { selectedHour} = this.state.newHabit.selectedHour
+
+        this.setState({ HourState: HourState });
+        console.log(`Hour selected: `, HourState);
+        var valueB =  HourState.value
+        console.log(`valueB: `, valueB);
 
         
-
-        const { selectedTOD } = this.state.newHabit.selectedTOD
-
-        this.setState({ TODState: TODState });
-        console.log(`TODState: `, TODState);
-        var valueA = TODState.value
-        console.log(`valueA: `, valueA);
-
-        this.setState({ newHabit: { selectedTOD: valueA } });
+        this.setState({ newHabit: { selectedHour: valueB } });
 
         console.log(`newHabit: `, newHabit);
     };
 
-    render() {
-        const { TODState } = this.state;
 
-        // const { selectedTOD } = this.state.newHabit.selectedTOD
+    render() {
+  
+        const { HourState } = this.state;
+
+      
+        // const { selectedHour } = this.state.newHabit.selectedHour
 
         return (
             <div>
-                <label htmlFor="TimeDay">Time Of Day</label>
+                <label htmlFor="Hours">Or Select an Hour</label>
                 <Select
-                    name="TimeDay"
-                    value={TODState}
-                    onChange={this.handleChange}
-                    options={timeOfDay}
+                    name="Hours"
+                    value={HourState}
+                    onChange={this.handleChange2}
+                    options={hours}
                 />
             </div >
         );
     }
 }
 
-export default TOD;
+export default Hours;
