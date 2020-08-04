@@ -35,7 +35,15 @@ class AddLink extends React.Component {
             PriorityItem: "",
             selectedTOD: "",
             selectedHour: "",
-            WeekSchedule: "",
+            WeekSchedule: {
+                Monday: false,
+                Tuesday: false,
+                Wednesday: false,
+                Thursday: false,
+                Friday: false,
+                Saturday: false,
+                Sunday: false
+            }
 
         }
     };

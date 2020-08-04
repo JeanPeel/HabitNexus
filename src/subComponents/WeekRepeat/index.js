@@ -15,30 +15,55 @@ var WeekSchedule = {
     Sunday: false
 }
 
-var WeekItem = ""
+var WeekState = ""
 
 
 class WeekRepeat extends React.Component {
 
     state = {
-        WeekItem: "",
-        WeekSchedule: {
-            Monday: false,
-            Tuesday: false,
-            Wednesday: false,
-            Thursday: false,
-            Friday: false,
-            Saturday: false,
-            Sunday: false
+        PriorityState: "",
+        LinkState: "",
+        DateState: "",
+        updateDateState: "",
+        NameState: "",
+        CategoryState: "",
+        DifficultyState: "",
+        DurrationState: "",
+        PriorityState: "",
+        TODState: "",
+        HourState: "",
+        WeekState: "",
+        newHabit: {
+            PriorityItem: "",
+            LinkItem: "",
+            DateItem: "",
+            updateDateItem: "",
+            NameItem: "",
+            CategoryItems: "",
+            DifficultyItem: "",
+            DurrationItem: "",
+            PriorityItem: "",
+            selectedTOD: "",
+            selectedHour: "",
+            WeekSchedule: {
+                Monday: false,
+                Tuesday: false,
+                Wednesday: false,
+                Thursday: false,
+                Friday: false,
+                Saturday: false,
+                Sunday: false
+            }
+
         }
     };
 
 
     updateInputValue9 = n => {
 
-        WeekItem = n.target.id
+        const value9 = n.target.value
 
-        this.setState({ WeekItem: n.target.id })
+        this.setState({ WeekState: value9})
 
         if (n.target.id === 'monday') {
 
@@ -76,78 +101,88 @@ class WeekRepeat extends React.Component {
             WeekSchedule.Sunday = WeekSchedule.Sunday ? false : true;
 
         }
-        console.log("WeekItem: ", n.target.id)
+
+        this.setState({ newHabit: { WeekSchedule: WeekSchedule } });
+
+    
+        console.log("WeekState: ", n.target.id)
         console.log("WeekSchedule: ", WeekSchedule)
     };
 
 
     render() {
-        const { WeekItem } = this.state;
+        const { WeekState } = this.state.WeekState;
+
+        const { newHabit } = this.state.newHabit;
+
+        const { WeekSchedule } = this.state.newHabit.WeekSchedule;
+
+        console.log("newHabit: ", this.state.newHabit)
 
         return (
             <div>
-                <label htmlFor="WeekItem" >Week Days to Repeat: </label>
-                <fieldset name="WeekItem">
+                <label htmlFor="WeekState" >Week Days to Repeat: </label>
+                <fieldset name="WeekState">
                     <input
                         type="checkbox"
                         className="radioBTN"
-                        name="WeekItem"
+                        name="WeekState"
                         id="monday"
-                        value={WeekItem}
+                        value={WeekState}
                         onChange={this.updateInputValue9}
                     />
                     <label htmlFor="monday">Monday</label>
                     <input
                         type="checkbox"
                         className="radioBTN"
-                        name="WeekItem"
+                        name="WeekState"
                         id="tuesday"
-                        value={WeekItem}
+                        value={WeekState}
                         onChange={this.updateInputValue9}
                     />
                     <label htmlFor="tuesday">Tuesday</label>
                     <input
                         type="checkbox"
                         className="radioBTN"
-                        name="WeekItem"
+                        name="WeekState"
                         id="wednesday"
-                        value={WeekItem}
+                        value={WeekState}
                         onChange={this.updateInputValue9}
                     />
                     <label htmlFor="wednesday">Wednesday</label>
                     <input
                         type="checkbox"
                         className="radioBTN"
-                        name="WeekItem"
+                        name="WeekState"
                         id="thursday"
-                        value={WeekItem}
+                        value={WeekState}
                         onChange={this.updateInputValue9}
                     />
                     <label htmlFor="thursday">Thursday</label>
                     <input
                         type="checkbox"
                         className="radioBTN"
-                        name="WeekItem"
+                        name="WeekState"
                         id="friday"
-                        value={WeekItem}
+                        value={WeekState}
                         onChange={this.updateInputValue9}
                     />
                     <label htmlFor="friday">Friday</label>
                     <input
                         type="checkbox"
                         className="radioBTN"
-                        name="WeekItem"
+                        name="WeekState"
                         id="saturday"
-                        value={WeekItem}
+                        value={WeekState}
                         onChange={this.updateInputValue9}
                     />
                     <label htmlFor="saturday">Saturday</label>
                     <input
                         type="checkbox"
                         className="radioBTN"
-                        name="WeekItem"
+                        name="WeekState"
                         id="sunday"
-                        value={WeekItem}
+                        value={WeekState}
                         onChange={this.updateInputValue9}
                     />
                     <label htmlFor="sunday">Sunday</label>
