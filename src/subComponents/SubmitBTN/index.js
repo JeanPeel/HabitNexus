@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../style.css";
 // import Moment from 'react-moment';
 // import 'moment-timezone';
-// const moment = require('moment');
+const moment = require('moment');
 
 var formData = require("../../data/formData");
 
@@ -16,7 +16,7 @@ var DurrationItem = "";
 var PriorityItem = "";
 var selectedTOD = "";
 var selectedHour = "";
-var WeekSchedule = ""
+var WeekSchedule = "";
 // var EmailItem = this.state.EmailItem;
 // var PasswordItem = this.state.PasswordItem;
 // var UserNameItem = this.state.UserNameItem;
@@ -24,51 +24,130 @@ var WeekSchedule = ""
 
 class SubmitBTN extends React.Component {
 
-    // LinkItem = this.state.LinkItem;
-    // DateItem = this.state.DateItem;
-    // updateDateItem = this.state.DateItem;
-    // NameItem = this.state.NameItem;
-    // CategoryItems = this.state.CategoryItems;
-    // DifficultyItem = this.state.DifficultyItem;
-    // DurrationItem = this.state.DurrationItem;
-    // PriorityItem = this.state.PriorityItem;
-    // selectedTOD = this.state.selectedTOD;
-    // selectedHour = this.state.selectedHour;
-    // WeekSchedule = this.state.WeekSchedule;
+    state = {
+        PriorityState: "",
+        LinkState: "",
+        DateState: "",
+        updateDateState: "",
+        NameState: "",
+        CategoryState: "",
+        DifficultyState: "",
+        DurrationState: "",
+        PriorityState: "",
+        TODState: "",
+        HourState: "",
+        WeekState: "",
+        FormState: "",
+        newHabit: {
+            PriorityItem: "",
+            LinkItem: "",
+            DateItem: "",
+            updateDateItem: "",
+            NameItem: "",
+            CategoryItems: "",
+            DifficultyItem: "",
+            DurrationItem: "",
+            PriorityItem: "",
+            selectedTOD: "",
+            selectedHour: "",
+            WeekSchedule: {
+                Monday: false,
+                Tuesday: false,
+                Wednesday: false,
+                Thursday: false,
+                Friday: false,
+                Saturday: false,
+                Sunday: false
+            }
 
-    // state = {
-    //     newHabit: {
-    //         LinkItem : this.state.LinkItem,
-    //         DateItem : this.state.DateItem,
-    //         updateDateItem : this.state.DateItem,
-    //         NameItem : this.state.NameItem,
-    //         CategoryItems : this.state.CategoryItems,
-    //         DifficultyItem : this.state.DifficultyItem,
-    //         DurrationItem : this.state.DurrationItem,
-    //         PriorityItem : this.state.PriorityItem,
-    //         selectedTOD : this.state.selectedTOD,
-    //         selectedHour : this.state.selectedHour,
-    //         WeekSchedule : this.state.WeekSchedule
+        }
+    };
 
-    //     }
-    // };
 
-    // updateInputValue0 = d => {
-    //     this.setState({ newHabit: d.target.value });
-    //     console.log("newHabit: ", d.target.value)
-    // };
+    updateInputValue0 = d => {
+
+        const value10 = {
+            PriorityState: "",
+        LinkState: "",
+        DateState: "",
+        updateDateState: "",
+        NameState: "",
+        CategoryState: "",
+        DifficultyState: "",
+        DurrationState: "",
+        PriorityState: "",
+        TODState: "",
+        HourState: "",
+        WeekState: "",
+        FormState: "",
+        newHabit: {
+            PriorityItem: "",
+            LinkItem: "",
+            DateItem: "",
+            updateDateItem: "",
+            NameItem: "",
+            CategoryItems: "",
+            DifficultyItem: "",
+            DurrationItem: "",
+            PriorityItem: "",
+            selectedTOD: "",
+            selectedHour: "",
+            WeekSchedule: {
+                Monday: false,
+                Tuesday: false,
+                Wednesday: false,
+                Thursday: false,
+                Friday: false,
+                Saturday: false,
+                Sunday: false
+            }
+
+        }
+        }
+
+        this.setState({ FormState: value10 });
+
+        this.setState({ newHabit: value10 });
+    };
 
     render() {
-        // const { newHabit } = this.state;
+        var AutoDate = moment().format("MM/DD/YYYY")
+    
+        const { FormState } = this.state.FormState;
+        const { LinkState } = this.state.LinkState;
+        const { CategoryState } = this.state.CategoryState;
+        const { DifficultyState } = this.state.DifficultyState;
+        const { DurrationState } = this.state.DurrationState;
+        const { HourState } = this.state.HourState;
+        const { DateState } = this.state.DateState;
+        const { NameState } = this.state.NameState;
+        const { PriorityState } = this.state.PriorityState;
+        const { TODState } = this.state.TODState;
+        const { WeekState } = this.state.WeekState;
+
+        const { newHabit } = this.state.newHabit;
+
+        // const { LinkItem } = this.state.newHabit.LinkItem;
+        // var { CategoryItems } = this.state.newHabit.CategoryItems;
+        // const { DifficultyItem } = this.state.newHabit.DifficultyItem;
+        // const { DurrationItem } = this.state.newHabit.DurrationItem;
+        // var { selectedHour } = this.state.newHabit.selectedHour;
+        // const { DateItem } = this.state.newHabit.DateItem;
+        // const { NameItem } = this.state.newHabit.NameItem;
+        // const { PriorityItem } = this.state.newHabit.PriorityItem;
+        // const { selectedTOD } = this.state.newHabit.selectedTOD;
+        // const { WeekSchedule } = this.state.newHabit.WeekSchedule;
+
+        console.log("newHabit: ", this.state.newHabit)
 
         return (
             <div>
                 <button
                     type="submit"
-                    // onClick={this.updateInputValue0}
+                    onClick={this.updateInputValue0}
                     className="submitBTN"
                     form="form"
-                    // value={newHabit}
+                    value={FormState}
                 >Submit</button>
             </div >
         );

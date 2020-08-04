@@ -74,7 +74,7 @@ class Hours extends React.Component {
 
     render() {
 
-        const { HourState } = this.state;
+        const { HourState } = this.state.HourState;
 
         const { newHabit } = this.state.newHabit;
 
