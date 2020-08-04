@@ -33,7 +33,15 @@ class Durration extends React.Component {
             PriorityItem: "",
             selectedTOD: "",
             selectedHour: "",
-            WeekSchedule: "",
+            WeekSchedule: {
+                Monday: false,
+                Tuesday: false,
+                Wednesday: false,
+                Thursday: false,
+                Friday: false,
+                Saturday: false,
+                Sunday: false
+            }
 
         }
     };
@@ -44,7 +52,7 @@ class Durration extends React.Component {
 
         this.setState({ PriorityState: value2 });
 
-        this.setState({ newHabit: {DurrationItem: value2 } });
+        this.setState({ newHabit: { DurrationItem: value2 } });
 
         // console.log("newHabit: ", this.state.newHabit)
     };
@@ -57,7 +65,7 @@ class Durration extends React.Component {
 
         const { newHabit } = this.state.newHabit;
 
-        const {DurrationItem} = this.state.newHabit.DurrationItem;
+        const { DurrationItem } = this.state.newHabit.DurrationItem;
 
         console.log("newHabit: ", this.state.newHabit)
 

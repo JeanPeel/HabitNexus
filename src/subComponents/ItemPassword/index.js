@@ -22,15 +22,15 @@ class ItemPassword extends React.Component {
 
         const value6 = h.target.value
 
-        this.setState({ PasswordState : value6});
+        this.setState({ PasswordState: value6 });
 
-        this.setState({ newUser: {  PasswordItem: value6  } });
+        this.setState({ newUser: { PasswordItem: value6 } });
     };
 
 
 
     render() {
-        const { PasswordState } = this.state.PasswordState ;
+        const { PasswordState } = this.state.PasswordState;
 
         const { newUser } = this.state.newUser;
 

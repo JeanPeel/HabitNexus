@@ -11,7 +11,6 @@ class ItemDate extends React.Component {
 
     // console.log("AutoDate: ", AutoDate);
 
-
     state = {
         PriorityState: "",
         LinkState: "",
@@ -37,7 +36,15 @@ class ItemDate extends React.Component {
             PriorityItem: "",
             selectedTOD: "",
             selectedHour: "",
-            WeekSchedule: "",
+            WeekSchedule: {
+                Monday: false,
+                Tuesday: false,
+                Wednesday: false,
+                Thursday: false,
+                Friday: false,
+                Saturday: false,
+                Sunday: false
+            }
 
         }
     };
@@ -46,8 +53,8 @@ class ItemDate extends React.Component {
 
         const value8 = k.target.value
 
-        this.setState({ DateState: value8  });
-       
+        this.setState({ DateState: value8 });
+
         this.setState({ newHabit: { DateItem: value8 || moment().format("MM/DD/YYYY") } });
     };
 
@@ -62,7 +69,7 @@ class ItemDate extends React.Component {
 
         const { newHabit } = this.state.newHabit;
 
-        const { DateItem } = this.state.newHabit.DateItem 
+        const { DateItem } = this.state.newHabit.DateItem
 
         console.log("newHabit: ", this.state.newHabit)
 

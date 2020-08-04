@@ -36,7 +36,16 @@ class TOD extends React.Component {
             PriorityItem: "",
             selectedTOD: "",
             selectedHour: "",
-            WeekSchedule: "",
+            WeekSchedule: {
+                Monday: false,
+                Tuesday: false,
+                Wednesday: false,
+                Thursday: false,
+                Friday: false,
+                Saturday: false,
+                Sunday: false
+            }
+
         }
     };
 
@@ -55,7 +64,7 @@ class TOD extends React.Component {
         var valueC = TODState.value
         console.log(`valueC: `, valueC);
 
-        this.setState({ newHabit: { selectedTOD: TODState.value} });
+        this.setState({ newHabit: { selectedTOD: TODState.value } });
 
         this.setState({ selectedTOD: TODState.value });
 

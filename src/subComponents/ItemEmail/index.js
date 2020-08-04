@@ -23,17 +23,17 @@ class ItemEmail extends React.Component {
 
         this.setState({ EmailState: value4 });
 
-        this.setState({ newUser: {  EmailItem: value4 } });
+        this.setState({ newUser: { EmailItem: value4 } });
     };
 
 
 
     render() {
-        const { EmailState } = this.state.EmailState ;
+        const { EmailState } = this.state.EmailState;
 
         const { newUser } = this.state.newUser;
 
-        const { EmailItem } = this.state.newUser.EmailItem ;
+        const { EmailItem } = this.state.newUser.EmailItem;
 
         console.log("newUser: ", this.state.newUser)
 

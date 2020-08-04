@@ -36,12 +36,21 @@ class Hours extends React.Component {
             PriorityItem: "",
             selectedTOD: "",
             selectedHour: "",
-            WeekSchedule: "",
+            WeekSchedule: {
+                Monday: false,
+                Tuesday: false,
+                Wednesday: false,
+                Thursday: false,
+                Friday: false,
+                Saturday: false,
+                Sunday: false
+            }
+
         }
     };
 
     newHabit = this.state.newHabit;
-   selectedHour = this.state.newHabit.selectedHour;
+    selectedHour = this.state.newHabit.selectedHour;
     valueB = "";
 
     handleChange2 = (HourState) => {
@@ -69,7 +78,7 @@ class Hours extends React.Component {
 
         const { newHabit } = this.state.newHabit;
 
-        var {selectedHour} = this.state.newHabit.selectedHour;
+        var { selectedHour } = this.state.newHabit.selectedHour;
 
         console.log("newHabit: ", this.state.newHabit)
 

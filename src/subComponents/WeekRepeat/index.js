@@ -63,7 +63,7 @@ class WeekRepeat extends React.Component {
 
         const value9 = n.target.value
 
-        this.setState({ WeekState: value9})
+        this.setState({ WeekState: value9 })
 
         if (n.target.id === 'monday') {
 
@@ -104,7 +104,7 @@ class WeekRepeat extends React.Component {
 
         this.setState({ newHabit: { WeekSchedule: WeekSchedule } });
 
-    
+
         console.log("WeekState: ", n.target.id)
         console.log("WeekSchedule: ", WeekSchedule)
     };

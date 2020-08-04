@@ -22,15 +22,15 @@ class UserName extends React.Component {
 
         const value5 = g.target.value
 
-        this.setState({ UserState: value5});
+        this.setState({ UserState: value5 });
 
-        this.setState({ newUser: {  UserNameItem: value5 } });
+        this.setState({ newUser: { UserNameItem: value5 } });
     };
 
 
 
     render() {
-        const { UserState } = this.state.UserState ;
+        const { UserState } = this.state.UserState;
 
         const { newUser } = this.state.newUser;
 
