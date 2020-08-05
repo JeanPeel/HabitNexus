@@ -12,7 +12,7 @@ class Hours extends React.Component {
     // selectedHour= ""
 
     state = {
-        PriorityState: "",
+        HabitItem: '',
         LinkState: "",
         DateState: "",
         updateDateState: "",
@@ -24,6 +24,8 @@ class Hours extends React.Component {
         TODState: "",
         HourState: "",
         WeekState: "",
+        FormState: "",
+        show: false,
         newHabit: {
             PriorityItem: "",
             LinkItem: "",
@@ -33,7 +35,6 @@ class Hours extends React.Component {
             CategoryItems: "",
             DifficultyItem: "",
             DurrationItem: "",
-            PriorityItem: "",
             selectedTOD: "",
             selectedHour: "",
             WeekSchedule: {
@@ -47,7 +48,7 @@ class Hours extends React.Component {
             }
 
         }
-    };
+    }
 
     newHabit = this.state.newHabit;
     selectedHour = this.state.newHabit.selectedHour;

@@ -7,7 +7,7 @@ import "../style.css";
 class ItemName extends React.Component {
 
     state = {
-        PriorityState: "",
+        HabitItem: '',
         LinkState: "",
         DateState: "",
         updateDateState: "",
@@ -19,6 +19,8 @@ class ItemName extends React.Component {
         TODState: "",
         HourState: "",
         WeekState: "",
+        FormState: "",
+        show: false,
         newHabit: {
             PriorityItem: "",
             LinkItem: "",
@@ -28,7 +30,6 @@ class ItemName extends React.Component {
             CategoryItems: "",
             DifficultyItem: "",
             DurrationItem: "",
-            PriorityItem: "",
             selectedTOD: "",
             selectedHour: "",
             WeekSchedule: {
@@ -42,7 +43,7 @@ class ItemName extends React.Component {
             }
 
         }
-    };
+    }
 
     updateInputValue2 = f => {
 

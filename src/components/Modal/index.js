@@ -5,7 +5,6 @@ class Modal extends React.Component {
 
     state = {
         HabitItem: '',
-        PriorityState: "",
         LinkState: "",
         DateState: "",
         updateDateState: "",
@@ -28,7 +27,6 @@ class Modal extends React.Component {
             CategoryItems: "",
             DifficultyItem: "",
             DurrationItem: "",
-            PriorityItem: "",
             selectedTOD: "",
             selectedHour: "",
             WeekSchedule: {

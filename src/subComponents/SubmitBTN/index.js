@@ -62,71 +62,75 @@ class SubmitBTN extends React.Component {
             }
 
         }
+
     };
 
 
-    updateInputValue0 = d => {
 
-        const value10 = {
-            PriorityState: "",
-        LinkState: "",
-        DateState: "",
-        updateDateState: "",
-        NameState: "",
-        CategoryState: "",
-        DifficultyState: "",
-        DurrationState: "",
-        PriorityState: "",
-        TODState: "",
-        HourState: "",
-        WeekState: "",
-        FormState: "",
-        show: false,
-        newHabit: {
-            PriorityItem: "",
-            LinkItem: "",
-            DateItem: "",
-            updateDateItem: "",
-            NameItem: "",
-            CategoryItems: "",
-            DifficultyItem: "",
-            DurrationItem: "",
-            PriorityItem: "",
-            selectedTOD: "",
-            selectedHour: "",
-            WeekSchedule: {
-                Monday: false,
-                Tuesday: false,
-                Wednesday: false,
-                Thursday: false,
-                Friday: false,
-                Saturday: false,
-                Sunday: false
-            }
 
-        }
-        }
+    // updateInputValue0 = d => {
 
-        this.setState({ FormState: value10 });
-
-        this.setState({ newHabit: value10 });
-    };
-
-    showModal = y => {
+    //     state = {
+    //         HabitItem: '',
+    //         LinkState: "",
+    //         DateState: "",
+    //         updateDateState: "",
+    //         NameState: "",
+    //         CategoryState: "",
+    //         DifficultyState: "",
+    //         DurrationState: "",
+    //         PriorityState: "",
+    //         TODState: "",
+    //         HourState: "",
+    //         WeekState: "",
+    //         FormState: "",
+    //         show: false,
+    //         newHabit: {
+    //             PriorityItem: "",
+    //             LinkItem: "",
+    //             DateItem: "",
+    //             updateDateItem: "",
+    //             NameItem: "",
+    //             CategoryItems: "",
+    //             DifficultyItem: "",
+    //             DurrationItem: "",
+    //             selectedTOD: "",
+    //             selectedHour: "",
+    //             WeekSchedule: {
+    //                 Monday: false,
+    //                 Tuesday: false,
+    //                 Wednesday: false,
+    //                 Thursday: false,
+    //                 Friday: false,
+    //                 Saturday: false,
+    //                 Sunday: false
+    //             }
     
-        this.setState({
-            show: !this.state.show
-        });
+    //         }
+    //     }
+
+    //     this.setState({ FormState: value10 });
+
+    //     this.setState({ newHabit: value10 });
+    // };
+
+    // showModal = y => {
+    
+    //     this.setState({
+    //         show: !this.state.show
+    //     });
 
 
-    }
+    // }
 
-    onClose = x => {
-        this.props.show = false;
-      };
+    // onClose = x => {
+    //     this.props.show = false;
+    //   };
+    
 
 
-    render() {
+    render() { 
+
         var AutoDate = moment().format("MM/DD/YYYY")
     
         const { FormState } = this.state.FormState;
@@ -144,7 +148,7 @@ class SubmitBTN extends React.Component {
         const { newHabit } = this.state.newHabit;
 
 
-    
+ 
 
         // const { LinkItem } = this.state.newHabit.LinkItem;
         // var { CategoryItems } = this.state.newHabit.CategoryItems;

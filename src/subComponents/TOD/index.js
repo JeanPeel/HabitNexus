@@ -12,7 +12,7 @@ class TOD extends React.Component {
     // selectedTOD= ""
 
     state = {
-        PriorityState: "",
+        HabitItem: '',
         LinkState: "",
         DateState: "",
         updateDateState: "",
@@ -24,6 +24,8 @@ class TOD extends React.Component {
         TODState: "",
         HourState: "",
         WeekState: "",
+        FormState: "",
+        show: false,
         newHabit: {
             PriorityItem: "",
             LinkItem: "",
@@ -33,7 +35,6 @@ class TOD extends React.Component {
             CategoryItems: "",
             DifficultyItem: "",
             DurrationItem: "",
-            PriorityItem: "",
             selectedTOD: "",
             selectedHour: "",
             WeekSchedule: {
@@ -47,7 +48,7 @@ class TOD extends React.Component {
             }
 
         }
-    };
+    }
 
     newHabit = this.state.newHabit
     CategoryItems = this.state.newHabit.selectedTOD;

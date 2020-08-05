@@ -9,7 +9,7 @@ import "../style.css";
 class Durration extends React.Component {
 
     state = {
-        PriorityState: "",
+        HabitItem: '',
         LinkState: "",
         DateState: "",
         updateDateState: "",
@@ -21,6 +21,8 @@ class Durration extends React.Component {
         TODState: "",
         HourState: "",
         WeekState: "",
+        FormState: "",
+        show: false,
         newHabit: {
             PriorityItem: "",
             LinkItem: "",
@@ -30,7 +32,6 @@ class Durration extends React.Component {
             CategoryItems: "",
             DifficultyItem: "",
             DurrationItem: "",
-            PriorityItem: "",
             selectedTOD: "",
             selectedHour: "",
             WeekSchedule: {
@@ -44,7 +45,7 @@ class Durration extends React.Component {
             }
 
         }
-    };
+    }
 
     updateInputValue8 = n => {
 

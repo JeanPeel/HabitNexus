@@ -21,7 +21,7 @@ var WeekState = ""
 class WeekRepeat extends React.Component {
 
     state = {
-        PriorityState: "",
+        HabitItem: '',
         LinkState: "",
         DateState: "",
         updateDateState: "",
@@ -33,6 +33,8 @@ class WeekRepeat extends React.Component {
         TODState: "",
         HourState: "",
         WeekState: "",
+        FormState: "",
+        show: false,
         newHabit: {
             PriorityItem: "",
             LinkItem: "",
@@ -42,7 +44,6 @@ class WeekRepeat extends React.Component {
             CategoryItems: "",
             DifficultyItem: "",
             DurrationItem: "",
-            PriorityItem: "",
             selectedTOD: "",
             selectedHour: "",
             WeekSchedule: {
@@ -56,7 +57,7 @@ class WeekRepeat extends React.Component {
             }
 
         }
-    };
+    }
 
 
     updateInputValue9 = n => {

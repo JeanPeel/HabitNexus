@@ -13,7 +13,7 @@ var categories = require("../../data/categories");
 class Category extends React.Component {
 
     state = {
-        PriorityState: "",
+        HabitItem: '',
         LinkState: "",
         DateState: "",
         updateDateState: "",
@@ -25,6 +25,8 @@ class Category extends React.Component {
         TODState: "",
         HourState: "",
         WeekState: "",
+        FormState: "",
+        show: false,
         newHabit: {
             PriorityItem: "",
             LinkItem: "",
@@ -34,7 +36,6 @@ class Category extends React.Component {
             CategoryItems: "",
             DifficultyItem: "",
             DurrationItem: "",
-            PriorityItem: "",
             selectedTOD: "",
             selectedHour: "",
             WeekSchedule: {
@@ -48,7 +49,7 @@ class Category extends React.Component {
             }
 
         }
-    };
+    }
 
     newHabit = this.state.newHabit;
     CategoryItems = this.state.newHabit.CategoryItems;

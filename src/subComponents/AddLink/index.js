@@ -11,7 +11,7 @@ import "../style.css";
 class AddLink extends React.Component {
 
     state = {
-        PriorityState: "",
+        HabitItem: '',
         LinkState: "",
         DateState: "",
         updateDateState: "",
@@ -23,6 +23,8 @@ class AddLink extends React.Component {
         TODState: "",
         HourState: "",
         WeekState: "",
+        FormState: "",
+        show: false,
         newHabit: {
             PriorityItem: "",
             LinkItem: "",
@@ -32,7 +34,6 @@ class AddLink extends React.Component {
             CategoryItems: "",
             DifficultyItem: "",
             DurrationItem: "",
-            PriorityItem: "",
             selectedTOD: "",
             selectedHour: "",
             WeekSchedule: {
@@ -46,7 +47,7 @@ class AddLink extends React.Component {
             }
 
         }
-    };
+    }
 
     updateInputValue = e => {
 
