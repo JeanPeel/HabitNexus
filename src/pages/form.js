@@ -4,18 +4,18 @@ import axios from 'axios';
 // import Moment from 'react-moment';
 // import 'moment-timezone';
 
-import AddLink from "../subComponents/AddLink";
-import Category from "../subComponents/Category";
-import Durration from "../subComponents/Durration";
-import ItemName from "../subComponents/ItemName";
-import Priority from "../subComponents/Priority";
-import SubmitBTN from "../subComponents/SubmitBTN";
-import TOD from "../subComponents/TOD";
-import Hours from "../subComponents/Hours";
-import WeekRepeat from "../subComponents/WeekRepeat";
-import ItemDate from "../subComponents/ItemDate";
-import Difficulty from "../subComponents/Difficulty";
-import Modal from "../components/Modal";
+import AddLink from "../formElements/AddLink";
+import Category from "../formElements/Category";
+import Durration from "../formElements/Durration";
+import ItemName from "../formElements/ItemName";
+import Priority from "../formElements/Priority";
+import SubmitBTN from "../formElements/SubmitBTN";
+import TOD from "../formElements/TOD";
+import Hours from "../formElements/Hours";
+import WeekRepeat from "../formElements/WeekRepeat";
+import ItemDate from "../formElements/ItemDate";
+import Difficulty from "../formElements/Difficulty";
+// import Modal from "../components/Modal";
 
 // var formData = require("../../data/formData");
 
@@ -127,18 +127,18 @@ class Form extends Component {
 
 
 
-    showModal = y => {
+    // showModal = y => {
 
-        this.setState({
-            show: !this.state.show
-        });
+    //     this.setState({
+    //         show: !this.state.show
+    //     });
 
 
-    }
+    // }
 
-    onClose = x => {
-        this.props.show = false;
-      };
+    // onClose = x => {
+    //     this.props.show = false;
+    //   };
 
     habitData = (newHabit) => {
 
@@ -241,7 +241,7 @@ class Form extends Component {
                         HabitData={this.habitData}
                         FormState={this.state.FormState}
                     />
-                    <Modal
+                    {/* <Modal
                         LinkState={this.state.LinkState}
                         LinkItem={this.state.newHabit.LinkItem}
 
@@ -276,7 +276,7 @@ class Form extends Component {
 
                         show={this.state.show}
                         onClose={this.showModal}
-                    />
+                    /> */}
                 </form>
             </div>
         );

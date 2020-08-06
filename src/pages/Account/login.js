@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import "./style.css";
 // import axios from 'axios';
 
-import UserName from "../../subComponents/UserName";
-// import ItemEmail from "../../subComponents/ItemEmail";
-import ItemPassword from "../../subComponents/ItemPassword";
-import SubmitBTN from "../../subComponents/SubmitBTN";
+import UserName from "../../formElements/UserName";
+// import ItemEmail from "../../formElements/ItemEmail";
+import ItemPassword from "../../formElements/ItemPassword";
+import SubmitBTN from "../../formElements/SubmitBTN";
 
 class Login extends Component {
 

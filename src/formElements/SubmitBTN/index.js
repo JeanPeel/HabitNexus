@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Alert} from "react";
 import "../style.css";
 // import Moment from 'react-moment';
 // import 'moment-timezone';
@@ -67,52 +68,59 @@ class SubmitBTN extends React.Component {
 
 
 
+    updateInputValue0 = d => {
 
-    // updateInputValue0 = d => {
+        // event.preventDefault();
 
-    //     state = {
-    //         HabitItem: '',
-    //         LinkState: "",
-    //         DateState: "",
-    //         updateDateState: "",
-    //         NameState: "",
-    //         CategoryState: "",
-    //         DifficultyState: "",
-    //         DurrationState: "",
-    //         PriorityState: "",
-    //         TODState: "",
-    //         HourState: "",
-    //         WeekState: "",
-    //         FormState: "",
-    //         show: false,
-    //         newHabit: {
-    //             PriorityItem: "",
-    //             LinkItem: "",
-    //             DateItem: "",
-    //             updateDateItem: "",
-    //             NameItem: "",
-    //             CategoryItems: "",
-    //             DifficultyItem: "",
-    //             DurrationItem: "",
-    //             selectedTOD: "",
-    //             selectedHour: "",
-    //             WeekSchedule: {
-    //                 Monday: false,
-    //                 Tuesday: false,
-    //                 Wednesday: false,
-    //                 Thursday: false,
-    //                 Friday: false,
-    //                 Saturday: false,
-    //                 Sunday: false
-    //             }
+        this.setState({
+            HabitItem: this.state.HabitItem,
+            LinkState: this.state.LinkState,
+            DateState: this.state.DateState,
+            NameState: this.state.NameState,
+            CategoryState: this.state.CategoryState,
+            DifficultyState: this.state.DifficultyState,
+            DurrationState: this.state.DurrationState,
+            PriorityState: this.state.PriorityState,
+            TODState: this.state.TODState,
+            HourState: this.state.HourState,
+            WeekState: this.state.WeekState,
+            FormState: this.state.FormState,
+            // show: false,
+            newHabit: {
+                PriorityItem: this.state.newHabit.PriorityItem,
+                LinkItem: this.state.newHabit.LinkItem,
+                DateItem: this.state.newHabit.DateItem,
+                NameItem: this.state.newHabit.NameItem,
+                CategoryItems: this.state.newHabit.CategoryItems,
+                DifficultyItem: this.state.newHabit.DifficultyItem,
+                DurrationItem: this.state.newHabit.DurrationItem,
+                PriorityItem: this.state.newHabit.PriorityItem,
+                selectedTOD: this.state.newHabit.selectedTOD,
+                selectedHour: this.state.newHabit.selectedHour,
+                WeekSchedule: this.state.newHabit.WeekSchedule
     
-    //         }
-    //     }
+            }
+        });
 
-    //     this.setState({ FormState: value10 });
+        // this.setState({ FormState: d });
 
-    //     this.setState({ newHabit: value10 });
-    // };
+        // this.setState({ newHabit: d });
+
+        Alert.alert(
+            "newHabit" + this.state.newHabit,
+            "PriorityItem" + this.state.newHabit.PriorityItem,
+            "LinkItem" + this.state.newHabit.LinkItem,
+            "DateItem" + this.state.newHabit.DateItem,
+            "NameItem" + this.state.newHabit.NameItem,
+            "CategoryItems" + this.state.newHabit.CategoryItems,
+            "DifficultyItem" + this.state.newHabit.DifficultyItem,
+            "DurrationItem" + this.state.newHabit.DurrationItem,
+            "PriorityItem" + this.state.newHabit.PriorityItem,
+            "selectedTOD" + this.state.newHabit.selectedTOD,
+            "selectedHour" + this.state.newHabit.selectedHour,
+            "WeekSchedule" + this.state.newHabit.WeekSchedule
+        )
+    };
 
     // showModal = y => {
     
@@ -122,6 +130,17 @@ class SubmitBTN extends React.Component {
 
 
     // }
+
+
+    // Alert () {
+    //     alert (
+    //         'New Habit: '  newHabit 
+    //     );
+    //     document.write (
+            
+    //     );
+    // }
+
 
     // onClose = x => {
     //     this.props.show = false;
@@ -147,9 +166,6 @@ class SubmitBTN extends React.Component {
 
         const { newHabit } = this.state.newHabit;
 
-
- 
-
         // const { LinkItem } = this.state.newHabit.LinkItem;
         // var { CategoryItems } = this.state.newHabit.CategoryItems;
         // const { DifficultyItem } = this.state.newHabit.DifficultyItem;
@@ -167,7 +183,12 @@ class SubmitBTN extends React.Component {
             <div>
                 <button
                     type="submit"
-                    onClick={this.updateInputValue0, this.showModal, this.onClose}
+                    onClick={
+                        this.updateInputValue0
+
+                        // this.showModal, 
+                        // this.onClose
+                    }
                     className="submitBTN"
                     form="form"
                     value={FormState}
