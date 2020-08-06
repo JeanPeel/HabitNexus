@@ -9,7 +9,7 @@ var axios = require("axios");
 var categories = require("../../data/categories");
 // var formData = require("../../data/formData");
 
-var formData = require("../../data/category");
+var categoryData = require("../../data/category");
 
 class Category extends React.Component {
 
@@ -86,8 +86,8 @@ class Category extends React.Component {
 
         // formData.push("CategoryState: " + this.state.CategoryState)
         // formData.unshift("CategoryState: " + this.state.CategoryState)
-        formData.unshift(this.state.CategoryState)
-        formData.pop()
+        categoryData.unshift(this.state.CategoryState)
+        // formData.pop()
 
         // console.log("newHabit on Category: ", this.state.newHabit)
 

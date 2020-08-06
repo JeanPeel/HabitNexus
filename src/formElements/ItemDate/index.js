@@ -4,7 +4,7 @@ import "../style.css";
 // import 'moment-timezone';
 const moment = require('moment');
 
-var formData = require("../../data/date");
+var dateData = require("../../data/date");
 
 class ItemDate extends React.Component {
 
@@ -54,7 +54,8 @@ class ItemDate extends React.Component {
 
     componentDidMount() {
         // formData.push("DateState: " + AutoDate)
-        formData.push(AutoDate)
+        var AutoDate = moment().format("MM/DD/YYYY")
+        dateData.push(AutoDate)
     }
 
     updateInputValue6 = k => {
@@ -81,9 +82,9 @@ class ItemDate extends React.Component {
 
         // formData.push("DateState: " + AutoDate || "DateState: " + this.state.DateState)
         // formData.unshift("WeekSchedule: " + this.state.newHabit)
-        formData.unshift(this.state.newHabit)
-        formData.pop()
-        formData.pop()
+        dateData.unshift(this.state.DateState)
+        // formData.pop()
+        // formData.pop()
 
         // console.log("newHabit on Date: ", this.state.newHabit)
 

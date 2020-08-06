@@ -7,7 +7,7 @@ import Select from 'react-select';
 
 var timeOfDay = require("../../data/timeOfDay");
 
-var formData = require("../../data/tod");
+var todData = require("../../data/tod");
 
 class TOD extends React.Component {
 
@@ -15,7 +15,7 @@ class TOD extends React.Component {
 
     state = {
         HabitItem: '',
-        linkstate : "",
+        linkstate: "",
         DateState: "",
         updateDateState: "",
         ItemState: "",
@@ -82,8 +82,8 @@ class TOD extends React.Component {
         const { selectedTOD } = this.state.newHabit.selectedTOD
 
         // formData.unshift("TODState: " + this.state.TODState)
-        formData.unshift( this.state.TODState)
-        formData.pop()
+        todData.unshift(this.state.TODState)
+        // formData.pop()
 
         // console.log("newHabit on TOD: ", this.state.newHabit)
 

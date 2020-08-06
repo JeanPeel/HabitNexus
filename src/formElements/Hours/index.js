@@ -7,7 +7,7 @@ import Select from 'react-select';
 
 var hours = require("../../data/hours");
 
-var formData = require("../../data/hours");
+var hourData = require("../../data/hour");
 
 class Hours extends React.Component {
 
@@ -15,7 +15,7 @@ class Hours extends React.Component {
 
     state = {
         HabitItem: '',
-        linkstate : "",
+        linkstate: "",
         DateState: "",
         updateDateState: "",
         ItemState: "",
@@ -85,8 +85,8 @@ class Hours extends React.Component {
 
         // formData.push("HourState: " + this.state.HourState)
         // formData.unshift("HourState: " + this.state.HourState)
-        formData.unshift(this.state.HourState)
-        formData.pop()
+        hourData.unshift(this.state.HourState)
+        // formData.pop()
 
         // console.log("newHabit on Hours: ", this.state.newHabit)
 

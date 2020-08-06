@@ -8,7 +8,7 @@ import "../style.css";
 
 // import Select from 'react-select';
 
-var formData = require("../../data/linkinfo");
+var linkInfo = require("../../data/linkinfo");
 
 class AddLink extends React.Component {
 
@@ -17,7 +17,7 @@ class AddLink extends React.Component {
 
     state = {
         HabitItem: '',
-        linkstate : "",
+        linkstate: "",
         DateState: "",
         updateDateState: "",
         ItemState: "",
@@ -58,7 +58,7 @@ class AddLink extends React.Component {
 
         const value2 = e.target.value
 
-        this.setState({ linkstate : value2 });
+        this.setState({ linkstate: value2 });
 
         this.setState({ newHabit: { linkitem: value2 } });
     };
@@ -70,8 +70,8 @@ class AddLink extends React.Component {
         // var formDataArray=  [formdata]
 
         // console.log("form data array: ", formDataArray)
-        
-        var { linkstate  } = this.state.linkstate ;
+
+        var { linkstate } = this.state.linkstate;
 
         var { newHabit } = this.state.newHabit;
 
@@ -79,8 +79,9 @@ class AddLink extends React.Component {
 
         // var formlinkstate = formData.linkstate
 
-        formData.push("LinkState: " + this.state.linkstate)
-
+        // linkinfo.push("LinkState: " + this.state.linkstate)
+        linkInfo.unshift(this.state.linkstate)
+        //  linkinfo.pop()
         // console.log("form data: ", formData)
 
         // console.log('linkitem z on add link: ', this.state.newHabit.linkitem)
@@ -99,7 +100,7 @@ class AddLink extends React.Component {
                     placeholder="Add a Link Here"
                     className="linkitem"
                     onChange={this.updateInputValue}
-                    linkstate ={this.state.linkstate }
+                    linkstate={this.state.linkstate}
                     linkitem={this.state.newHabit.linkitem}
                 />
             </div>

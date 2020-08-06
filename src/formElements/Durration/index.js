@@ -6,7 +6,7 @@ import "../style.css";
 
 
 
-var formData = require("../../data/durration");
+var durrationData = require("../../data/durration");
 
 
 
@@ -14,7 +14,7 @@ class Durration extends React.Component {
 
     state = {
         HabitItem: '',
-        linkstate : "",
+        linkstate: "",
         DateState: "",
         updateDateState: "",
         ItemState: "",
@@ -74,8 +74,8 @@ class Durration extends React.Component {
 
         // formData.push("DurrationState: " + this.state.DurrationState)
         // formData.unshift("DurrationState: " + this.state.DurrationState)
-        formData.unshift(this.state.DurrationState)
-        formData.pop()
+        durrationData.unshift(this.state.DurrationState)
+        // formData.pop()
 
         // console.log("newHabit on Durration: ", this.state.newHabit)
 
