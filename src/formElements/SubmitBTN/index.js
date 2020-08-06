@@ -68,9 +68,20 @@ class SubmitBTN extends React.Component {
 
 
 
-    updateInputValue0 = d => {
+    updateInputValue0 = (event) => {
 
-        // event.preventDefault();
+
+        event.preventDefault();
+
+        console.log("newHabit1: ", this.state.newHabit)
+
+
+    //  alert(
+    //         "Submit BTN pushed!"
+    //     )
+
+    //     console.log("newHabit2: ", this.state.newHabit)
+
 
         this.setState({
             HabitItem: this.state.HabitItem,
@@ -102,11 +113,20 @@ class SubmitBTN extends React.Component {
             }
         });
 
-        // this.setState({ FormState: d });
+        console.log("newHabit2: ", this.state.newHabit)
 
-        // this.setState({ newHabit: d });
+        this.setState({ FormState: event.target.value });
 
-        Alert.alert(
+        this.setState({ newHabit: event.target.value });
+
+        // console.log("FormState3: ", FormState)
+        console.log("FormState3b: ", event.target.value)
+        // console.log("newHabit3: ", newHabit)
+        console.log("newHabit3b: ", event.target.value)
+
+        // console.log("newHabit3: ", this.state.newHabit)
+
+        alert(
             "newHabit" + this.state.newHabit,
             "PriorityItem" + this.state.newHabit.PriorityItem,
             "LinkItem" + this.state.newHabit.LinkItem,
@@ -120,6 +140,9 @@ class SubmitBTN extends React.Component {
             "selectedHour" + this.state.newHabit.selectedHour,
             "WeekSchedule" + this.state.newHabit.WeekSchedule
         )
+
+        console.log("newHabit4: ", this.state.newHabit)
+
     };
 
     // showModal = y => {

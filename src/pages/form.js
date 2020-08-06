@@ -190,7 +190,12 @@ class Form extends Component {
             <div>
                 <h1>New Habit Form</h1>
                 {/* <form action="/habits" method="POST" id="form"> */}
-                <form id="form">
+                <form 
+                id="form" 
+                // action="" 
+                // onsubmit="alert('submit!');return false"
+                // method="POST"
+                >
                     <ItemDate
                         DateState={this.state.DateState}
                         DateItem={this.state.newHabit.DateItem}
