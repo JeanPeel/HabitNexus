@@ -8,7 +8,7 @@ class Modal extends React.Component {
         linkstate: "",
         DateState: "",
         updateDateState: "",
-        NameState: "",
+        ItemState: "",
         CategoryState: "",
         DifficultyState: "",
         DurrationState: "",
@@ -69,7 +69,7 @@ class Modal extends React.Component {
         const { DurrationState } = this.state.DurrationState;
         const { HourState } = this.state.HourState;
         const { DateState } = this.state.DateState;
-        const { NameState } = this.state.NameState;
+        const { ItemState } = this.state.ItemState;
         const { PriorityState } = this.state.PriorityState;
         const { TODState } = this.state.TODState;
         const { WeekState } = this.state.WeekState;

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "../style.css";
 
+var formData = require("../../data/formData");
+
 class Priority extends React.Component {
 
     state = {
@@ -8,7 +10,7 @@ class Priority extends React.Component {
         linkstate : "",
         DateState: "",
         updateDateState: "",
-        NameState: "",
+        ItemState: "",
         CategoryState: "",
         DifficultyState: "",
         DurrationState: "",
@@ -64,7 +66,9 @@ class Priority extends React.Component {
 
         const { PriorityItem } = this.state.newHabit.PriorityItem;
 
-        console.log("newHabit on priority: ", this.state.newHabit)
+        formData.push("PriorityState: " + this.state.PriorityState)
+
+        // console.log("newHabit on priority: ", this.state.newHabit)
 
         return (
             <div>

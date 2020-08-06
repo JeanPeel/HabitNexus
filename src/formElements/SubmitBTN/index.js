@@ -30,7 +30,7 @@ class SubmitBTN extends React.Component {
         linkstate : "",
         DateState: "",
         updateDateState: "",
-        NameState: "",
+        ItemState: "",
         CategoryState: "",
         DifficultyState: "",
         DurrationState: "",
@@ -83,9 +83,9 @@ class SubmitBTN extends React.Component {
 
 
         // these are logging but the state information is blank
-        console.log("newHabit1 on Submit BTN: ", this.state.newHabit)
+        // console.log("newHabit1 on Submit BTN: ", this.state.newHabit)
 
-        console.log("newUser1 on Submit BTN: ", this.state.newUser)
+        // console.log("newUser1 on Submit BTN: ", this.state.newUser)
 
 
         //  alert(
@@ -99,7 +99,7 @@ class SubmitBTN extends React.Component {
             HabitItem: this.state.HabitItem,
             linkstate : this.state.linkstate ,
             DateState: this.state.DateState,
-            NameState: this.state.NameState,
+            ItemState: this.state.ItemState,
             CategoryState: this.state.CategoryState,
             DifficultyState: this.state.DifficultyState,
             DurrationState: this.state.DurrationState,
@@ -127,7 +127,7 @@ class SubmitBTN extends React.Component {
 
         // these are logging but the state information is blank
 
-        console.log("newHabit2 on Submit BTN: ", this.state.newHabit)
+        // console.log("newHabit2 on Submit BTN: ", this.state.newHabit)
 
         this.setState({ FormState: e.target.value });
 
@@ -137,7 +137,7 @@ class SubmitBTN extends React.Component {
         //     HabitItem: event.target.value.HabitItem,
         //     linkstate: event.target.value.linkstate,
         //     DateState: event.target.value.DateState,
-        //     NameState: event.target.value.NameState,
+        //     ItemState: event.target.value.ItemState,
         //     CategoryState: event.target.value.CategoryState,
         //     DifficultyState: event.target.value.DifficultyState,
         //     DurrationState: event.target.value.DurrationState,
@@ -166,14 +166,14 @@ class SubmitBTN extends React.Component {
 
         // these are logging but the state information is blank
         // console.log("FormState3: ", FormState)
-        console.log("FormState3b on Submit BTN: ", e.target.value)
+        // console.log("FormState3b on Submit BTN: ", e.target.value)
         // console.log("newHabit3: ", newHabit)
-        console.log("newHabit3b on Submit BTN: ", e.target.value)
+        // console.log("newHabit3b on Submit BTN: ", e.target.value)
 
         // These are all comming out undefined
-        console.log(" linkstate on Submit BTN1: ", e.target.value.linkstate )
-        console.log(" linkstate on Submit BTN2: ", e.target.linkstate )
-        console.log(" linkstate on Submit BTN3: ", e.linkstate )
+        // console.log(" linkstate on Submit BTN1: ", e.target.value.linkstate )
+        // console.log(" linkstate on Submit BTN2: ", e.target.linkstate )
+        // console.log(" linkstate on Submit BTN3: ", e.linkstate )
         // console.log(" linkstate on Submit BTN: ", linkstate)
         // console.log("newHabit3: ", newHabit)
         // console.log("PriorityItem on Submit BTN: ", event.target.value.newHabit.PriorityItem)
@@ -202,7 +202,9 @@ class SubmitBTN extends React.Component {
         )
 
         // this is showing up after the alert is closed
-        console.log("newHabit4 on Submit BTN: ", this.state.newHabit)
+        // console.log("newHabit4 on Submit BTN: ", this.state.newHabit)
+
+        // console.log('formdata on submitbtn: ', formData )
 
     };
 
@@ -243,7 +245,7 @@ class SubmitBTN extends React.Component {
         const { DurrationState } = this.state.DurrationState;
         const { HourState } = this.state.HourState;
         const { DateState } = this.state.DateState;
-        const { NameState } = this.state.NameState;
+        const { ItemState } = this.state.ItemState;
         const { PriorityState } = this.state.PriorityState;
         const { TODState } = this.state.TODState;
         const { WeekState } = this.state.WeekState;
@@ -252,12 +254,14 @@ class SubmitBTN extends React.Component {
 
         var { linkstate  } = this.state.linkstate ;
 
+        console.log("form data: ", formData)
+
         // console.log(" linkstate on Submit BTN1: ", event.target.value.linkstate)
         // console.log(" linkstate on Submit BTN2: ", event.target.linkstate)
         // console.log(" linkstate on Submit BTN3: ", event.linkstate)
 
         // returning no info, blank. after alert is closed
-        console.log(" linkstate on Submit BTN Z: ", this.state.linkstate )
+        // console.log(" linkstate on Submit BTN Z: ", this.state.linkstate )
 
         // const { linkitem } = this.state.newHabit.linkitem;
         // var { CategoryItems } = this.state.newHabit.CategoryItems;
@@ -271,17 +275,18 @@ class SubmitBTN extends React.Component {
         // const { WeekSchedule } = this.state.newHabit.WeekSchedule;
 
         // this is showing up after the alert is closed
-        console.log("newHabitZ on Submit BTN: ", this.state.newHabit)
+        // console.log("newHabitZ on Submit BTN: ", this.state.newHabit)
 
         return (
             <div>
                 <button
                     type="submit"
                     onClick={
-                        linkstate  = this.state.linkstate ,
-                        linkitem = this.state.newHabit.linkitem,
+                        linkstate,
+                        linkitem,
 
                         this.updateInputValue
+
 
 
                         // this.showModal, 

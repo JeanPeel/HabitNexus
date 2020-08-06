@@ -8,14 +8,19 @@ import "../style.css";
 
 // import Select from 'react-select';
 
+var formData = require("../../data/formData");
+
 class AddLink extends React.Component {
+
+
+    // formDataArray =  formdata
 
     state = {
         HabitItem: '',
         linkstate : "",
         DateState: "",
         updateDateState: "",
-        NameState: "",
+        ItemState: "",
         CategoryState: "",
         DifficultyState: "",
         DurrationState: "",
@@ -61,6 +66,10 @@ class AddLink extends React.Component {
 
 
     render() {
+
+        // var formDataArray=  [formdata]
+
+        // console.log("form data array: ", formDataArray)
         
         var { linkstate  } = this.state.linkstate ;
 
@@ -68,7 +77,17 @@ class AddLink extends React.Component {
 
         var { linkitem } = this.state.newHabit.linkitem;
 
-        console.log("newHabit on Add Link: ", this.state.newHabit)
+        // var formlinkstate = formData.linkstate
+
+        formData.push("LinkState: " + this.state.linkstate)
+
+        // console.log("form data: ", formData)
+
+        // console.log('linkitem z on add link: ', this.state.newHabit.linkitem)
+
+        // console.log("formlinkstate: ", formlinkstate)
+
+        // console.log("newHabit on Add Link: ", this.state.newHabit)
 
         return (
             <div>

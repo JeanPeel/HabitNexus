@@ -9,6 +9,7 @@ var axios = require("axios");
 var categories = require("../../data/categories");
 // var formData = require("../../data/formData");
 
+var formData = require("../../data/formData");
 
 class Category extends React.Component {
 
@@ -17,7 +18,7 @@ class Category extends React.Component {
         linkstate : "",
         DateState: "",
         updateDateState: "",
-        NameState: "",
+        ItemState: "",
         CategoryState: "",
         DifficultyState: "",
         DurrationState: "",
@@ -62,15 +63,15 @@ class Category extends React.Component {
         const { CategoryItems } = this.newHabit.CategoryItems;
 
         this.setState({ CategoryState: CategoryState });
-        console.log(`CategoryState on Category: `, CategoryState);
+        // console.log(`CategoryState on Category: `, CategoryState);
         var valueA = CategoryState.value
-        console.log(`valueA on Category: `, valueA);
+        // console.log(`valueA on Category: `, valueA);
 
         this.setState({ newHabit: { CategoryItems: CategoryState.value } });
 
         this.setState({ CategoryItems: CategoryState.value });
 
-        console.log(`CategoryItems on Category: `, CategoryItems);
+        // console.log(`CategoryItems on Category: `, CategoryItems);
 
     }
 
@@ -83,7 +84,9 @@ class Category extends React.Component {
 
         var { CategoryItems } = this.state.newHabit.CategoryItems;
 
-        console.log("newHabit on Category: ", this.state.newHabit)
+        formData.push("CategoryState: " + this.state.CategoryState)
+
+        // console.log("newHabit on Category: ", this.state.newHabit)
 
         return (
             <div>

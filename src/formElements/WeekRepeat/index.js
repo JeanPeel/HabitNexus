@@ -17,6 +17,8 @@ var WeekSchedule = {
 
 var WeekState = ""
 
+var formData = require("../../data/formData");
+
 
 class WeekRepeat extends React.Component {
 
@@ -25,7 +27,7 @@ class WeekRepeat extends React.Component {
         linkstate : "",
         DateState: "",
         updateDateState: "",
-        NameState: "",
+        ItemState: "",
         CategoryState: "",
         DifficultyState: "",
         DurrationState: "",
@@ -106,8 +108,8 @@ class WeekRepeat extends React.Component {
         this.setState({ newHabit: { WeekSchedule: WeekSchedule } });
 
 
-        console.log("WeekState on Week: ", n.target.id)
-        console.log("WeekSchedule on Week: ", WeekSchedule)
+        // console.log("WeekState on Week: ", n.target.id)
+        // console.log("WeekSchedule on Week: ", WeekSchedule)
     };
 
 
@@ -118,7 +120,11 @@ class WeekRepeat extends React.Component {
 
         const { WeekSchedule } = this.state.newHabit.WeekSchedule;
 
-        console.log("newHabit on Week: ", this.state.newHabit)
+        formData.push("WeekSchedule: " + this.state.newHabit)
+
+        // console.log(("will week schedule push? ", this.state.newHabit))
+
+        console.log("WeekSchedule: ", this.state.newHabit)
 
         return (
             <div>

@@ -6,6 +6,10 @@ import "../style.css";
 
 
 
+var formData = require("../../data/formData");
+
+
+
 class Durration extends React.Component {
 
     state = {
@@ -13,7 +17,7 @@ class Durration extends React.Component {
         linkstate : "",
         DateState: "",
         updateDateState: "",
-        NameState: "",
+        ItemState: "",
         CategoryState: "",
         DifficultyState: "",
         DurrationState: "",
@@ -47,11 +51,11 @@ class Durration extends React.Component {
         }
     }
 
-    updateInputValue8 = n => {
+    updateInputValue8 = r => {
 
-        const value2 = n.target.id
+        const value2 = r.target.id
 
-        this.setState({ PriorityState: value2 });
+        this.setState({ DurrationState: value2 });
 
         this.setState({ newHabit: { DurrationItem: value2 } });
 
@@ -68,7 +72,9 @@ class Durration extends React.Component {
 
         const { DurrationItem } = this.state.newHabit.DurrationItem;
 
-        console.log("newHabit on Durration: ", this.state.newHabit)
+        formData.push("DurrationState: " + this.state.DurrationState)
+
+        // console.log("newHabit on Durration: ", this.state.newHabit)
 
         return (
             <div>
@@ -78,7 +84,7 @@ class Durration extends React.Component {
                         type="radio"
                         className="radioBTN"
                         name="DurrationItem"
-                        id="regular-upkeep <10min"
+                        id="regular-upkeep-10min-or-less"
                         value={DurrationItem}
                         onChange={this.updateInputValue8}
                     />
@@ -87,7 +93,7 @@ class Durration extends React.Component {
                         type="radio"
                         className="radioBTN"
                         name="DurrationItem"
-                        id="fast-task <30min"
+                        id="fast-task-30min-or-less"
                         value={DurrationItem}
                         onChange={this.updateInputValue8}
 
@@ -97,7 +103,7 @@ class Durration extends React.Component {
                         type="radio"
                         className="radioBTN"
                         name="DurrationItem"
-                        id="quick-bit <1hour"
+                        id="quick-bit-1hour-or-less"
                         value={DurrationItem}
                         onChange={this.updateInputValue8}
                     />

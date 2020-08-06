@@ -4,6 +4,8 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
+var formData = require("../../data/formData");
+
 class ItemName extends React.Component {
 
     state = {
@@ -11,7 +13,7 @@ class ItemName extends React.Component {
         linkstate : "",
         DateState: "",
         updateDateState: "",
-        NameState: "",
+        ItemState: "",
         CategoryState: "",
         DifficultyState: "",
         DurrationState: "",
@@ -49,7 +51,7 @@ class ItemName extends React.Component {
 
         const value7 = f.target.value
 
-        this.setState({ NameState: value7 });
+        this.setState({ ItemState: value7 });
 
         this.setState({ newHabit: { NameItem: value7 } });
     };
@@ -57,13 +59,15 @@ class ItemName extends React.Component {
 
 
     render() {
-        const { NameState } = this.state.NameState;
+        const { ItemState } = this.state.ItemState;
 
         const { newHabit } = this.state.newHabit;
 
         const { NameItem } = this.state.newHabit.NameItem;
 
-        console.log("newHabit on Item Name: ", this.state.newHabit)
+        formData.push("ItemState: "+this.state.ItemState)
+
+        // console.log("newHabit on Item Name: ", this.state.newHabit)
 
         return (
             <div>

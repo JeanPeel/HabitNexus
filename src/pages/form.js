@@ -17,7 +17,9 @@ import ItemDate from "../formElements/ItemDate";
 import Difficulty from "../formElements/Difficulty";
 // import Modal from "../components/Modal";
 
-// var formData = require("../../data/formData");
+var formData = require("../data/formData");
+
+
 
 var linkitem = "";
 var DateItem = "";
@@ -40,7 +42,7 @@ class Form extends Component {
         linkstate : "",
         DateState: "",
         updateDateState: "",
-        NameState: "",
+        ItemState: "",
         CategoryState: "",
         DifficultyState: "",
         DurrationState: "",
@@ -73,6 +75,16 @@ class Form extends Component {
             }
 
         }
+    }
+
+    componentDidMount() {
+        formData.length = 0
+
+        console.log('formdata should be empty: ', formData)
+
+        formData.length = 0
+
+        console.log('formdata should be empty: ', formData)
     }
 
 
@@ -177,6 +189,7 @@ class Form extends Component {
     }
 
     render() {
+        // console.log('formData on Form: ', formData)
 
         var AutoDate = moment().format("MM/DD/YYYY")
 
@@ -187,7 +200,7 @@ class Form extends Component {
         const { DurrationState } = this.state.DurrationState;
         const { HourState } = this.state.HourState;
         const { DateState } = this.state.DateState;
-        const { NameState } = this.state.NameState;
+        const { ItemState } = this.state.ItemState;
         const { PriorityState } = this.state.PriorityState;
         const { TODState } = this.state.TODState;
         const { WeekState } = this.state.WeekState;
@@ -223,7 +236,7 @@ class Form extends Component {
                         DateItem={this.state.newHabit.DateItem}
                     />
                     <ItemName
-                        NameState={this.state.NameState}
+                        ItemState={this.state.ItemState}
                         NameItem={this.state.newHabit.NameItem}
                     />
                     <Category
@@ -295,7 +308,7 @@ class Form extends Component {
                         CategoryState={this.state.CategoryState}
                         CategoryItems={this.state.newHabit.CategoryItems}
 
-                        NameState={this.state.NameState}
+                        ItemState={this.state.ItemState}
                         NameItem={this.state.newHabit.NameItem}
 
                         DateState={this.state.DateState}

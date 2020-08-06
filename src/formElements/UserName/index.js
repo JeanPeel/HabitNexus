@@ -4,6 +4,8 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
+var formData = require("../../data/formData");
+
 class UserName extends React.Component {
 
     state = {
@@ -36,7 +38,9 @@ class UserName extends React.Component {
 
         const { UserNameItem } = this.state.newUser.UserNameItem;
 
-        console.log("newUser on UserName: ", this.state.newUser)
+        formData.push("UserState: " + this.state.UserState)
+
+        // console.log("newUser on UserName: ", this.state.newUser)
 
         return (
             <div>
