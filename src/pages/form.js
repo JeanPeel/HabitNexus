@@ -19,7 +19,7 @@ import Difficulty from "../formElements/Difficulty";
 
 // var formData = require("../../data/formData");
 
-var LinkItem = "";
+var linkitem = "";
 var DateItem = "";
 var updateDateItem = "";
 var NameItem = "";
@@ -37,7 +37,7 @@ class Form extends Component {
     state = {
         HabitItem: '',
         PriorityState: "",
-        LinkState: "",
+        linkstate : "",
         DateState: "",
         updateDateState: "",
         NameState: "",
@@ -52,7 +52,7 @@ class Form extends Component {
         show: false,
         newHabit: {
             PriorityItem: "",
-            LinkItem: "",
+            linkitem: "",
             DateItem: "",
             updateDateItem: "",
             NameItem: "",
@@ -88,14 +88,14 @@ class Form extends Component {
         console.log('updateHabit ran on Form')
     }
 
-    saveHabit = (event) => {
+    updateInputValue = e => {
 
-        event.preventDefault();
+        e.preventDefault();
 
         // this is not running
         console.log('SaveHabit1 ran on Form')
 
-        // var LinkItem = this.state.LinkItem;
+        // var linkitem = this.state.linkitem;
         // var DateItem = this.state.DateItem;
         // var updateDateItem = this.state.DateItem;
         // var NameItem = this.state.NameItem;
@@ -109,7 +109,7 @@ class Form extends Component {
 
         const newHabit = {
             PriorityItem: this.state.newHabit.PriorityItem,
-            LinkItem: this.state.newHabit.LinkItem,
+            linkitem: this.state.newHabit.linkitem,
             DateItem: this.state.newHabit.DateItem,
             NameItem: this.state.newHabit.NameItem,
             CategoryItems: this.state.newHabit.CategoryItems,
@@ -169,7 +169,7 @@ class Form extends Component {
         document.getElementById("#itemWeek").text(newHabit.WeekSchedule);
         document.getElementById("#itemTOD").text(newHabit.selectedTOD);
         document.getElementById("#itemHour").text(newHabit.selectedHour);
-        document.getElementById("#itemLink").text(newHabit.LinkItem);
+        document.getElementById("#itemLink").text(newHabit.linkitem);
 
         // this is not running
         console.log('HabitData2 ran on Form')
@@ -181,7 +181,7 @@ class Form extends Component {
         var AutoDate = moment().format("MM/DD/YYYY")
 
         const { FormState } = this.state.FormState;
-        const { LinkState } = this.state.LinkState;
+        var { linkstate  } = this.state.linkstate ;
         const { CategoryState } = this.state.CategoryState;
         const { DifficultyState } = this.state.DifficultyState;
         const { DurrationState } = this.state.DurrationState;
@@ -192,9 +192,9 @@ class Form extends Component {
         const { TODState } = this.state.TODState;
         const { WeekState } = this.state.WeekState;
 
-        const { newHabit } = this.state.newHabit;
+        var { newHabit } = this.state.newHabit;
 
-        const { LinkItem } = this.state.newHabit.LinkItem;
+        var { linkitem } = this.state.newHabit.linkitem;
         var { CategoryItems } = this.state.newHabit.CategoryItems;
         const { DifficultyItem } = this.state.newHabit.DifficultyItem;
         const { DurrationItem } = this.state.newHabit.DurrationItem;
@@ -256,12 +256,14 @@ class Form extends Component {
                         selectedHour={this.state.newHabit.selectedHour}
                     />
                     <AddLink
-                        LinkState={this.state.LinkState}
-                        LinkItem={this.state.newHabit.LinkItem}
+                        linkstate ={this.state.linkstate }
+                        linkitem={this.state.newHabit.linkitem}
 
 
                     />
                     <SubmitBTN
+                        linkstate ={this.state.linkstate }
+                        linkitem={this.state.newHabit.linkitem}
                         newHabit={this.state.newHabit}
                         updateHabit={this.updateHabit}
                         saveHabit={this.saveHabit}
@@ -269,8 +271,8 @@ class Form extends Component {
                         FormState={this.state.FormState}
                     />
                     {/* <Modal
-                        LinkState={this.state.LinkState}
-                        LinkItem={this.state.newHabit.LinkItem}
+                        linkstate={this.state.linkstate}
+                        linkitem={this.state.newHabit.linkitem}
 
                         HourState={this.state.HourState}
                         selectedHour={this.state.newHabit.selectedHour}

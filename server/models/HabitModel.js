@@ -10,7 +10,7 @@ var HabitModel = new Schema({
     DurrationValue: String,
     WeekObject: Object,
     TimeDay: String,
-    LinkItem: String,
+    linkitem: String,
     score: {type: Number, default: 0}
 });
 

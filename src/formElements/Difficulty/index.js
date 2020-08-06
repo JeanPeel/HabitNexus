@@ -8,7 +8,7 @@ class Difficulty extends React.Component {
 
     state = {
         HabitItem: '',
-        LinkState: "",
+        linkstate : "",
         DateState: "",
         updateDateState: "",
         NameState: "",
@@ -23,7 +23,7 @@ class Difficulty extends React.Component {
         show: false,
         newHabit: {
             PriorityItem: "",
-            LinkItem: "",
+            linkitem: "",
             DateItem: "",
             updateDateItem: "",
             NameItem: "",

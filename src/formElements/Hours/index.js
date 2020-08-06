@@ -13,7 +13,7 @@ class Hours extends React.Component {
 
     state = {
         HabitItem: '',
-        LinkState: "",
+        linkstate : "",
         DateState: "",
         updateDateState: "",
         NameState: "",
@@ -28,7 +28,7 @@ class Hours extends React.Component {
         show: false,
         newHabit: {
             PriorityItem: "",
-            LinkItem: "",
+            linkitem: "",
             DateItem: "",
             updateDateItem: "",
             NameItem: "",

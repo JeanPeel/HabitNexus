@@ -12,7 +12,7 @@ class AddLink extends React.Component {
 
     state = {
         HabitItem: '',
-        LinkState: "",
+        linkstate : "",
         DateState: "",
         updateDateState: "",
         NameState: "",
@@ -27,7 +27,7 @@ class AddLink extends React.Component {
         show: false,
         newHabit: {
             PriorityItem: "",
-            LinkItem: "",
+            linkitem: "",
             DateItem: "",
             updateDateItem: "",
             NameItem: "",
@@ -53,33 +53,35 @@ class AddLink extends React.Component {
 
         const value2 = e.target.value
 
-        this.setState({ LinkState: value2 });
+        this.setState({ linkstate : value2 });
 
-        this.setState({ newHabit: { LinkItem: value2 } });
+        this.setState({ newHabit: { linkitem: value2 } });
     };
 
 
 
     render() {
         
-        const { LinkState } = this.state.LinkState;
+        var { linkstate  } = this.state.linkstate ;
 
-        const { newHabit } = this.state.newHabit;
+        var { newHabit } = this.state.newHabit;
 
-        const { LinkItem } = this.state.newHabit.LinkItem;
+        var { linkitem } = this.state.newHabit.linkitem;
 
         console.log("newHabit on Add Link: ", this.state.newHabit)
 
         return (
             <div>
-                <label htmlFor="LinkItem" >Add Link to info or image (optional): </label>
+                <label htmlFor="linkitem" >Add Link to info or image (optional): </label>
                 <input
                     type="url"
-                    name="LinkItem"
-                    value={LinkItem}
+                    name="linkitem"
+                    value={linkitem}
                     placeholder="Add a Link Here"
-                    className="linkItem"
+                    className="linkitem"
                     onChange={this.updateInputValue}
+                    linkstate ={this.state.linkstate }
+                    linkitem={this.state.newHabit.linkitem}
                 />
             </div>
         );

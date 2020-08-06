@@ -5,7 +5,7 @@ class Modal extends React.Component {
 
     state = {
         HabitItem: '',
-        LinkState: "",
+        linkstate: "",
         DateState: "",
         updateDateState: "",
         NameState: "",
@@ -20,7 +20,7 @@ class Modal extends React.Component {
         show: false,
         newHabit: {
             PriorityItem: "",
-            LinkItem: "",
+            linkitem: "",
             DateItem: "",
             updateDateItem: "",
             NameItem: "",
@@ -63,7 +63,7 @@ class Modal extends React.Component {
         // var AutoDate = moment().format("MM/DD/YYYY")
 
         const { FormState } = this.state.FormState;
-        const { LinkState } = this.state.LinkState;
+        const { linkstate } = this.state.linkstate ;
         const { CategoryState } = this.state.CategoryState;
         const { DifficultyState } = this.state.DifficultyState;
         const { DurrationState } = this.state.DurrationState;
@@ -76,7 +76,7 @@ class Modal extends React.Component {
 
         const { newHabit } = this.state.newHabit;
 
-        const { LinkItem } = this.state.newHabit.LinkItem;
+        const { linkitem } = this.state.newHabit.linkitem;
         var { CategoryItems } = this.state.newHabit.CategoryItems;
         const { DifficultyItem } = this.state.newHabit.DifficultyItem;
         const { DurrationItem } = this.state.newHabit.DurrationItem;
