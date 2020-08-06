@@ -38,7 +38,10 @@ class ItemEmail extends React.Component {
 
         const { EmailItem } = this.state.newUser.EmailItem;
 
-        formData.push("EmailState: " + this.state.EmailState)
+        // formData.push("EmailState: " + this.state.EmailState)
+        // formData.unshift("EmailState: " + this.state.EmailState)
+        formData.unshift(this.state.EmailState)
+        formData.pop()
 
         // console.log("newUser on Item Email: ", this.state.newUser)
 

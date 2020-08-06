@@ -4,7 +4,7 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-var formData = require("../../data/formData");
+var formData = require("../../data/item");
 
 class ItemName extends React.Component {
 
@@ -65,7 +65,10 @@ class ItemName extends React.Component {
 
         const { NameItem } = this.state.newHabit.NameItem;
 
-        formData.push("ItemState: "+this.state.ItemState)
+        // formData.push("ItemState: "+this.state.ItemState)
+        // formData.unshift("ItemState: "+this.state.ItemState)
+        formData.unshift(this.state.ItemState)
+        formData.pop()
 
         // console.log("newHabit on Item Name: ", this.state.newHabit)
 

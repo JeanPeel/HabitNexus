@@ -8,7 +8,7 @@ import "../style.css";
 
 // import Select from 'react-select';
 
-var formData = require("../../data/formData");
+var formData = require("../../data/linkinfo");
 
 class AddLink extends React.Component {
 

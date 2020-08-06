@@ -4,7 +4,7 @@ import "../style.css";
 // import 'moment-timezone';
 // const moment = require('moment');
 
-var formData = require("../../data/formData");
+var formData = require("../../data/difficulty");
 
 
 class Difficulty extends React.Component {
@@ -70,7 +70,10 @@ class Difficulty extends React.Component {
 
         const { DifficultyItem } = this.state.newHabit.DifficultyItem;
 
-        formData.push("DifficultyState: " + this.state.DifficultyState)
+        // formData.push("DifficultyState: " + this.state.DifficultyState)
+        // formData.unshift("DifficultyState: " + this.state.DifficultyState)
+        formData.unshift(this.state.DifficultyState)
+        formData.pop()
 
         // console.log("newHabit on Difficulty: ", this.state.newHabit)
 
