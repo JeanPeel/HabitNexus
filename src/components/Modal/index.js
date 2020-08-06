@@ -87,7 +87,7 @@ class Modal extends React.Component {
         const { selectedTOD } = this.state.newHabit.selectedTOD
         const { WeekSchedule } = this.state.newHabit.WeekSchedule;
 
-        console.log("newHabit: ", this.state.newHabit)
+        console.log("newHabit on Modal: ", this.state.newHabit)
 
         if (!this.props.show) {
             return null;

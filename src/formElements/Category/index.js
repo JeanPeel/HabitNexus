@@ -62,15 +62,15 @@ class Category extends React.Component {
         const { CategoryItems } = this.newHabit.CategoryItems;
 
         this.setState({ CategoryState: CategoryState });
-        console.log(`CategoryState: `, CategoryState);
+        console.log(`CategoryState on Category: `, CategoryState);
         var valueA = CategoryState.value
-        console.log(`valueA: `, valueA);
+        console.log(`valueA on Category: `, valueA);
 
         this.setState({ newHabit: { CategoryItems: CategoryState.value } });
 
         this.setState({ CategoryItems: CategoryState.value });
 
-        console.log(`CategoryItems: `, CategoryItems);
+        console.log(`CategoryItems on Category: `, CategoryItems);
 
     }
 
@@ -83,7 +83,7 @@ class Category extends React.Component {
 
         var { CategoryItems } = this.state.newHabit.CategoryItems;
 
-        console.log("newHabit: ", this.state.newHabit)
+        console.log("newHabit on Category: ", this.state.newHabit)
 
         return (
             <div>

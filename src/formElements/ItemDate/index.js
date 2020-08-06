@@ -72,7 +72,7 @@ class ItemDate extends React.Component {
 
         const { DateItem } = this.state.newHabit.DateItem
 
-        console.log("newHabit: ", this.state.newHabit)
+        console.log("newHabit on Date: ", this.state.newHabit)
 
 
         return (

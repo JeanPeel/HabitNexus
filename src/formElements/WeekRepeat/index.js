@@ -106,8 +106,8 @@ class WeekRepeat extends React.Component {
         this.setState({ newHabit: { WeekSchedule: WeekSchedule } });
 
 
-        console.log("WeekState: ", n.target.id)
-        console.log("WeekSchedule: ", WeekSchedule)
+        console.log("WeekState on Week: ", n.target.id)
+        console.log("WeekSchedule on Week: ", WeekSchedule)
     };
 
 
@@ -118,7 +118,7 @@ class WeekRepeat extends React.Component {
 
         const { WeekSchedule } = this.state.newHabit.WeekSchedule;
 
-        console.log("newHabit: ", this.state.newHabit)
+        console.log("newHabit on Week: ", this.state.newHabit)
 
         return (
             <div>

@@ -68,7 +68,7 @@ class AddLink extends React.Component {
 
         const { LinkItem } = this.state.newHabit.LinkItem;
 
-        console.log("newHabit: ", this.state.newHabit)
+        console.log("newHabit on Add Link: ", this.state.newHabit)
 
         return (
             <div>

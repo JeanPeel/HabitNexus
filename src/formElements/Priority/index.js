@@ -64,7 +64,7 @@ class Priority extends React.Component {
 
         const { PriorityItem } = this.state.newHabit.PriorityItem;
 
-        console.log("newHabit: ", this.state.newHabit)
+        console.log("newHabit on priority: ", this.state.newHabit)
 
         return (
             <div>

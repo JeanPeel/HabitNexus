@@ -35,7 +35,7 @@ class ItemEmail extends React.Component {
 
         const { EmailItem } = this.state.newUser.EmailItem;
 
-        console.log("newUser: ", this.state.newUser)
+        console.log("newUser on Item Email: ", this.state.newUser)
 
         return (
             <div>

@@ -63,7 +63,7 @@ class ItemName extends React.Component {
 
         const { NameItem } = this.state.newHabit.NameItem;
 
-        console.log("newHabit: ", this.state.newHabit)
+        console.log("newHabit on Item Name: ", this.state.newHabit)
 
         return (
             <div>

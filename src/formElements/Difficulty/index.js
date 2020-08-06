@@ -67,7 +67,7 @@ class Difficulty extends React.Component {
 
         const { DifficultyItem } = this.state.newHabit.DifficultyItem;
 
-        console.log("newHabit: ", this.state.newHabit)
+        console.log("newHabit on Difficulty: ", this.state.newHabit)
 
         return (
             <div>

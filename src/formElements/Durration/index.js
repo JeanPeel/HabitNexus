@@ -68,7 +68,7 @@ class Durration extends React.Component {
 
         const { DurrationItem } = this.state.newHabit.DurrationItem;
 
-        console.log("newHabit: ", this.state.newHabit)
+        console.log("newHabit on Durration: ", this.state.newHabit)
 
         return (
             <div>

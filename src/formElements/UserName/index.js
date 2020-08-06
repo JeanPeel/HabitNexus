@@ -36,7 +36,7 @@ class UserName extends React.Component {
 
         const { UserNameItem } = this.state.newUser.UserNameItem;
 
-        console.log("newUser: ", this.state.newUser)
+        console.log("newUser on UserName: ", this.state.newUser)
 
         return (
             <div>

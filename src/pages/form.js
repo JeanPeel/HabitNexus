@@ -75,17 +75,25 @@ class Form extends Component {
         }
     }
 
+
+
     updateHabit = (event) => {
         const { name, value } = event.target;
 
         this.setState({
             [name]: value
         })
+
+        // this is not running
+        console.log('updateHabit ran on Form')
     }
 
     saveHabit = (event) => {
 
         event.preventDefault();
+
+        // this is not running
+        console.log('SaveHabit1 ran on Form')
 
         // var LinkItem = this.state.LinkItem;
         // var DateItem = this.state.DateItem;
@@ -113,15 +121,22 @@ class Form extends Component {
             WeekSchedule: this.state.newHabit.WeekSchedule
         }
 
+        // this is not running
+        console.log('SaveHabit2 ran on Form')
+
         axios
             .post("/HabitNexus2", newHabit)
-            .catch((error) => console.log(error));
+            .catch((error) => console.log("error on form.js: ", error));
 
+        console.log('SaveHabit3 ran on Form')
 
         this.setState({
             HabitItem: '',
             newHabit: [],
         })
+
+        // this is not running
+        console.log('SaveHabit4 ran on Form')
 
     }
 
@@ -142,6 +157,9 @@ class Form extends Component {
 
     habitData = (newHabit) => {
 
+        // this is not running
+        console.log('HabitData1 ran on Form')
+
         document.getElementById('#itemDate').text(newHabit.DateItem);
         document.getElementById("#itemName").text(newHabit.NameItem);;
         document.getElementById("#itemCat").text(newHabit.CategoryItems);
@@ -152,7 +170,10 @@ class Form extends Component {
         document.getElementById("#itemTOD").text(newHabit.selectedTOD);
         document.getElementById("#itemHour").text(newHabit.selectedHour);
         document.getElementById("#itemLink").text(newHabit.LinkItem);
-        
+
+        // this is not running
+        console.log('HabitData2 ran on Form')
+
     }
 
     render() {
@@ -184,14 +205,15 @@ class Form extends Component {
         const { selectedTOD } = this.state.newHabit.selectedTOD
         const { WeekSchedule } = this.state.newHabit.WeekSchedule;
 
-        console.log("newHabit: ", this.state.newHabit)
+        // this is not running
+        console.log("newHabit on Form: ", this.state.newHabit)
 
         return (
             <div>
                 <h1>New Habit Form</h1>
                 {/* <form action="/habits" method="POST" id="form"> */}
-                <form 
-                id="form" 
+                <form
+                    id="form"
                 // action="" 
                 // onsubmit="alert('submit!');return false"
                 // method="POST"

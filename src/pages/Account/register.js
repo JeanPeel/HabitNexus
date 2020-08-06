@@ -10,6 +10,10 @@ import SubmitBTN from "../../formElements/SubmitBTN";
 class Register extends Component {
 
     render() {
+
+        // this is not running
+        console.log('render ran on register')
+
         return (
             <div>
                 <h1>Register</h1>

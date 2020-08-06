@@ -61,15 +61,15 @@ class TOD extends React.Component {
         const { selectedTOD } = this.state.newHabit.selectedTOD
 
         this.setState({ TODState: TODState });
-        console.log(`TODState: `, TODState);
+        console.log(`TODState on TOD: `, TODState);
         var valueC = TODState.value
-        console.log(`valueC: `, valueC);
+        console.log(`valueC on TOD: `, valueC);
 
         this.setState({ newHabit: { selectedTOD: TODState.value } });
 
         this.setState({ selectedTOD: TODState.value });
 
-        console.log(`selectedTOD: `, selectedTOD);
+        console.log(`selectedTOD on TOD: `, selectedTOD);
     };
 
     render() {
@@ -79,7 +79,7 @@ class TOD extends React.Component {
 
         const { selectedTOD } = this.state.newHabit.selectedTOD
 
-        console.log("newHabit: ", this.state.newHabit)
+        console.log("newHabit on TOD: ", this.state.newHabit)
 
         return (
             <div>

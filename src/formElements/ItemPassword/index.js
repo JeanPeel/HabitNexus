@@ -36,7 +36,7 @@ class ItemPassword extends React.Component {
 
         const { PasswordItem } = this.state.newUser.PasswordItem;
 
-        console.log("newUser: ", this.state.newUser)
+        console.log("newUser on Password: ", this.state.newUser)
 
         return (
             <div>

@@ -40,6 +40,14 @@ class SubmitBTN extends React.Component {
         WeekState: "",
         FormState: "",
         show: false,
+        UserState: "",
+        EmailState: "",
+        PasswordState: "",
+        newUser: {
+            UserNameItem: "",
+            EmailItem: "",
+            PasswordItem: ""
+        },
         newHabit: {
             PriorityItem: "",
             LinkItem: "",
@@ -73,7 +81,11 @@ class SubmitBTN extends React.Component {
 
         event.preventDefault();
 
-        console.log("newHabit1: ", this.state.newHabit)
+
+        // these are logging but the state information is blank
+        console.log("newHabit1 on Submit BTN: ", this.state.newHabit)
+
+        console.log("newUser1 on Submit BTN: ", this.state.newUser)
 
 
     //  alert(
@@ -113,35 +125,41 @@ class SubmitBTN extends React.Component {
             }
         });
 
-        console.log("newHabit2: ", this.state.newHabit)
+           // these are logging but the state information is blank
+
+        console.log("newHabit2 on Submit BTN: ", this.state.newHabit)
 
         this.setState({ FormState: event.target.value });
 
         this.setState({ newHabit: event.target.value });
 
+           // these are logging but the state information is blank
         // console.log("FormState3: ", FormState)
-        console.log("FormState3b: ", event.target.value)
+        console.log("FormState3b on Submit BTN: ", event.target.value)
         // console.log("newHabit3: ", newHabit)
-        console.log("newHabit3b: ", event.target.value)
+        console.log("newHabit3b on Submit BTN: ", event.target.value)
 
         // console.log("newHabit3: ", this.state.newHabit)
 
+        // this is showing up on the submit btn
         alert(
-            "newHabit" + this.state.newHabit,
-            "PriorityItem" + this.state.newHabit.PriorityItem,
-            "LinkItem" + this.state.newHabit.LinkItem,
-            "DateItem" + this.state.newHabit.DateItem,
-            "NameItem" + this.state.newHabit.NameItem,
-            "CategoryItems" + this.state.newHabit.CategoryItems,
-            "DifficultyItem" + this.state.newHabit.DifficultyItem,
-            "DurrationItem" + this.state.newHabit.DurrationItem,
-            "PriorityItem" + this.state.newHabit.PriorityItem,
-            "selectedTOD" + this.state.newHabit.selectedTOD,
-            "selectedHour" + this.state.newHabit.selectedHour,
-            "WeekSchedule" + this.state.newHabit.WeekSchedule
+            "newHabit" + this.state.newHabit
+            // "PriorityItem" + this.state.newHabit.PriorityItem,
+            // "LinkItem" + this.state.newHabit.LinkItem,
+            // "DateItem" + this.state.newHabit.DateItem,
+            // "NameItem" + this.state.newHabit.NameItem,
+            // "CategoryItems" + this.state.newHabit.CategoryItems,
+            // "DifficultyItem" + this.state.newHabit.DifficultyItem,
+            // "DurrationItem" + this.state.newHabit.DurrationItem,
+            // "PriorityItem" + this.state.newHabit.PriorityItem,
+            // "selectedTOD" + this.state.newHabit.selectedTOD,
+            // "selectedHour" + this.state.newHabit.selectedHour,
+            // "WeekSchedule" + this.state.newHabit.WeekSchedule,
+            // "New User" + this.state.newUser
         )
 
-        console.log("newHabit4: ", this.state.newHabit)
+         // this is showing up after the alert is closed
+        console.log("newHabit4 on Submit BTN: ", this.state.newHabit)
 
     };
 
@@ -200,7 +218,8 @@ class SubmitBTN extends React.Component {
         // const { selectedTOD } = this.state.newHabit.selectedTOD;
         // const { WeekSchedule } = this.state.newHabit.WeekSchedule;
 
-        console.log("newHabit: ", this.state.newHabit)
+        // this is showing up after the alert is closed
+        console.log("newHabitZ on Submit BTN: ", this.state.newHabit)
 
         return (
             <div>

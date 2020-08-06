@@ -9,7 +9,13 @@ import SubmitBTN from "../../formElements/SubmitBTN";
 
 class Login extends Component {
 
+
+
     render() {
+
+        // this is not running
+        console.log('render ran on login')
+
         return (
             <div>
                 <h1>Login</h1>
