@@ -86,7 +86,9 @@ class Category extends React.Component {
 
         // formData.push("CategoryState: " + this.state.CategoryState)
         // formData.unshift("CategoryState: " + this.state.CategoryState)
-        categoryData.unshift(this.state.CategoryState)
+        categoryData.unshift(this.state.CategoryState.value)
+
+        console.log("Category state Value: ", this.state.CategoryState.value)
         // formData.pop()
 
         // console.log("newHabit on Category: ", this.state.newHabit)

@@ -85,9 +85,10 @@ class Hours extends React.Component {
 
         // formData.push("HourState: " + this.state.HourState)
         // formData.unshift("HourState: " + this.state.HourState)
-        hourData.unshift(this.state.HourState)
+        hourData.unshift(this.state.HourState.value)
         // formData.pop()
 
+        console.log("Hour State Value: ", this.state.HourState.value)
         // console.log("newHabit on Hours: ", this.state.newHabit)
 
         return (

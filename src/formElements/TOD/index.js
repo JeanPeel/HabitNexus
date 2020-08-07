@@ -82,7 +82,9 @@ class TOD extends React.Component {
         const { selectedTOD } = this.state.newHabit.selectedTOD
 
         // formData.unshift("TODState: " + this.state.TODState)
-        todData.unshift(this.state.TODState)
+        todData.unshift(this.state.TODState.value)
+
+        console.log("TOD state value: ", this.state.TODState.value)
         // formData.pop()
 
         // console.log("newHabit on TOD: ", this.state.newHabit)
