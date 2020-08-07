@@ -183,7 +183,7 @@ class SubmitBTN extends React.Component {
         var APriorityData = ("priorityData: " + priorityData[0])
         var ADifficultyData = ("difficultyData: " + difficultyData[0])
         var ADurrationData = ("durrationData: " + durrationData[0])
-        var AWeekData = ("weekData: " + weekData[0])
+        var AWeekData = ("weekData: " + weekData)
         var AdTodData = ("todData: " + todData[0])
         var AHourData = ("hourData: " + hourData[0])
         var ALinkInfo = ("linkInfo: " + linkInfo[0])
