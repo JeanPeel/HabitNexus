@@ -51,19 +51,6 @@ class Form extends Component {
         HourState: "",
         WeekState: "",
         FormState: "",
-        show: false,
-        newHabit: {
-            PriorityItem: "",
-            linkitem: "",
-            DateItem: "",
-            updateDateItem: "",
-            NameItem: "",
-            CategoryItems: "",
-            DifficultyItem: "",
-            DurrationItem: "",
-            PriorityItem: "",
-            selectedTOD: "",
-            selectedHour: "",
             WeekSchedule: {
                 Monday: false,
                 Tuesday: false,
@@ -73,8 +60,6 @@ class Form extends Component {
                 Saturday: false,
                 Sunday: false
             }
-
-        }
     }
 
     componentDidMount() {
@@ -107,17 +92,7 @@ class Form extends Component {
         // this is not running
         console.log('SaveHabit1 ran on Form')
 
-        // var linkitem = this.state.linkitem;
-        // var DateItem = this.state.DateItem;
-        // var updateDateItem = this.state.DateItem;
-        // var NameItem = this.state.NameItem;
-        // var CategoryItems = this.state.CategoryItems;
-        // var DifficultyItem = this.state.DifficultyItem;
-        // var DurrationItem = this.state.DurrationItem;
-        // var PriorityItem = this.state.PriorityItem;
-        // var selectedTOD = this.state.selectedTOD;
-        // var selectedHour = this.state.selectedHour;
-        // var WeekSchedule = this.state.WeekSchedule;
+ 
 
         const newHabit = {
             PriorityItem: this.state.newHabit.PriorityItem,
@@ -167,122 +142,75 @@ class Form extends Component {
     //     this.props.show = false;
     //   };
 
-    habitData = (newHabit) => {
+    // habitData = (newHabit) => {
 
-        // this is not running
-        console.log('HabitData1 ran on Form')
+     
+    //     console.log('HabitData1 ran on Form')
 
-        document.getElementById('#itemDate').text(newHabit.DateItem);
-        document.getElementById("#itemName").text(newHabit.NameItem);;
-        document.getElementById("#itemCat").text(newHabit.CategoryItems);
-        document.getElementById("#itemPri").text(newHabit.PriorityItem);
-        document.getElementById("#itemDif").text(newHabit.DifficultyItem);
-        document.getElementById("#itemDur").text(newHabit.DurrationItem);
-        document.getElementById("#itemWeek").text(newHabit.WeekSchedule);
-        document.getElementById("#itemTOD").text(newHabit.selectedTOD);
-        document.getElementById("#itemHour").text(newHabit.selectedHour);
-        document.getElementById("#itemLink").text(newHabit.linkitem);
+    //     document.getElementById('#itemDate').text(newHabit.DateItem);
+    //     document.getElementById("#itemName").text(newHabit.NameItem);;
+    //     document.getElementById("#itemCat").text(newHabit.CategoryItems);
+    //     document.getElementById("#itemPri").text(newHabit.PriorityItem);
+    //     document.getElementById("#itemDif").text(newHabit.DifficultyItem);
+    //     document.getElementById("#itemDur").text(newHabit.DurrationItem);
+    //     document.getElementById("#itemWeek").text(newHabit.WeekSchedule);
+    //     document.getElementById("#itemTOD").text(newHabit.selectedTOD);
+    //     document.getElementById("#itemHour").text(newHabit.selectedHour);
+    //     document.getElementById("#itemLink").text(newHabit.linkitem);
 
-        // this is not running
-        console.log('HabitData2 ran on Form')
+    //     console.log('HabitData2 ran on Form')
 
-    }
+    // }
 
     render() {
-        // console.log('formData on Form: ', formData)
 
-        var AutoDate = moment().format("MM/DD/YYYY")
+        // var AutoDate = moment().format("MM/DD/YYYY")
 
-        const { FormState } = this.state.FormState;
-        var { linkstate  } = this.state.linkstate ;
-        const { CategoryState } = this.state.CategoryState;
-        const { DifficultyState } = this.state.DifficultyState;
-        const { DurrationState } = this.state.DurrationState;
-        const { HourState } = this.state.HourState;
-        const { DateState } = this.state.DateState;
-        const { ItemState } = this.state.ItemState;
-        const { PriorityState } = this.state.PriorityState;
-        const { TODState } = this.state.TODState;
-        const { WeekState } = this.state.WeekState;
+        // const { FormState } = this.state.FormState;
+        // var { linkstate  } = this.state.linkstate ;
+        // const { CategoryState } = this.state.CategoryState;
+        // const { DifficultyState } = this.state.DifficultyState;
+        // const { DurrationState } = this.state.DurrationState;
+        // const { HourState } = this.state.HourState;
+        // const { DateState } = this.state.DateState;
+        // const { ItemState } = this.state.ItemState;
+        // const { PriorityState } = this.state.PriorityState;
+        // const { TODState } = this.state.TODState;
+        // const { WeekState } = this.state.WeekState;
 
-        var { newHabit } = this.state.newHabit;
+        // var { newHabit } = this.state.newHabit;
 
-        var { linkitem } = this.state.newHabit.linkitem;
-        var { CategoryItems } = this.state.newHabit.CategoryItems;
-        const { DifficultyItem } = this.state.newHabit.DifficultyItem;
-        const { DurrationItem } = this.state.newHabit.DurrationItem;
-        var { selectedHour } = this.state.newHabit.selectedHour;
-        const { DateItem } = this.state.newHabit.DateItem
-        const { NameItem } = this.state.newHabit.NameItem;
-        const { PriorityItem } = this.state.newHabit.PriorityItem;
-        const { selectedTOD } = this.state.newHabit.selectedTOD
-        const { WeekSchedule } = this.state.newHabit.WeekSchedule;
+        // var { linkitem } = this.state.newHabit.linkitem;
+        // var { CategoryItems } = this.state.newHabit.CategoryItems;
+        // const { DifficultyItem } = this.state.newHabit.DifficultyItem;
+        // const { DurrationItem } = this.state.newHabit.DurrationItem;
+        // var { selectedHour } = this.state.newHabit.selectedHour;
+        // const { DateItem } = this.state.newHabit.DateItem
+        // const { NameItem } = this.state.newHabit.NameItem;
+        // const { PriorityItem } = this.state.newHabit.PriorityItem;
+        // const { selectedTOD } = this.state.newHabit.selectedTOD
+        // const { WeekSchedule } = this.state.newHabit.WeekSchedule;
 
         // this is not running
-        console.log("newHabit on Form: ", this.state.newHabit)
+        // console.log("newHabit on Form: ", this.state.newHabit)
 
         return (
             <div>
                 <h1>New Habit Form</h1>
-                {/* <form action="/habits" method="POST" id="form"> */}
                 <form
                     id="form"
-                // action="" 
-                // onsubmit="alert('submit!');return false"
-                // method="POST"
                 >
-                    <ItemDate
-                        DateState={this.state.DateState}
-                        DateItem={this.state.newHabit.DateItem}
-                    />
-                    <ItemName
-                        ItemState={this.state.ItemState}
-                        NameItem={this.state.newHabit.NameItem}
-                    />
-                    <Category
-                        CategoryState={this.state.CategoryState}
-                        CategoryItems={this.state.newHabit.CategoryItems}
-                    />
-                    <Priority
-                        PriorityState={this.state.PriorityState}
-                        PriorityItem={this.state.newHabit.PriorityItem}
-                    />
-                    <Difficulty
-                        DifficultyState={this.state.DifficultyState}
-                        DifficultyItem={this.state.newHabit.DifficultyItem}
-                    />
-                    <Durration
-                        DurrationState={this.state.DurrationState}
-                        DurrationItem={this.state.newHabit.DurrationItem}
-                    />
-                    <WeekRepeat
-                        WeekState={this.state.WeekState}
-                        WeekSchedule={this.state.newHabit.WeekSchedule}
-                    />
-                    <TOD
-                        TODState={this.state.TODState}
-                        selectedTOD={this.state.newHabit.selectedTOD}
-
-                    />
-                    < Hours
-                        HourState={this.state.HourState}
-                        selectedHour={this.state.newHabit.selectedHour}
-                    />
-                    <AddLink
-                        linkstate ={this.state.linkstate }
-                        linkitem={this.state.newHabit.linkitem}
-
-
-                    />
-                    <SubmitBTN
-                        linkstate ={this.state.linkstate }
-                        linkitem={this.state.newHabit.linkitem}
-                        newHabit={this.state.newHabit}
-                        updateHabit={this.updateHabit}
-                        saveHabit={this.saveHabit}
-                        HabitData={this.habitData}
-                        FormState={this.state.FormState}
-                    />
+                    <ItemDate/>
+                    <ItemName/>
+                    <Category/>
+                    <Priority/>
+                    <Difficulty/>
+                    <Durration/>
+                    <WeekRepeat/>
+                    <TOD/>
+                    < Hours/>
+                    <AddLink/>
+                    <SubmitBTN/>
                     {/* <Modal
                         linkstate={this.state.linkstate}
                         linkitem={this.state.newHabit.linkitem}
