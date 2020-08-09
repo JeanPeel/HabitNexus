@@ -14,64 +14,17 @@ var categoryData = require("../../data/category");
 class Category extends React.Component {
 
     state = {
-        HabitItem: '',
-        linkstate : "",
-        DateState: "",
-        updateDateState: "",
-        ItemState: "",
         CategoryState: "",
-        DifficultyState: "",
-        DurrationState: "",
-        PriorityState: "",
-        TODState: "",
-        HourState: "",
-        WeekState: "",
-        FormState: "",
-        show: false,
-        newHabit: {
-            PriorityItem: "",
-            linkitem: "",
-            DateItem: "",
-            updateDateItem: "",
-            NameItem: "",
-            CategoryItems: "",
-            DifficultyItem: "",
-            DurrationItem: "",
-            selectedTOD: "",
-            selectedHour: "",
-            WeekSchedule: {
-                Monday: false,
-                Tuesday: false,
-                Wednesday: false,
-                Thursday: false,
-                Friday: false,
-                Saturday: false,
-                Sunday: false
-            }
-
-        }
     }
 
-    newHabit = this.state.newHabit;
-    CategoryItems = this.state.newHabit.CategoryItems;
     valueA = "";
 
     handleChange5 = (CategoryState) => {
 
-        const newHabit = this.state.newHabit
-
-        const { CategoryItems } = this.newHabit.CategoryItems;
 
         this.setState({ CategoryState: CategoryState });
-        // console.log(`CategoryState on Category: `, CategoryState);
+      
         var valueA = CategoryState.value
-        // console.log(`valueA on Category: `, valueA);
-
-        this.setState({ newHabit: { CategoryItems: CategoryState.value } });
-
-        this.setState({ CategoryItems: CategoryState.value });
-
-        // console.log(`CategoryItems on Category: `, CategoryItems);
 
     }
 
@@ -80,18 +33,7 @@ class Category extends React.Component {
 
         const { CategoryState } = this.state.CategoryState;
 
-        const { newHabit } = this.state.newHabit;
-
-        var { CategoryItems } = this.state.newHabit.CategoryItems;
-
-        // formData.push("CategoryState: " + this.state.CategoryState)
-        // formData.unshift("CategoryState: " + this.state.CategoryState)
         categoryData.unshift(this.state.CategoryState.value)
-
-        console.log("Category state Value: ", this.state.CategoryState.value)
-        // formData.pop()
-
-        // console.log("newHabit on Category: ", this.state.newHabit)
 
         return (
             <div>
