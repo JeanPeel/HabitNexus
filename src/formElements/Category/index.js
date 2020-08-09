@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import "../style.css";
-// import Moment from 'react-moment';
-// import 'moment-timezone';
-// const moment = require('moment');
 import Select from 'react-select';
 var axios = require("axios");
 
 var categories = require("../../data/categories");
-// var formData = require("../../data/formData");
 
 var categoryData = require("../../data/category");
 
