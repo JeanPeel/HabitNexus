@@ -6,42 +6,7 @@ var priorityData = require("../../data/priority");
 class Priority extends React.Component {
 
     state = {
-        HabitItem: '',
-        linkstate : "",
-        DateState: "",
-        updateDateState: "",
-        ItemState: "",
-        CategoryState: "",
-        DifficultyState: "",
-        DurrationState: "",
         PriorityState: "",
-        TODState: "",
-        HourState: "",
-        WeekState: "",
-        FormState: "",
-        show: false,
-        newHabit: {
-            PriorityItem: "",
-            linkitem: "",
-            DateItem: "",
-            updateDateItem: "",
-            NameItem: "",
-            CategoryItems: "",
-            DifficultyItem: "",
-            DurrationItem: "",
-            selectedTOD: "",
-            selectedHour: "",
-            WeekSchedule: {
-                Monday: false,
-                Tuesday: false,
-                Wednesday: false,
-                Thursday: false,
-                Friday: false,
-                Saturday: false,
-                Sunday: false
-            }
-
-        }
     }
 
     updateInputValue9 = m => {
@@ -49,11 +14,6 @@ class Priority extends React.Component {
         const value1 = m.target.id
 
         this.setState({ PriorityState: value1 });
-
-        this.setState({ newHabit: { PriorityItem: value1 } });
-
-        // console.log("newHabit: ", this.state.newHabit)
-
     };
 
 
@@ -62,16 +22,7 @@ class Priority extends React.Component {
 
         const { PriorityState } = this.state.PriorityState;
 
-        const { newHabit } = this.state.newHabit;
-
-        const { PriorityItem } = this.state.newHabit.PriorityItem;
-
-        // formData.push("PriorityState: " + this.state.PriorityState)        
-        // formData.unshift("PriorityState: " + this.state.PriorityState)   
         priorityData.unshift(this.state.PriorityState)   
-        // formData.pop()
-
-        // console.log("newHabit on priority: ", this.state.newHabit)
 
         return (
             <div>
@@ -82,7 +33,7 @@ class Priority extends React.Component {
                         className="radioBTN"
                         name="PriorityItem"
                         id="high"
-                        value={PriorityItem}
+                        value={PriorityState}
                         onChange={this.updateInputValue9}
                     />
                     <label htmlFor="high">High</label>
@@ -91,7 +42,7 @@ class Priority extends React.Component {
                         className="radioBTN"
                         name="PriorityItem"
                         id="medium"
-                        value={PriorityItem}
+                        value={PriorityState}
                         onChange={this.updateInputValue9}
 
                     />
@@ -101,7 +52,7 @@ class Priority extends React.Component {
                         className="radioBTN"
                         name="PriorityItem"
                         id="low"
-                        value={PriorityItem}
+                        value={PriorityState}
                         onChange={this.updateInputValue9}
                     />
                     <label htmlFor="low">Low</label>
