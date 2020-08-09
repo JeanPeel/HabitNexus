@@ -1,9 +1,6 @@
 import React, { Component, useState } from "react";
 
 import "../style.css";
-// import Moment from 'react-moment';
-// import 'moment-timezone';
-// const moment = require('moment');
 
 var WeekSchedule = {
     Monday: false,
@@ -23,32 +20,8 @@ var weekData = require("../../data/weekdays");
 class WeekRepeat extends React.Component {
 
     state = {
-        HabitItem: '',
-        linkstate: "",
-        DateState: "",
-        updateDateState: "",
-        ItemState: "",
-        CategoryState: "",
-        DifficultyState: "",
-        DurrationState: "",
-        PriorityState: "",
-        TODState: "",
-        HourState: "",
         WeekState: "",
-        FormState: "",
-        show: false,
-        newHabit: {
-            PriorityItem: "",
-            linkitem: "",
-            DateItem: "",
-            updateDateItem: "",
-            NameItem: "",
-            CategoryItems: "",
-            DifficultyItem: "",
-            DurrationItem: "",
-            selectedTOD: "",
-            selectedHour: "",
-            WeekSchedule: {
+        WeekSchedule: {
                 Monday: false,
                 Tuesday: false,
                 Wednesday: false,
@@ -59,7 +32,6 @@ class WeekRepeat extends React.Component {
             }
 
         }
-    }
 
 
     updateInputValue9 = n => {
@@ -144,34 +116,19 @@ class WeekRepeat extends React.Component {
             }
         }
 
-        this.setState({ newHabit: { WeekSchedule: WeekSchedule } });
-
-  
+        this.setState({  WeekSchedule: WeekSchedule });
 
             console.log("Week Data: ", weekData)
-
-            // weekData.unshift(this.state.newHabit)
-
-        // console.log("WeekState on Week: ", n.target.id)
-        // console.log("WeekSchedule on Week: ", WeekSchedule)
     };
 
 
     render() {
         const { WeekState } = this.state.WeekState;
 
-        const { newHabit } = this.state.newHabit;
+        const { WeekSchedule } = this.state.WeekSchedule;
 
-        const { WeekSchedule } = this.state.newHabit.WeekSchedule;
 
-        // formData.push("WeekSchedule: " + this.state.newHabit)
-        // formData.unshift("WeekSchedule: " + this.state.newHabit)
-   
-        // formData.pop()
-
-        // console.log(("will week schedule push? ", this.state.newHabit))
-
-        console.log("WeekSchedule: ", this.state.newHabit)
+        console.log("WeekSchedule: ", this.state.WeekSchedule)
 
         return (
             <div>
