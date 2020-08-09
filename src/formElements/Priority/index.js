@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../style.css";
 
-var priorityData = require("../../data/priority");
+var formData = require("../../data/formData");
 
 class Priority extends React.Component {
 
@@ -9,11 +9,18 @@ class Priority extends React.Component {
         PriorityState: "",
     }
 
+    componentDidMount() {
+
+        formData[3] = "medium"
+    }
+
     updateInputValue9 = m => {
 
-        const value1 = m.target.id
+        const value12 = m.target.id
 
-        this.setState({ PriorityState: value1 });
+        this.setState({ PriorityState: value12 });
+
+        formData[3] = value12
     };
 
 
@@ -21,8 +28,6 @@ class Priority extends React.Component {
     render() {
 
         const { PriorityState } = this.state.PriorityState;
-
-        priorityData.unshift(this.state.PriorityState)   
 
         return (
             <div>
@@ -46,7 +51,7 @@ class Priority extends React.Component {
                         onChange={this.updateInputValue9}
 
                     />
-                    <label htmlFor="medium">Medium</label>
+                    <label htmlFor="medium">Medium (Default)</label>
                     <input
                         type="radio"
                         className="radioBTN"

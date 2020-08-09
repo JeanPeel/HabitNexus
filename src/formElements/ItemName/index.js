@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../style.css";
 
-var itemData = require("../../data/item");
+var formData = require("../../data/formData");
 
 class ItemName extends React.Component {
 
@@ -9,19 +9,25 @@ class ItemName extends React.Component {
         ItemState: "",
     }
 
+    
+    componentDidMount() {
+
+        formData[1] = "none"
+    }
+
     updateInputValue2 = f => {
 
         const value7 = f.target.value
 
         this.setState({ ItemState: value7 });
+
+        formData[1] = value7
     };
 
 
 
     render() {
         const { ItemState } = this.state.ItemState;
-
-        itemData.unshift(this.state.ItemState)
       
         return (
             <div>
@@ -33,6 +39,7 @@ class ItemName extends React.Component {
                     placeholder="Add Item Name"
                     className="nameItem"
                     onChange={this.updateInputValue2}
+                    required
                 />
             </div>
         );

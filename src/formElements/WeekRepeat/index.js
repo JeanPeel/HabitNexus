@@ -2,6 +2,8 @@ import React, { Component, useState } from "react";
 
 import "../style.css";
 
+var formData = require("../../data/formData");
+
 var WeekSchedule = {
     Monday: false,
     Tuesday: false,
@@ -15,7 +17,6 @@ var WeekSchedule = {
 var WeekState = ""
 
 var weekData = require("../../data/weekdays");
-
 
 class WeekRepeat extends React.Component {
 
@@ -33,6 +34,19 @@ class WeekRepeat extends React.Component {
 
         }
 
+        componentDidMount() {
+
+        formData[6] = "none"
+        formData[7] = "none"
+        formData[8] = "none"
+        formData[9] = "none"
+        formData[10] = "none"
+        formData[11] = "none"
+        formData[12] = "none"
+        // console.log('formdata for the week: ', formData)
+
+    }
+
 
     updateInputValue9 = n => {
 
@@ -40,14 +54,16 @@ class WeekRepeat extends React.Component {
 
         this.setState({ WeekState: value9 })
 
+
+
         if (n.target.id === 'monday') {
 
             WeekSchedule.Monday = WeekSchedule.Monday ? false : true;
 
             if ( WeekSchedule.Monday === true) {
-                weekData[0] = "Mon"
+                formData[6] = "Mon"
             } else {
-                weekData[0] = "none"
+                formData[6] = "none"
             }
         }
         else if (n.target.id === 'tuesday') {
@@ -55,9 +71,9 @@ class WeekRepeat extends React.Component {
             WeekSchedule.Tuesday = WeekSchedule.Tuesday ? false : true;
 
             if ( WeekSchedule.Tuesday === true) {
-                weekData[1] = "Tues"
+                formData[7] = "Tues"
             } else {
-                weekData[1] = "none"
+                formData[7] = "none"
             }
         }
         else if (n.target.id === 'wednesday') {
@@ -65,9 +81,9 @@ class WeekRepeat extends React.Component {
             WeekSchedule.Wednesday = WeekSchedule.Wednesday ? false : true;
 
             if (  WeekSchedule.Wednesday === true) {
-                weekData[2] = "Wed"
+                formData[8] = "Wed"
             } else {
-                weekData[2] = "none"
+                formData[8] = "none"
             }
 
         }
@@ -76,9 +92,9 @@ class WeekRepeat extends React.Component {
             WeekSchedule.Thursday = WeekSchedule.Thursday ? false : true;
 
             if (  WeekSchedule.Thursday === true) {
-                weekData[3] = "Thurs"
+                formData[9] = "Thurs"
             } else {
-                weekData[3] = "none"
+                formData[9] = "none"
             }
 
         }
@@ -87,9 +103,9 @@ class WeekRepeat extends React.Component {
             WeekSchedule.Friday = WeekSchedule.Friday ? false : true;
 
             if (  WeekSchedule.Friday === true) {
-                weekData[4] = "Fri"
+                formData[10] = "Fri"
             } else {
-                weekData[4] = "none"
+                formData[10] = "none"
             }
 
         }
@@ -98,9 +114,9 @@ class WeekRepeat extends React.Component {
             WeekSchedule.Saturday = WeekSchedule.Saturday ? false : true;
 
             if (  WeekSchedule.Saturday === true) {
-                weekData[5] = "Sat"
+                formData[11] = "Sat"
             } else {
-                weekData[5] = "none"
+                formData[11] = "none"
             }
 
 
@@ -110,15 +126,17 @@ class WeekRepeat extends React.Component {
             WeekSchedule.Sunday = WeekSchedule.Sunday ? false : true;
 
             if ( WeekSchedule.Sunday === true) {
-                weekData[6] = "Sun"
+                formData[12] = "Sun"
             } else {
-                weekData[6] = "none"
+                formData[12] = "none"
             }
         }
 
         this.setState({  WeekSchedule: WeekSchedule });
 
             console.log("Week Data: ", weekData)
+
+           
     };
 
 

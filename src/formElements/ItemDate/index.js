@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../style.css";
 const moment = require('moment');
 
-var dateData = require("../../data/date");
+var formData = require("../../data/formData");
 
 class ItemDate extends React.Component {
 
@@ -12,7 +12,8 @@ class ItemDate extends React.Component {
 
     componentDidMount() {
         var AutoDate = moment().format("MM/DD/YYYY")
-        dateData.push(AutoDate)
+
+        formData[0] = AutoDate
     }
 
     updateInputValue6 = k => {
@@ -20,6 +21,8 @@ class ItemDate extends React.Component {
         const value8 = k.target.value
 
         this.setState({ DateState: value8 });
+
+        formData[0] = value8
     };
 
 
@@ -30,8 +33,6 @@ class ItemDate extends React.Component {
         var AutoDate = moment().format("MM/DD/YYYY")
 
         const { DateState } = this.state.DateState;
-
-        dateData.unshift(this.state.DateState)
 
         return (
             <div>

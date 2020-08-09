@@ -63,13 +63,29 @@ class Form extends Component {
     }
 
     componentDidMount() {
-        formData.length = 0
+        formData = [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
+        ]
 
-        console.log('formdata should be empty: ', formData)
+        console.log('formdata should be 15 nuns: ', formData)
 
-        formData.length = 0
+        // formData.length = 0
 
-        console.log('formdata should be empty: ', formData)
+        // console.log('formdata should be empty: ', formData)
     }
 
 

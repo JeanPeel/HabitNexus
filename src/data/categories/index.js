@@ -12,6 +12,7 @@ const categories = [
     { value: "mental_health", label: "Mental Health" },
     { value: "pets", label: "Pets" },
     { value: "school", label: "School" },
+    { value: "self-improvment", label: "Self Improvment (Default)" },
     { value: "shopping", label: "Shopping" },
     { value: "social_connections", label: "Social Connections" },
     { value: "spiritual", label: "Spiritual" },

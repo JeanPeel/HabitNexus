@@ -4,12 +4,17 @@ import Select from 'react-select';
 
 var hours = require("../../data/hours");
 
-var hourData = require("../../data/hour");
+var formData = require("../../data/formData");
 
 class Hours extends React.Component {
 
     state = {
         HourState: "",
+    }
+
+    componentDidMount() {
+
+        formData[14] = "8:00 AM"
     }
 
     valueB = "";
@@ -22,14 +27,14 @@ class Hours extends React.Component {
 
         this.setState({ selectedHour: HourState.value });
 
+        formData[14] = valueB
+
     };
 
 
     render() {
 
         const { HourState } = this.state.HourState;
-
-        hourData.unshift(this.state.HourState.value)
        
         return (
             <div>

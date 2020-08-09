@@ -6,7 +6,7 @@ const hours = [
     { value: "5:00 AM", label: "5:00 AM" },
     { value: "6:00 AM", label: "6:00 AM" },
     { value: "7:00 AM", label: "7:00 AM" },
-    { value: "8:00 AM", label: "8:00 AM" },
+    { value: "8:00 AM", label: "8:00 AM (Default)" },
     { value: "9:00 AM", label: "9:00 AM" },
     { value: "10:00 AM", label: "10:00 AM" },
     { value: "11:00 AM", label: "11:00 AM" },

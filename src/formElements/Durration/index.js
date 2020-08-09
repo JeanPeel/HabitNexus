@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../style.css";
 
-var durrationData = require("../../data/durration");
+var formData = require("../../data/formData");
 
 class Durration extends React.Component {
 
@@ -9,11 +9,19 @@ class Durration extends React.Component {
         DurrationState: "",
     }
 
+    componentDidMount() {
+
+        formData[5] = "fast-task-30min-or-less"
+    }
+
     updateInputValue8 = r => {
 
-        const value2 = r.target.id
+        const value11 = r.target.id
 
-        this.setState({ DurrationState: value2 });
+        this.setState({ DurrationState: value11 });
+
+        formData[5] = value11
+
     };
 
 
@@ -21,8 +29,6 @@ class Durration extends React.Component {
     render() {
 
         const { DurrationState } = this.state.DurrationState;
-
-        durrationData.unshift(this.state.DurrationState)
 
         return (
             <div>
@@ -46,7 +52,7 @@ class Durration extends React.Component {
                         onChange={this.updateInputValue8}
 
                     />
-                    <label htmlFor="task">Fast-Task (30 min or less)</label>
+                    <label htmlFor="task">Fast-Task (Default) (30 min or less)</label>
                     <input
                         type="radio"
                         className="radioBTN"

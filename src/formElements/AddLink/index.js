@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "../style.css";
 
-var linkInfo = require("../../data/linkinfo");
+var formData = require("../../data/formData");
 
 class AddLink extends React.Component {
+
 
 
     state = {
@@ -12,11 +13,20 @@ class AddLink extends React.Component {
 
     }
 
+    componentDidMount() {
+
+        formData[15] = "none"
+    }
+
     updateInputValue = e => {
 
         const value2 = e.target.value
 
         this.setState({ linkstate: value2 });
+
+        formData[15] = value2
+
+        // console.log("formData: ", formData)
 
     };
 
@@ -25,8 +35,6 @@ class AddLink extends React.Component {
     render() {
 
         var { linkstate } = this.state.linkstate;
-
-        linkInfo.unshift(this.state.linkstate)
 
         return (
             <div>

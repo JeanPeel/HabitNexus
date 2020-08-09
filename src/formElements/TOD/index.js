@@ -4,7 +4,7 @@ import Select from 'react-select';
 
 var timeOfDay = require("../../data/timeOfDay");
 
-var todData = require("../../data/tod");
+var formData = require("../../data/formData");
 
 class TOD extends React.Component {
 
@@ -12,6 +12,11 @@ class TOD extends React.Component {
 
     state = {
         TODState: "",
+    }
+
+    componentDidMount() {
+
+        formData[13] = "Morning"
     }
 
     valueC = "";
@@ -24,12 +29,12 @@ class TOD extends React.Component {
       
         this.setState({ selectedTOD: TODState.value });
 
+        formData[13] = valueC
+
     };
 
     render() {
         const { TODState } = this.state.TODState;
-
-        todData.unshift(this.state.TODState.value)
 
         return (
             <div>

@@ -16,66 +16,97 @@ var todData = require("../../data/tod");
 var weekData = require("../../data/weekdays");
 var linkInfo = require("../../data/linkinfo");
 
+var formData = require("../../data/formData");
+
 class SubmitBTN extends React.Component {
 
     state = {
         FormState: "",
     };
 
+    // componentDidMount() {
+    //     formData = [
+    //         "none",
+    //         "none",
+    //         "none",
+    //         "none",
+    //         "none",
+    //         "none",
+    //         "none",
+    //         "none",
+    //         "none",
+    //         "none",
+    //         "none",
+    //         "none",
+    //         "none",
+    //         "none",
+    //         "none"
+    //     ]
+    // }
 
     updateInputValue = e => {
 
         e.preventDefault();
 
-        var ADateData = ("dateData: " + dateData[0])
-        var AItemData = ("itemData: " + itemData[0])
-        var ACategoryData = ("categoryData: " + categoryData[0])
-        var APriorityData = ("priorityData: " + priorityData[0])
-        var ADifficultyData = ("difficultyData: " + difficultyData[0])
-        var ADurrationData = ("durrationData: " + durrationData[0])
-        var AWeekData = ("weekData: " + weekData)
-        var AdTodData = ("todData: " + todData[0])
-        var AHourData = ("hourData: " + hourData[0])
-        var ALinkInfo = ("linkInfo: " + linkInfo[0])
+        var ADateData = ("dateData: " + formData[0])
+        var AItemData = ("itemData: " + formData[1])
+        var ACategoryData = ("categoryData: " + formData[2])
+        var APriorityData = ("priorityData: " + formData[3])
+        var ADifficultyData = ("difficultyData: " + formData[4])
+        var ADurrationData = ("durrationData: " + formData[5])
+        var AWeekData = ("weekData: " + formData[6] + ", "
+            + formData[7] + ", "
+            + formData[8] + ", "
+            + formData[9] + ", "
+            + formData[10] + ", "
+            + formData[11] + ", "
+            + formData[12])
+        var AdTodData = ("todData: " + formData[13])
+        var AHourData = ("hourData: " + formData[14])
+        var ALinkInfo = ("linkInfo: " + formData[15])
 
-    alert(
+        if (formData[1] === "none") {
+            alert("Please fill out the Habit Item Name")
+        } else {
+            alert(
 
-            ADateData + "\n" 
-            + AItemData + "\n " 
-            + ACategoryData + "\n " 
-            + APriorityData + "\n " 
-            + ADifficultyData + "\n " 
-            + ADurrationData + "\n " 
-            + AWeekData + "\n " 
-            + AdTodData + "\n " 
-            + AHourData + "\n " 
-            + ALinkInfo 
-
-        )
+                ADateData + "\n"
+                + AItemData + "\n "
+                + ACategoryData + "\n "
+                + APriorityData + "\n "
+                + ADifficultyData + "\n "
+                + ADurrationData + "\n "
+                + AWeekData + "\n "
+                + AdTodData + "\n "
+                + AHourData + "\n "
+                + ALinkInfo
+    
+            )
+        }
 
     };
 
-render() {
+    render() {
 
-    const { FormState } = this.state.FormState;
+        const { FormState } = this.state.FormState;
 
-    return (
-        <div>
-            <button
-                type="submit"
-                onClick={
+        return (
+            <div>
+                <button
+                    type="submit"
+                    onClick={
 
-                    this.updateInputValue
+                        this.updateInputValue
 
-                }
-                className="submitBTN"
-                form="form"
-                value={FormState}
+                    }
+                    className="submitBTN"
+                    form="form"
+                    value={FormState}
 
-            >Submit</button>
-        </div >
-    );
-}
+                >Submit</button>
+            </div >
+        );
+    }
 
 }
 

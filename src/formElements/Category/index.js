@@ -5,12 +5,17 @@ var axios = require("axios");
 
 var categories = require("../../data/categories");
 
-var categoryData = require("../../data/category");
+var formData = require("../../data/formData");
 
 class Category extends React.Component {
 
     state = {
         CategoryState: "",
+    }
+
+    componentDidMount() {
+
+        formData[2] = "self-improvment"
     }
 
     valueA = "";
@@ -22,14 +27,16 @@ class Category extends React.Component {
       
         var valueA = CategoryState.value
 
+        formData[2] = valueA
+
+        // console.log("formData: ", formData)
+
     }
 
 
     render() {
 
         const { CategoryState } = this.state.CategoryState;
-
-        categoryData.unshift(this.state.CategoryState.value)
 
         return (
             <div>

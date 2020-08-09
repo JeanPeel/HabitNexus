@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../style.css";
 
-var difficultyData = require("../../data/difficulty");
+var formData = require("../../data/formData");
 
 
 class Difficulty extends React.Component {
@@ -10,11 +10,19 @@ class Difficulty extends React.Component {
         DifficultyState: "",
     }
 
+    componentDidMount() {
+
+        formData[4] = "moderate"
+    }
+
+
     updateInputValue7 = l => {
 
         const value1 = l.target.id
 
         this.setState({ DifficultyState: value1 });
+
+        formData[4] = value1
 
     };
 
@@ -23,8 +31,6 @@ class Difficulty extends React.Component {
     render() {
 
         const { DifficultyState } = this.state.DifficultyState;
-
-        difficultyData.unshift(this.state.DifficultyState)
    
         return (
             <div>
@@ -48,7 +54,7 @@ class Difficulty extends React.Component {
                         onChange={this.updateInputValue7}
 
                     />
-                    <label htmlFor="moderate">Moderate</label>
+                    <label htmlFor="moderate">Moderate (Default)</label>
                     <input
                         type="radio"
                         className="radioBTN"
