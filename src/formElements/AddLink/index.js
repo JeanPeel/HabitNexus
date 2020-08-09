@@ -38,7 +38,6 @@ class AddLink extends React.Component {
                     placeholder="Add a Link Here"
                     className="linkitem"
                     onChange={this.updateInputValue}
-                    linkstate={this.state.linkstate}
                 />
             </div>
         );
