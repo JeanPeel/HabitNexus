@@ -44,7 +44,7 @@ class Category extends React.Component {
                     <label htmlFor="CategoryItem">Category</label>
                     <Select
                         name="CategoryItem"
-                        placeholder="Select a Category"
+                        placeholder="Select a Category (Default is Self Improvment)"
                         value={CategoryState}
                         onChange={this.handleChange5}
                         options={categories}

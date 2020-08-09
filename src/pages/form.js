@@ -39,7 +39,7 @@ class Form extends Component {
     state = {
         HabitItem: '',
         PriorityState: "",
-        linkstate : "",
+        linkstate: "",
         DateState: "",
         updateDateState: "",
         ItemState: "",
@@ -51,15 +51,15 @@ class Form extends Component {
         HourState: "",
         WeekState: "",
         FormState: "",
-            WeekSchedule: {
-                Monday: false,
-                Tuesday: false,
-                Wednesday: false,
-                Thursday: false,
-                Friday: false,
-                Saturday: false,
-                Sunday: false
-            }
+        WeekSchedule: {
+            Monday: false,
+            Tuesday: false,
+            Wednesday: false,
+            Thursday: false,
+            Friday: false,
+            Saturday: false,
+            Sunday: false
+        }
     }
 
     componentDidMount() {
@@ -108,7 +108,7 @@ class Form extends Component {
         // this is not running
         console.log('SaveHabit1 ran on Form')
 
- 
+
 
         const newHabit = {
             PriorityItem: this.state.newHabit.PriorityItem,
@@ -160,7 +160,7 @@ class Form extends Component {
 
     // habitData = (newHabit) => {
 
-     
+
     //     console.log('HabitData1 ran on Form')
 
     //     document.getElementById('#itemDate').text(newHabit.DateItem);
@@ -216,17 +216,19 @@ class Form extends Component {
                 <form
                     id="form"
                 >
-                    <ItemDate/>
-                    <ItemName/>
-                    <Category/>
-                    <Priority/>
-                    <Difficulty/>
-                    <Durration/>
-                    <WeekRepeat/>
-                    <TOD/>
-                    < Hours/>
-                    <AddLink/>
-                    <SubmitBTN/>
+                    <ItemDate />
+                    <div id="required">
+                        <ItemName />
+                        <WeekRepeat />
+                    </div>
+                    <Category />
+                    <Priority />
+                    <Difficulty />
+                    <Durration />
+                    <TOD />
+                    < Hours />
+                    <AddLink />
+                    <SubmitBTN />
                     {/* <Modal
                         linkstate={this.state.linkstate}
                         linkitem={this.state.newHabit.linkitem}

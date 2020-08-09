@@ -41,6 +41,7 @@ class TOD extends React.Component {
                 <label htmlFor="TimeDay">Time Of Day</label>
                 <Select
                     name="TimeDay"
+                    placeholder="Select a Time Of Day (Default is Morning)"
                     value={TODState}
                     onChange={this.handleChange}
                     options={timeOfDay}

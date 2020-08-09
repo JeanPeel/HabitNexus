@@ -38,9 +38,10 @@ class Hours extends React.Component {
        
         return (
             <div>
-                <label htmlFor="Hours">Or Select an Hour</label>
+                <label htmlFor="Hours">Hour of the Day</label>
                 <Select
                     name="Hours"
+                    placeholder="and/or Select an Hour of the Day (Default is 8:00 am)"
                     value={HourState}
                     onChange={this.handleChange2}
                     options={hours}

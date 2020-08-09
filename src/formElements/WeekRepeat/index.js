@@ -188,6 +188,7 @@ class WeekRepeat extends React.Component {
                         onChange={this.updateInputValue9}
                     />
                     <label htmlFor="thursday">Thursday</label>
+                    <br />
                     <input
                         type="checkbox"
                         className="radioBTN"
