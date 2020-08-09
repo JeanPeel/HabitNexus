@@ -44,6 +44,9 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
+
 // Serve up static assets (usually on heroku)
 // if (process.env.NODE_ENV === "production") {
 // app.use(express.static("client/build"));
