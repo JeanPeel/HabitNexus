@@ -81,14 +81,67 @@ class Form extends Component {
             "none"
         ]
 
-        console.log('formdata should be 15 nuns: ', formData)
-
-        // formData.length = 0
-
-        // console.log('formdata should be empty: ', formData)
+        this.getAxios()
+        this.fetchApi()
     }
 
+    getAxios = () => {
+        console.log('formdata should be 16 nuns: ', formData)
 
+        axios.get('/api/formData')
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+
+        axios.get('/api/timeOfDay')
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+
+        axios.get("/api/categories")
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+
+        axios.get("/api/hours")
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+
+        axios.get("/api/weekdays")
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+
+    fetchApi = () => {
+        fetch('http://localhost:3000/api/categories')
+        .then(response => this.handleSuccessRes(response))
+        .catch(error => this.handleErrorRes(error))
+    }
+
+    handleSuccessRes = response => {
+       console.log("Categories Api: ", response)
+    }
+
+        handleErrorRes = error => {
+        console.log('Error while fethcing accouts: ', error)
+    }
 
     updateHabit = (event) => {
         const { name, value } = event.target;

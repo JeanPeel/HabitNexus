@@ -16,7 +16,7 @@ var WeekSchedule = {
 
 var WeekState = ""
 
-var weekData = require("../../data/weekdays");
+// var weekData = require("../../data/weekdays");
 
 class WeekRepeat extends React.Component {
 
@@ -134,7 +134,7 @@ class WeekRepeat extends React.Component {
 
         this.setState({  WeekSchedule: WeekSchedule });
 
-            console.log("Week Data: ", weekData)
+            // console.log("Week Data: ", weekData)
 
            
     };
@@ -197,6 +197,7 @@ class WeekRepeat extends React.Component {
                         value={WeekState}
                         onChange={this.updateInputValue9}
                     />
+
                     <label htmlFor="friday">Friday</label>
                     <input
                         type="checkbox"

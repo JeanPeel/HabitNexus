@@ -8,9 +8,14 @@ const express = require("express");
 // const path = require('path');
 
 // const PORT = process.env.PORT || 3030;
+
+// const apiRoutes = require("./routes/apiRoutes")
+// const htmlRoutes = require("./routes/htmlRoutes")
+
 const app = express();
 
 var PORT = process.env.PORT || 8080;
+
 
 // const bcrypt = require('bcrypt')
 // const passport = require('passport')
@@ -46,6 +51,10 @@ app.use(express.json());
 
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+
+// app.use('/api', apiRouter);
+// app.use(express.static('public'));
+// app.use(express.static('public/views'));
 
 // Serve up static assets (usually on heroku)
 // if (process.env.NODE_ENV === "production") {
